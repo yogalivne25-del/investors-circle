@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Investor's Circle TLV — ליווי משקיעי נדל"ן בתל אביב</title>
+  <meta name="description" content="ליווי פרטי ובלעדי למשקיעים עם מיליון ₪ ומעלה. נדל&quot;ן יוקרה בתל אביב — שקיפות מלאה, תשואות אמיתיות." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Heebo:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:    #FFFFFF;
+      --offwhite: #F8F7F4;
+      --glass:    #EEF5FB;
+      --navy:     #0D1B2A;
+      --navy2:    #1A2E42;
+      --gold:     #B8963E;
+      --gold2:    #D4AE58;
+      --gold3:    #8A6E2A;
+      --grey:     #6B7280;
+      --grey2:    #9CA3AF;
+      --border:   rgba(184,150,62,0.15);
+      --border2:  rgba(13,27,42,0.08);
+      --shadow:   0 4px 40px rgba(13,27,42,0.08);
+      --shadow2:  0 2px 16px rgba(13,27,42,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Heebo', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--gold); color: var(--white); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--offwhite); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; line-height: 1.2; font-weight: 500; }
+    .gold { color: var(--gold); }
+    .italic { font-style: italic; }
+
+    /* ── UTILS ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .label {
+      display: block; font-size: 11px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0 0 40px;
+    }
+    .divider--center { margin: 0 auto 40px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    /* ── BUTTON ── */
+    .btn {
+      display: inline-block; padding: 16px 44px;
+      background: var(--navy); color: var(--white);
+      font-family: 'Heebo', sans-serif; font-size: 13px;
+      font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none;
+      cursor: pointer; border: none;
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gold); transform: translateX(100%);
+      transition: transform 0.35s ease;
+    }
+    .btn:hover::before { transform: translateX(0); }
+    .btn span { position: relative; z-index: 1; }
+    .btn--gold {
+      background: var(--gold); color: var(--white);
+    }
+    .btn--gold::before { background: var(--navy); transform: translateX(-100%); }
+    .btn--outline {
+      background: transparent; color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+    .btn--outline::before { background: var(--navy); transform: translateX(100%); }
+    .btn--outline:hover { color: var(--white); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; inset-inline: 0; z-index: 100;
+      padding: 20px 0; transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      padding: 14px 0;
+      box-shadow: var(--shadow2);
+      border-bottom: 1px solid var(--border2);
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 17px; font-weight: 400; letter-spacing: 1px;
+      color: var(--navy); text-decoration: none;
+    }
+    .nav__logo span { color: var(--gold); }
+    .nav__links { display: flex; gap: 36px; list-style: none; }
+    .nav__links a {
+      font-size: 12px; letter-spacing: 1px; color: var(--grey);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__cta {
+      font-size: 12px; letter-spacing: 1px; font-weight: 500;
+      color: var(--white); background: var(--navy);
+      padding: 10px 24px; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .nav__cta:hover { background: var(--gold); }
+    .nav__lang {
+      font-size: 11px; letter-spacing: 1px; color: var(--grey);
+      text-decoration: none; border-bottom: 1px solid var(--border);
+      padding-bottom: 2px; transition: color 0.3s;
+      margin-inline-end: 20px;
+    }
+    .nav__lang:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 0 100px; position: relative; overflow: hidden;
+    }
+    .hero__photo-credit {
+      position: absolute; bottom: 20px; left: 28px;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(13,27,42,0.35); z-index: 2;
+    }
+    .hero__img {
+      position: absolute; inset: 0;
+      background: url('/images/hero.jpg') center/cover no-repeat;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(248,247,244,0.97) 0%,
+        rgba(248,247,244,0.92) 38%,
+        rgba(248,247,244,0.55) 60%,
+        rgba(13,27,42,0.15) 100%
+      );
+    }
+    .hero__content { position: relative; z-index: 1; max-width: 680px; }
+    .hero__eyebrow {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 36px;
+    }
+    .hero__eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
+    .hero__eyebrow span {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+    }
+    .hero h1 {
+      font-size: clamp(40px, 5.5vw, 72px);
+      line-height: 1.1; margin-bottom: 28px; color: var(--navy);
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+    .hero__sub {
+      font-size: 17px; line-height: 1.9; color: var(--grey);
+      max-width: 500px; margin-bottom: 48px;
+    }
+    .hero__actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .hero__note { font-size: 12px; color: var(--grey2); letter-spacing: 1px; }
+    .hero__scroll {
+      position: absolute; bottom: 40px; right: 50%;
+      transform: translateX(50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .hero__scroll span { font-size: 10px; letter-spacing: 3px; color: var(--grey2); }
+    .hero__scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+    /* ── STATS ── */
+    .stats {
+      background: var(--navy); padding: 48px 0;
+      border-bottom: 3px solid var(--gold);
+    }
+    .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stats__item {
+      padding: 0 32px; text-align: center;
+      border-inline-end: 1px solid rgba(255,255,255,0.1);
+    }
+    .stats__item:last-child { border-inline-end: none; }
+    .stats__num {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 44px; font-weight: 300; color: var(--gold);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .stats__label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+
+    /* ── IDENTIFICATION ── */
+    .identification { padding: 120px 0; background: var(--offwhite); }
+    .identification__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .identification h2 { font-size: clamp(28px,3.5vw,48px); margin-bottom: 20px; }
+    .identification__text { font-size: 16px; color: var(--grey); margin-bottom: 40px; line-height: 1.9; }
+    .identification__list { list-style: none; }
+    .identification__list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid var(--border2);
+      font-size: 15px; color: var(--navy);
+    }
+    .identification__list li:last-child { border-bottom: none; }
+    .identification__list li::before {
+      content: '◆'; color: var(--gold); font-size: 8px; margin-top: 7px; flex-shrink: 0;
+    }
+    .identification__visual {
+      position: relative; border: 1px solid var(--border);
+      background: var(--white); box-shadow: var(--shadow);
+      padding: 48px; aspect-ratio: 4/5;
+      display: flex; flex-direction: column; justify-content: center; gap: 32px;
+    }
+    .identification__corner {
+      position: absolute; width: 18px; height: 18px; border-color: var(--gold); border-style: solid;
+    }
+    .identification__corner--tl { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+    .identification__corner--tr { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .identification__corner--bl { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+    .identification__corner--br { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+    .identification__quote {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 24px; font-weight: 300; font-style: italic;
+      line-height: 1.6; color: var(--navy);
+    }
+    .identification__quote em { color: var(--gold); font-style: normal; }
+    .identification__attr { font-size: 12px; letter-spacing: 2px; color: var(--grey2); }
+
+    /* ── WHY TEL AVIV ── */
+    .why-tlv { padding: 120px 0; background: var(--white); }
+    .why-tlv__top { text-align: center; margin-bottom: 80px; }
+    .why-tlv__top h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 20px; }
+    .why-tlv__top p { font-size: 17px; color: var(--grey); max-width: 640px; margin: 0 auto; line-height: 1.9; }
+    .why-tlv__image {
+      width: 100%; height: 420px;
+      background: linear-gradient(to left, #1a2e42, #0d1b2a);
+      position: relative; margin-bottom: 80px;
+      box-shadow: var(--shadow);
+    }
+    .why-tlv__image-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to left, rgba(13,27,42,0.5), transparent 60%);
+    }
+    .why-tlv__image-caption {
+      position: absolute; bottom: 40px; left: 48px;
+      color: var(--white);
+    }
+    .why-tlv__image-caption h3 { font-size: 28px; font-weight: 400; margin-bottom: 8px; }
+    .why-tlv__image-caption p { font-size: 14px; opacity: 0.8; }
+    .why-tlv__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border2); }
+    .why-tlv__card {
+      background: var(--white); padding: 44px 36px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+    .why-tlv__card:hover { background: var(--glass); border-bottom-color: var(--gold); }
+    .why-tlv__card-icon {
+      font-size: 32px; margin-bottom: 20px; display: block;
+    }
+    .why-tlv__card h3 { font-size: 18px; margin-bottom: 12px; font-weight: 500; }
+    .why-tlv__card p { font-size: 14px; color: var(--grey); line-height: 1.9; }
+    .why-tlv__bottom {
+      margin-top: 80px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      padding: 56px 64px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .why-tlv__bottom h3 { font-size: 28px; margin-bottom: 16px; }
+    .why-tlv__bottom p { font-size: 15px; color: var(--grey); line-height: 1.9; }
+    .why-tlv__flex-list { list-style: none; margin-top: 24px; }
+    .why-tlv__flex-list li {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border2);
+      font-size: 14px;
+    }
+    .why-tlv__flex-list li:last-child { border-bottom: none; }
+    .why-tlv__flex-list li::before { content: '◆'; color: var(--gold); font-size: 7px; margin-top: 6px; flex-shrink: 0; }
+
+    /* ── PROBLEM ── */
+    .problem { padding: 120px 0; background: var(--navy); color: var(--white); text-align: center; }
+    .problem .label { color: rgba(184,150,62,0.9); }
+    .problem h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 20px; color: var(--white); }
+    .problem__intro {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 21px; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.6); max-width: 580px; margin: 0 auto 64px;
+    }
+    .problem__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.05); margin-bottom: 64px; }
+    .problem__card {
+      background: rgba(255,255,255,0.03); padding: 48px 36px; text-align: right;
+      transition: background 0.3s;
+    }
+    .problem__card:hover { background: rgba(255,255,255,0.06); }
+    .problem__card-num {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 52px; font-weight: 300;
+      color: rgba(184,150,62,0.2); line-height: 1; margin-bottom: 20px;
+    }
+    .problem__card h3 { font-size: 18px; margin-bottom: 12px; color: var(--white); }
+    .problem__card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.9; }
+    .problem__statement {
+      max-width: 680px; margin: 0 auto;
+      border: 1px solid rgba(184,150,62,0.25); padding: 48px;
+      position: relative;
+    }
+    .problem__statement::before {
+      content: '"';
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 100px; line-height: 0.8;
+      color: var(--gold); opacity: 0.2;
+      position: absolute; top: 20px; right: 28px;
+    }
+    .problem__statement p {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 22px; font-weight: 300; font-style: italic;
+      line-height: 1.7; color: rgba(255,255,255,0.85);
+    }
+
+    /* ── PROCESS ── */
+    .process { padding: 120px 0; background: var(--offwhite); }
+    .process__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .process h2 { font-size: clamp(28px,3.5vw,48px); margin-bottom: 20px; }
+    .process__lead { font-size: 16px; color: var(--grey); line-height: 1.9; margin-bottom: 40px; }
+    .process__lead strong { color: var(--navy); font-weight: 500; }
+    .process__visual {
+      background: var(--white); border: 1px solid var(--border);
+      padding: 48px; box-shadow: var(--shadow);
+    }
+    .process__quote {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 22px; font-weight: 300; font-style: italic;
+      line-height: 1.7; color: var(--navy); margin-bottom: 28px;
+    }
+    .process__quote em { color: var(--gold); font-style: normal; }
+    .process__attr { font-size: 11px; letter-spacing: 2px; color: var(--grey2); }
+    .process__steps { list-style: none; }
+    .process__step { display: flex; gap: 20px; padding-bottom: 28px; position: relative; }
+    .process__step:not(:last-child)::after {
+      content: '';
+      position: absolute; right: 15px; top: 32px;
+      width: 1px; bottom: 0;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .process__step-dot {
+      width: 32px; height: 32px; flex-shrink: 0;
+      border: 1.5px solid var(--gold); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 500; color: var(--gold);
+      background: var(--offwhite); position: relative; z-index: 1;
+    }
+    .process__step h4 { font-size: 15px; font-weight: 500; margin-bottom: 4px; font-family: 'Heebo'; }
+    .process__step p { font-size: 13px; color: var(--grey); }
+
+    /* ── SOLUTION ── */
+    .solution { padding: 120px 0; background: var(--white); text-align: center; }
+    .solution h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 16px; }
+    .solution__sub { font-size: 16px; color: var(--grey); max-width: 500px; margin: 0 auto 64px; }
+    .solution__grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--border2); text-align: right;
+      border: 1px solid var(--border2); margin-bottom: 40px;
+    }
+    .solution__item {
+      background: var(--white); padding: 44px 36px;
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .solution__item:hover { background: var(--glass); }
+    .solution__item::after {
+      content: ''; position: absolute; top: 0; right: 0; left: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: right;
+      transition: transform 0.4s;
+    }
+    .solution__item:hover::after { transform: scaleX(1); }
+    .solution__num { font-size: 11px; letter-spacing: 2px; color: var(--gold); display: block; margin-bottom: 16px; font-weight: 500; }
+    .solution__item h3 { font-size: 18px; margin-bottom: 10px; font-weight: 500; }
+    .solution__item p { font-size: 14px; color: var(--grey); line-height: 1.9; }
+    .solution__note { font-size: 13px; color: var(--grey2); font-style: italic; }
+
+    /* ── RESULTS ── */
+    .results { padding: 120px 0; background: var(--glass); text-align: center; }
+    .results h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 64px; }
+    .results__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-bottom: 64px; text-align: right; }
+    .results__card {
+      background: var(--white); border: 1px solid var(--border);
+      padding: 40px 32px; position: relative;
+      box-shadow: var(--shadow2); transition: all 0.3s;
+    }
+    .results__card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .results__card-tag {
+      position: absolute; top: 0; right: 0;
+      background: var(--navy); color: var(--white);
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      padding: 5px 14px;
+    }
+    .results__address { font-family: 'Frank Ruhl Libre', serif; font-size: 19px; margin: 20px 0; color: var(--navy); }
+    .results__row {
+      display: flex; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid var(--border2);
+      font-size: 13px;
+    }
+    .results__row:last-child { border-bottom: none; }
+    .results__row span:first-child { color: var(--grey); }
+    .results__row span:last-child { color: var(--navy); font-weight: 500; }
+    .results__row .gold { color: var(--gold); }
+
+    /* ── TRUST ── */
+    .trust { padding: 120px 0; background: var(--white); text-align: center; }
+    .trust h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 16px; }
+    .trust__sub { font-size: 16px; color: var(--grey); margin-bottom: 64px; }
+    .trust__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; text-align: right; }
+    .trust__card {
+      border: 1px solid var(--border2); padding: 40px 32px;
+      background: var(--offwhite); transition: all 0.3s;
+    }
+    .trust__card:hover { border-color: var(--border); box-shadow: var(--shadow2); }
+    .trust__stars { color: var(--gold); font-size: 14px; letter-spacing: 3px; margin-bottom: 20px; }
+    .trust__quote {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 17px; font-weight: 300; font-style: italic;
+      line-height: 1.8; color: var(--navy); margin-bottom: 28px;
+    }
+    .trust__person { display: flex; align-items: center; gap: 12px; }
+    .trust__avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Frank Ruhl Libre', serif; font-size: 18px; color: var(--gold); flex-shrink: 0;
+    }
+    .trust__name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+    .trust__role { font-size: 12px; color: var(--grey); }
+
+    /* ── FAQ ── */
+    .faq { padding: 120px 0; background: var(--offwhite); }
+    .faq__inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+    .faq__left h2 { font-size: clamp(26px,3vw,42px); margin-bottom: 16px; }
+    .faq__left p { font-size: 15px; color: var(--grey); line-height: 1.9; }
+    .faq__item { border-bottom: 1px solid var(--border2); }
+    .faq__question {
+      width: 100%; text-align: right; background: none; border: none;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; font-size: 16px; font-weight: 400;
+      color: var(--navy); font-family: 'Heebo', sans-serif; transition: color 0.3s;
+    }
+    .faq__question:hover { color: var(--gold); }
+    .faq__icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--gold); transition: transform 0.3s;
+    }
+    .faq__item.open .faq__icon { transform: rotate(45deg); }
+    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq__answer p { padding-bottom: 22px; font-size: 14px; color: var(--grey); line-height: 1.9; }
+    .faq__item.open .faq__answer { max-height: 300px; }
+
+    /* ── URGENCY ── */
+    .urgency {
+      padding: 72px 0; background: var(--gold);
+    }
+    .urgency__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .urgency__text h3 { font-size: 26px; margin-bottom: 6px; color: var(--white); }
+    .urgency__text p { font-size: 15px; color: rgba(255,255,255,0.8); }
+    .urgency__spots { display: flex; gap: 8px; align-items: center; }
+    .urgency__dot { width: 10px; height: 10px; border-radius: 50%; }
+    .urgency__dot--filled { background: var(--white); }
+    .urgency__dot--empty { background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.4); }
+    .urgency__label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-inline-start: 8px; }
+    .urgency .btn { background: var(--white); color: var(--navy); }
+    .urgency .btn::before { background: var(--navy); }
+    .urgency .btn:hover { color: var(--white); }
+
+    /* ── CTA / FORM ── */
+    .cta { padding: 120px 0; background: var(--white); text-align: center; }
+    .cta h2 { font-size: clamp(30px,4vw,56px); margin-bottom: 16px; }
+    .cta__sub { font-size: 16px; color: var(--grey); max-width: 480px; margin: 0 auto 64px; }
+    .cta__form {
+      max-width: 580px; margin: 0 auto;
+      background: var(--offwhite); border: 1px solid var(--border);
+      padding: 56px 48px; box-shadow: var(--shadow);
+      position: relative;
+    }
+    .cta__form::after {
+      content: ''; position: absolute; top: 0; right: 50%; transform: translateX(50%);
+      width: 72px; height: 2px; background: var(--gold);
+    }
+    .form__group { margin-bottom: 18px; text-align: right; }
+    .form__label { display: block; font-size: 11px; letter-spacing: 2px; color: var(--grey); margin-bottom: 8px; }
+    .form__input {
+      width: 100%; background: var(--white);
+      border: 1px solid var(--border2); color: var(--navy);
+      padding: 13px 16px; font-size: 14px;
+      font-family: 'Heebo', sans-serif; outline: none;
+      transition: border-color 0.3s; direction: rtl;
+    }
+    .form__input:focus { border-color: var(--gold); }
+    .form__input::placeholder { color: var(--grey2); }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form__select {
+      width: 100%; background: var(--white);
+      border: 1px solid var(--border2); color: var(--navy);
+      padding: 13px 16px; font-size: 14px;
+      font-family: 'Heebo', sans-serif; cursor: pointer;
+      outline: none; appearance: none; direction: rtl;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8963E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: left 16px center;
+      transition: border-color 0.3s;
+    }
+    .form__select:focus { border-color: var(--gold); }
+    .form__submit {
+      width: 100%; margin-top: 8px; padding: 17px;
+      background: var(--navy); color: var(--white); border: none;
+      cursor: pointer; font-family: 'Heebo', sans-serif;
+      font-size: 13px; font-weight: 500; letter-spacing: 2px;
+      transition: background 0.3s;
+    }
+    .form__submit:hover { background: var(--gold); }
+    .form__note { font-size: 12px; color: var(--grey2); margin-top: 18px; }
+    .form__success { display: none; text-align: center; padding: 40px 0; }
+    .form__success-icon { font-size: 36px; color: var(--gold); margin-bottom: 16px; }
+    .form__success h3 { font-size: 22px; margin-bottom: 10px; }
+    .form__success p { font-size: 14px; color: var(--grey); }
+
+    /* ── FOOTER ── */
+    footer { padding: 56px 0; background: var(--navy); }
+    .footer__inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px; }
+    .footer__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--white); }
+    .footer__logo span { color: var(--gold); }
+    .footer__links { display: flex; gap: 28px; list-style: none; justify-content: center; }
+    .footer__links a { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+    .footer__links a:hover { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); text-align: left; }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .stats__grid { grid-template-columns: repeat(2,1fr); }
+      .identification__inner, .process__inner, .faq__inner { grid-template-columns: 1fr; gap: 40px; }
+      .identification__visual { display: none; }
+      .problem__grid, .solution__grid, .results__grid, .trust__grid, .why-tlv__grid { grid-template-columns: 1fr; }
+      .why-tlv__bottom { grid-template-columns: 1fr; padding: 40px; }
+      .urgency__inner { flex-direction: column; text-align: center; }
+      .cta__form { padding: 40px 24px; }
+      .form__row { grid-template-columns: 1fr; }
+      .footer__inner { grid-template-columns: 1fr; text-align: center; }
+      .footer__copy { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <ul class="nav__links">
+        <li><a href="#about">אודות</a></li>
+        <li><a href="#tlv">למה ת"א</a></li>
+        <li><a href="#process">התהליך</a></li>
+        <li><a href="/projects/">פרויקטים</a></li>
+        <li><a href="#results">עסקאות</a></li>
+        <li><a href="#faq">שאלות</a></li>
+      </ul>
+      <div style="display:flex;align-items:center">
+        <a href="/en/" class="nav__lang">EN</a>
+        <a href="#contact" class="nav__cta">בקשת ייעוץ פרטי</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__img"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <div class="hero__eyebrow-line"></div>
+        <span>נדל"ן בתל אביב · ליווי פרטי</span>
+      </div>
+      <h1>
+        ההון שלך יכול<br>
+        <em>לעבוד הרבה יותר חכם.</em>
+      </h1>
+      <p class="hero__sub">
+        אתה כבר יודע שנדל"ן בתל אביב זה הכיוון. השאלה היא רק עם מי — ואיזו עסקה תפספס אם תחכה עוד רבעון.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--gold"><span>בוא נדבר ←</span></a>
+        <span class="hero__note">עד 8 לקוחות ברבעון</span>
+      </div>
+    </div>
+  </div>
+  <span class="hero__photo-credit">תל אביב–יפו · חוף הים התיכון</span>
+  <div class="hero__scroll">
+    <span>גלול</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stats__item fade-up">
+        <div class="stats__num">15</div>
+        <div class="stats__label">שנות ניסיון בתל אביב</div>
+      </div>
+      <div class="stats__item fade-up">
+        <div class="stats__num">₪22,359</div>
+        <div class="stats__label">שכר ממוצע חודשי בת"א — הגבוה בישראל</div>
+      </div>
+      <div class="stats__item fade-up">
+        <div class="stats__num">+6%</div>
+        <div class="stats__label">עלייה בשכירות ב-2026</div>
+      </div>
+      <div class="stats__item fade-up">
+        <div class="stats__num">7–12%</div>
+        <div class="stats__label">תשואה כוללת ממוצעת (שכירות + השבחה)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIFICATION -->
+<section class="identification" id="about">
+  <div class="container">
+    <div class="identification__inner">
+      <div>
+        <span class="label">מכיר את התחושה?</span>
+        <h2>כבר עשית את שלך.<br>עכשיו תן לכסף <em class="gold">לעשות את שלו.</em></h2>
+        <p class="identification__text">
+          יש אנשים שיש להם הון פנוי, הם יודעים שנדל"ן בתל אביב זה מהלך נכון — אבל לא רוצים לעשות את זה לבד, לא רוצים מתווכים שמכניסים אותם לעסקה שמתאימה לעמלה שלהם. הם רוצים מישהו שחושב כמוהם.
+        </p>
+        <ul class="identification__list">
+          <li>יש לך ₪1 מיליון ומעלה פנויים — ואתה מחפש שהם יעבדו כמו שאתה עבדת כדי להשיג אותם</li>
+          <li>אתה מחפש שותף שחושב קודם על הכסף שלך — לא על העמלה שלו</li>
+          <li>אתה רוצה את העסקאות הטובות — לא את מה שנשאר אחרי שכולם כבר עברו עליהן</li>
+          <li>חשוב לך שהכל על השולחן — מחירים, סיכונים, תשואות. בלי הפתעות בדרך</li>
+        </ul>
+      </div>
+      <div class="identification__visual">
+        <div class="identification__corner identification__corner--tl"></div>
+        <div class="identification__corner identification__corner--tr"></div>
+        <div class="identification__corner identification__corner--bl"></div>
+        <div class="identification__corner identification__corner--br"></div>
+        <div class="divider"></div>
+        <p class="identification__quote">
+          "אנחנו לא מוכרים נכסים.<br>
+          אנחנו עושים <em>עסקאות טובות</em><br>עם אנשים שאנחנו מאמינים בהם."
+        </p>
+        <div class="divider"></div>
+        <span class="identification__attr">The Investor's Circle TLV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TEL AVIV -->
+<section class="why-tlv" id="tlv">
+  <div class="container">
+    <div class="why-tlv__top fade-up">
+      <span class="label" style="text-align:center;display:block">למה תל אביב?</span>
+      <h2>העיר שמעולם לא<br><em class="gold">מפסיקה לגדול.</em></h2>
+      <p>אם אתה כבר עוסק בעסקים או בהיי-טק — אתה כנראה מכיר את תל אביב מבפנים. אז אתה יודע למה הנדל"ן שלה ממשיך לטפס. הנה הנתונים שמסבירים את זה.</p>
+    </div>
+
+    <div class="why-tlv__image">
+      <div class="why-tlv__image-overlay"></div>
+      <div class="why-tlv__image-caption">
+        <h3>תל אביב–יפו</h3>
+        <p>עיר שמעולם לא נעצרת</p>
+      </div>
+    </div>
+
+    <div class="why-tlv__grid">
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">💻</span>
+        <h3>מעצמת ההיי-טק הישראלית</h3>
+        <p>גוש דן הוא עמק הסיליקון של ישראל — עשרות אלפי עובדי היי-טק עם שכר ממוצע גבוה מחפשים מגורים איכותיים, מה שמחזיק את הביקוש גבוה ואת שוק השכירות חם כל העת.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">🏙️</span>
+        <h3>פיתוח עירוני ללא הפסקה</h3>
+        <p>הרכבת הקלה, פיתוח מרחבי מגורים חדשים, פרויקטים של התחדשות עירונית ותמ"א 38 — כל אלה מעלים ערך נכסים באזורים שלמים ויוצרים הזדמנויות השקעה ייחודיות.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">🌊</span>
+        <h3>איכות חיים ייחודית בעולם</h3>
+        <p>קו חוף ים תיכוני, אוכל עולמי, תרבות עשירה, מזג אוויר נפלא — תל אביב נבחרה שוב ושוב לאחת הערים המעניינות לחיות בהן. הביקוש למגורים לא הולך לשום מקום.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">🏥</span>
+        <h3>תשתיות בריאות ולימוד</h3>
+        <p>בתי החולים המובילים בישראל — איכילוב, שיבא, אסף הרופא — בסמיכות מלאה. כמו כן אוניברסיטת תל אביב ומוסדות לימוד מובילים — מה שמבטיח ביקוש קבוע לשכירות.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">✈️</span>
+        <h3>נגישות בינלאומית</h3>
+        <p>רכבת מהירה ישירה לשדה התעופה בן גוריון — <strong>25 דקות בלבד</strong> ממרכז העיר. קישוריות בינלאומית יוצאת דופן שהופכת את תל אביב ליעד מועדף למשקיעים זרים וישראלים בחו"ל.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">📈</span>
+        <h3>מחירים שמטפסים בעקביות</h3>
+        <p>מחירי הנדל"ן בתל אביב עלו בממוצע 7–12% בשנה בעשור האחרון. אפילו בתקופות של אי-ודאות, העיר הוכיחה עמידות שלא נראתה ברוב ערי העולם.</p>
+      </div>
+    </div>
+
+    <div class="why-tlv__bottom">
+      <div>
+        <h3>להתגורר <em class="gold">או</em> להשקיע —<br>הגמישות היא היתרון.</h3>
+        <p>אחד הייחודים של נדל"ן תל אביב: הנכס שלך יכול לשמש אותך למגורים עצמיים, להשכרה לטווח קצר (Airbnb), לשכירות ארוכה, ואחר כך לאקזיט. הגמישות הזו מייצרת ערך שנדיר למצוא בשוקי נדל"ן אחרים.</p>
+      </div>
+      <div>
+        <ul class="why-tlv__flex-list">
+          <li>שכירות חודשית ממוצעת ב-3 חדרים: ₪7,500–12,000</li>
+          <li>תשואת שכירות ממוצעת: 3.5%–5.5% לשנה</li>
+          <li>עליית ערך ממוצעת 10 שנים: +180%</li>
+          <li>ביקוש להשכרה בשפל היסטורי — תפוסה מעל 97%</li>
+          <li>משקיעים זרים מהווים 14% מהרוכשים — וגדל</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <span class="label">שלוש עובדות על השוק</span>
+    <h2>כל עסקה טובה נסגרת<br>לפני שהיא מתפרסמת.</h2>
+    <p class="problem__intro">זה לא סוד. זו פשוט המציאות של שוק תל אביב.</p>
+    <div class="problem__grid">
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">01</div>
+        <h3>בלי הרשת הנכונה — אתה רואה שאריות</h3>
+        <p>מה שמגיע ליד2 הוא מה שלא נסגר בשקט. הנכסים שמכפילים ערך — מחליפים ידיים בין אנשים שמכירים אנשים.</p>
+      </div>
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">02</div>
+        <h3>המתווך עובד בשבילו, לא בשבילך</h3>
+        <p>זה לא ביקורת — זה המודל העסקי שלו. אנחנו עובדים אחרת: דמי ייעוץ אחד, אחרי סגירה, כשאתה מרוצה.</p>
+      </div>
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">03</div>
+        <h3>כל רבעון שחולף עולה לך כסף</h3>
+        <p>לא בצורה דרמטית. בצורה שקטה. הנכס שיכולת לקנות ב-2.1 מיליון היום שווה 2.4 — ומחר יהיה שווה יותר.</p>
+      </div>
+    </div>
+  </div>
+  <!-- CTA after problem -->
+  <div style="text-align:center;padding:0 0 72px">
+    <a href="#contact" class="btn btn--outline"><span>בוא נדבר על ההזדמנות שלך ←</span></a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process__inner">
+      <div>
+        <span class="label">הגישה שלנו</span>
+        <h2>ייעוץ, לא תיווך.<br><em class="gold">שותפות, לא עסקה.</em></h2>
+        <p class="process__lead">
+          אנחנו עובדים עם מעט אנשים בכל פעם — בכוונה. כי ליווי אמיתי דורש זמן, תשומת לב ויחס אישי. <strong>לא לוקחים רישומים. לוקחים לקוחות.</strong> ויש הבדל גדול בין השניים.
+        </p>
+        <ul class="process__steps">
+          <li class="process__step">
+            <div class="process__step-dot">1</div>
+            <div>
+              <h4>פרופיל אסטרטגי</h4>
+              <p>נמפה את ההון, הטווח והסיכון שלך ונגדיר את המסלול האופטימלי.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">2</div>
+            <div>
+              <h4>גישה לעסקאות off-market</h4>
+              <p>הרשת שלנו מביאה עסקאות 4–6 שבועות לפני שהן מפורסמות — במחירים טובים יותר.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">3</div>
+            <div>
+              <h4>בדיקת נאותות מלאה</h4>
+              <p>משפטי, פיננסי, הנדסי ורגולטורי — כל פרט נבדק לפני שאתה מוציא שקל.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">4</div>
+            <div>
+              <h4>ייעוץ מימון ומשכנתא</h4>
+              <p>נמקסם מינוף ונמזער עלות הון — כולל קשרים עם הגופים הפיננסיים הנכונים.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">5</div>
+            <div>
+              <h4>סגירה ואחרי</h4>
+              <p>מחתימה לרישום — ואחר כך סקירות תיק שוטפות.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="process__visual">
+        <div class="divider"></div>
+        <p class="process__quote">
+          "אחרי 20 שנה בשוק הזה, יכול להגיד לך ישירות — העסקאות הטובות לא מגיעות מחיפוש, הן מגיעות מ<em>אנשים.</em> זה מה שאנחנו מביאים לשולחן."
+        </p>
+        <div class="divider"></div>
+        <span class="process__attr">מייסד — The Investor's Circle TLV</span>
+        <br /><br />
+        <div style="width:100%;height:200px;margin-top:24px;background:linear-gradient(135deg,var(--glass),var(--offwhite));display:flex;align-items:center;justify-content:center;border:1px solid var(--border2);color:var(--grey2);font-size:13px;letter-spacing:2px">תמונת נכס</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <span class="label">מה אנחנו עושים ביחד</span>
+    <h2>ליווי מלא —<br><em class="gold">מהשיחה הראשונה עד התשואה.</em></h2>
+    <p class="solution__sub">דמי ייעוץ אחד. הכל על השולחן. אתה יודע בדיוק מה קורה בכל שלב.</p>
+    <div class="solution__grid">
+      <div class="solution__item fade-up">
+        <span class="solution__num">01 —</span>
+        <h3>מכירים אותך קודם</h3>
+        <p>פגישה אישית עם אחד מהמומחים שלנו — נבין מה יש לך, מה אתה רוצה שיהיה לך, ונבנה ביחד אסטרטגיה שמתאימה לך ספציפית.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">02 —</span>
+        <h3>מביאים לך עסקאות</h3>
+        <p>נאתר נכסים שמתאימים בדיוק לאסטרטגיה שבנינו. נצא ביחד לשטח — ולכל נכס תקבל ניתוח עסקי מלא לפני שתחליט.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">03 —</span>
+        <h3>הופכים כל אבן</h3>
+        <p>טאבו, תשריטים, היתרים, חוזי שכירות, שכנים, תוכניות עירוניות — אנחנו בודקים כל דבר לפני שאתה מתחייב לשקל.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">04 —</span>
+        <h3>אופטימיזציה פיננסית</h3>
+        <p>מומחה המימון שלנו בונה את תמהיל המשכנתא הטוב ביותר עבורך — הריבית הנמוכה, המינוף הנכון. לקוחות שלנו מקבלים ייעוץ במחיר מוזל.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">05 —</span>
+        <h3>סוגרים בשבילך</h3>
+        <p>משא ומתן, בדיקות משפטיות, עורך דין, חתימות, רישום בטאבו — אתה מגיע לחתום. אנחנו מסדרים את כל השאר.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">06 —</span>
+        <h3>מביאים את הערך</h3>
+        <p>תכנון אדריכלי, שיפוץ מקצועי ועיצוב פנים שמכפילים את ערך הנכס — ובמידת הצורך, ליווי מכירה עד האקזיט המקסימלי. <em style="color:var(--grey2);font-size:12px">(אופציונלי, מתומחר בנפרד)</em></p>
+      </div>
+    </div>
+    <p class="solution__note">דמי ייעוץ: 2% ממחיר הנכס, בתשלום אחרי סגירה. פגישת ייעוץ ראשונה: ₪1,500 + מע"מ (מזוכה מהדמי הסופיים).</p>
+    <div style="text-align:center;margin-top:48px">
+      <a href="#contact" class="btn btn--gold"><span>אני רוצה להתחיל ←</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="container">
+    <span class="label" style="display:block;text-align:center">עסקאות נבחרות</span>
+    <h2>עסקאות שמדברות<br><em class="gold">חזק מכל הבטחה.</em></h2>
+    <div class="results__grid">
+      <div class="results__card fade-up">
+        <span class="results__card-tag">נמכר</span>
+        <p class="results__address">רח' אבן גבירול, ת"א</p>
+        <div class="results__row"><span>סוג</span><span>דירת 3 חדרים</span></div>
+        <div class="results__row"><span>מחיר רכישה</span><span>₪2.1M</span></div>
+        <div class="results__row"><span>מחיר מכירה</span><span>₪2.8M</span></div>
+        <div class="results__row"><span>תקופת החזקה</span><span>26 חודשים</span></div>
+        <div class="results__row"><span>תשואה כוללת</span><span class="gold">33%</span></div>
+      </div>
+      <div class="results__card fade-up">
+        <span class="results__card-tag">מושכר</span>
+        <p class="results__address">שכונת פלורנטין, ת"א</p>
+        <div class="results__row"><span>סוג</span><span>דופלקס + שיפוץ</span></div>
+        <div class="results__row"><span>מחיר רכישה</span><span>₪1.65M</span></div>
+        <div class="results__row"><span>שכ"ד חודשי</span><span>₪8,200</span></div>
+        <div class="results__row"><span>עלות שיפוץ</span><span>₪140K</span></div>
+        <div class="results__row"><span>תשואה שנתית</span><span class="gold">5.4%</span></div>
+      </div>
+      <div class="results__card fade-up">
+        <span class="results__card-tag">אקזיט</span>
+        <p class="results__address">הצפון הישן, ת"א</p>
+        <div class="results__row"><span>סוג</span><span>דירת גן</span></div>
+        <div class="results__row"><span>מחיר רכישה</span><span>₪3.2M</span></div>
+        <div class="results__row"><span>עלות כוללת</span><span>₪3.55M</span></div>
+        <div class="results__row"><span>מחיר יציאה</span><span>₪4.4M</span></div>
+        <div class="results__row"><span>רווח נקי</span><span class="gold">₪850K</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="container">
+    <span class="label" style="display:block;text-align:center">מה אומרים עלינו</span>
+    <h2>אנשים שעשו<br><em class="gold">עסקאות טובות.</em></h2>
+    <p class="trust__sub">בדברים שלהם, לא שלנו.</p>
+    <div class="trust__grid">
+      <div class="trust__card fade-up">
+        <div class="trust__stars">★★★★★</div>
+        <p class="trust__quote">"ישבתי על 1.8 מיליון שנתיים. ידעתי שצריך לעשות משהו, סתם לא ידעתי עם מי. ארבעה חודשים אחרי שהתחלנו לדבר — יש לי דירה בצפון הישן שעלתה כבר 18%."</p>
+        <div class="trust__person">
+          <div class="trust__avatar">ד</div>
+          <div>
+            <p class="trust__name">דוד ר.</p>
+            <p class="trust__role">יזם היי-טק, תל אביב</p>
+          </div>
+        </div>
+      </div>
+      <div class="trust__card fade-up">
+        <div class="trust__stars">★★★★★</div>
+        <p class="trust__quote">"העסקה שקיבלתי לא הייתה ביד2, לא בנדל"ן מגנט, לא בשום מקום. היא הגיעה אלי ישירות דרכם — מתחת לשווי, בדיוק בשכונה שרציתי. זו הסיבה שעובדים עם אנשים."</p>
+        <div class="trust__person">
+          <div class="trust__avatar">מ</div>
+          <div>
+            <p class="trust__name">מיה ש.</p>
+            <p class="trust__role">מנהלת כספים, הרצליה</p>
+          </div>
+        </div>
+      </div>
+      <div class="trust__card fade-up">
+        <div class="trust__stars">★★★★★</div>
+        <p class="trust__quote">"גר בלונדון, לא רצה לעשות את זה בלי מישהו שאני סומך עליו מאה אחוז. הם ניהלו הכל מרחוק — בדיקות, משא ומתן, חתימה. הגעתי לישראל רק לחתום."</p>
+        <div class="trust__person">
+          <div class="trust__avatar">י</div>
+          <div>
+            <p class="trust__name">יואב כ.</p>
+            <p class="trust__role">ישראלי בלונדון</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:0 0 72px">
+    <a href="#contact" class="btn" style="background:var(--navy);color:var(--white)"><span>רוצה עסקה כזו? בוא נדבר ←</span></a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq__inner">
+      <div class="faq__left">
+        <span class="label">כמה שאלות שבטח עולות</span>
+        <h2>שאלות ישרות,<br><em class="gold">תשובות ישרות.</em></h2>
+        <p>אין לנו עניין בעמימות. אם משהו לא מופיע כאן — שאל ישירות. אנחנו מעדיפים שיחה כנה על כל אלטרנטיבה.</p>
+      </div>
+      <ul class="faq__list">
+        <li class="faq__item">
+          <button class="faq__question">
+            מה ההון המינימלי כדי לעבוד אתכם?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>אנחנו עובדים עם לקוחות שיש להם מינימום ₪1 מיליון פנוי להשקעה. זה מאפשר גישה לעסקאות משמעותיות בלוקיישנים פריים בתל אביב. אין מקסימום — ליווינו עסקאות עד ₪12 מיליון.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            איך בנויים דמי הייעוץ?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>דמי ייעוץ של 2% ממחיר הרכישה — משולמים רק אחרי סגירה מוצלחת. פגישת ייעוץ ראשונה עולה ₪1,500 + מע"מ ומזוכה מהדמי הסופיים. אנחנו לא מרוויחים עמלות ממוכרים, בנקים או גורמים אחרים — רק ממך, בהתאמה מלאה לאינטרסים שלך.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            כמה זמן לוקח התהליך?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>מפגישת ייעוץ ראשונה ועד סגירה, רוב העסקאות נסגרות תוך 60–120 יום. לאיתור נכסים — לקוחותינו רואים בדרך כלל 2–3 הצעות איכותיות בתוך 30 הימים הראשונים.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            אני ישראלי בחו"ל — זה מתאים לי?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>בהחלט. חלק ניכר מלקוחותינו הם ישראלים בחו"ל ומשקיעים זרים. אנחנו מנהלים את כל התהליך מרחוק — כולל ייפוי כוח, ייעוץ משפטי ישראלי, ניהול עד לחתימה.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            האם אתם מבטיחים תשואה?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>אף אחד לא יכול להבטיח תשואות נדל"ן באופן אתי. מה שאנחנו מבטיחים: בדיקת נאותות קפדנית, ייעוץ ישיר ומבוסס נתונים, ואינטרס מלא שהעסקה תצליח. ה-19% תשואה שנתית ממוצעת שלנו הגיעה מאסטרטגיה — לא מהימור.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            למה מספר הלקוחות מוגבל?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>כי אנחנו מסרבים לפגוע באיכות. כל לקוח מקבל את תשומת לבנו המלאה — לא שירות תבנית. אנחנו מקבלים מקסימום 8 לקוחות חדשים ברבעון כדי שכל עסקה תקבל את עומק הניתוח שהיא מגיעה לה.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;padding:48px 0 72px">
+    <a href="#contact" class="btn btn--outline"><span>יש לי שאלה — בוא נדבר ←</span></a>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+  <div class="container">
+    <div class="urgency__inner">
+      <div class="urgency__text">
+        <h3>Q2 2026 — <strong>נותרו 3 מקומות פנויים</strong></h3>
+        <p>אנחנו עובדים עם מעט אנשים בכל פעם. כשאנחנו מלאים — אנחנו מלאים.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
+        <div class="urgency__spots">
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--empty"></div>
+          <div class="urgency__dot urgency__dot--empty"></div>
+          <div class="urgency__dot urgency__dot--empty"></div>
+          <span class="urgency__label">5/8 מלא</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn"><span>בוא נדבר ←</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / FORM -->
+<section class="cta" id="contact">
+  <div class="container">
+    <span class="label" style="display:block;text-align:center">בוא נכיר</span>
+    <h2>שיחה קצרה.<br><em class="gold">בלי התחייבות.</em></h2>
+    <p class="cta__sub">תשאיר פרטים ואחד מהצוות יחזור אליך. בלי מצגות מכירה, בלי לחץ — רק שיחה כנה.</p>
+    <div class="cta__form">
+      <form id="leadForm">
+        <div class="form__row">
+          <div class="form__group">
+            <label class="form__label">שם פרטי</label>
+            <input type="text" class="form__input" placeholder="דוד" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label">שם משפחה</label>
+            <input type="text" class="form__input" placeholder="כהן" required />
+          </div>
+        </div>
+        <div class="form__group">
+          <label class="form__label">דואר אלקטרוני</label>
+          <input type="email" class="form__input" placeholder="david@email.com" required />
+        </div>
+        <div class="form__group">
+          <label class="form__label">טלפון</label>
+          <input type="tel" class="form__input" placeholder="050-0000000" required />
+        </div>
+        <div class="form__group">
+          <label class="form__label">הון פנוי להשקעה</label>
+          <select class="form__select" required>
+            <option value="" disabled selected>בחר טווח</option>
+            <option>₪1M – ₪2M</option>
+            <option>₪2M – ₪5M</option>
+            <option>₪5M – ₪10M</option>
+            <option>₪10M+</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label">מטרת ההשקעה</label>
+          <select class="form__select">
+            <option value="" disabled selected>מה אתה מחפש להשיג?</option>
+            <option>הכנסה שוטפת משכירות</option>
+            <option>עליית ערך / אקזיט</option>
+            <option>אסטרטגיה משולבת</option>
+            <option>השקעה ראשונה — בשלב בדיקה</option>
+          </select>
+        </div>
+        <button type="submit" class="form__submit">שלח — ניצור קשר בקרוב ←</button>
+        <p class="form__note">הפרטים שלך נשארים אצלנו בלבד.</p>
+      </form>
+      <div class="form__success" id="formSuccess">
+        <div class="form__success-icon">◆</div>
+        <h3>קיבלנו.</h3>
+        <p>אחד מהצוות יחזור אליך תוך 24 שעות. מחכים לדבר איתך.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
+      <ul class="footer__links">
+        <li><a href="#about">אודות</a></li>
+        <li><a href="#tlv">למה ת"א</a></li>
+        <li><a href="#process">תהליך</a></li>
+        <li><a href="#results">עסקאות</a></li>
+        <li><a href="#contact">צור קשר</a></li>
+        <li><a href="/blog/">בלוג</a></li>
+      </ul>
+      <p class="footer__copy">© 2025 The Investor's Circle TLV</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq__item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.getElementById('leadForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('leadForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+</script>
+</body>
+</html>

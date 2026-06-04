@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "investors-circle",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3456", "/c/Users/LevYu/investors-circle"],
+      "port": 3456
+    }
+  ]
+}

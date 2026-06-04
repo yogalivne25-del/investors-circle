@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>למה נדל"ן בתל אביב הוא עדיין ההשקעה הטובה ביותר — The Investor's Circle TLV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --gold: #B8963E;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border: rgba(184,150,62,0.15); --border2: rgba(13,27,42,0.08);
+      --shadow: 0 4px 40px rgba(13,27,42,0.08);
+    }
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.9; }
+    h1,h2,h3 { font-family: 'Frank Ruhl Libre', serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+
+    nav {
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+      padding: 18px 0; border-bottom: 1px solid var(--border2);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--navy); text-decoration: none; }
+    .nav__logo span { color: var(--gold); }
+    .nav__back { font-size: 12px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__back:hover { color: var(--gold); }
+
+    .post-hero {
+      padding: 80px 0 0;
+      background: var(--offwhite);
+    }
+    .post-hero__inner { max-width: 760px; margin: 0 auto; text-align: center; padding-bottom: 56px; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 5px 14px; margin-bottom: 20px; }
+    .post-hero h1 { font-size: clamp(26px,4vw,48px); line-height: 1.2; margin-bottom: 20px; }
+    .post-meta { font-size: 13px; color: var(--grey2); letter-spacing: 1px; }
+    .post-meta span { color: var(--gold); }
+    .post-hero__img { width: 100%; height: 400px; object-fit: cover; display: block; }
+
+    .post-body {
+      padding: 80px 0;
+    }
+    .post-body__inner { display: grid; grid-template-columns: 1fr 280px; gap: 64px; }
+    .article { max-width: 680px; }
+    .article p { font-size: 16px; margin-bottom: 24px; color: #2d3748; }
+    .article h2 { font-size: 26px; margin: 48px 0 16px; }
+    .article h3 { font-size: 20px; margin: 36px 0 14px; }
+    .article ul { margin: 0 0 24px 0; padding-right: 24px; }
+    .article ul li { font-size: 15px; color: #2d3748; margin-bottom: 10px; }
+    .article strong { font-weight: 500; color: var(--navy); }
+    .article .highlight {
+      background: var(--glass); border-right: 3px solid var(--gold);
+      padding: 24px 28px; margin: 32px 0; font-size: 18px;
+      font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--navy);
+    }
+    .data-box {
+      background: var(--offwhite); border: 1px solid var(--border2);
+      padding: 28px; margin: 32px 0;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: center;
+    }
+    .data-box__item p:first-child { font-family: 'Frank Ruhl Libre', serif; font-size: 32px; color: var(--gold); }
+    .data-box__item p:last-child { font-size: 12px; color: var(--grey); letter-spacing: 1px; margin-top: 4px; }
+
+    /* SIDEBAR */
+    .post-sidebar { position: sticky; top: 90px; align-self: start; }
+    .toc { background: var(--offwhite); border: 1px solid var(--border2); padding: 28px; margin-bottom: 28px; }
+    .toc__title { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .toc__list { list-style: none; }
+    .toc__list li { border-bottom: 1px solid var(--border2); }
+    .toc__list a { display: block; padding: 10px 0; font-size: 13px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .toc__list a:hover { color: var(--gold); }
+    .sidebar-cta { background: var(--navy); padding: 28px; color: var(--white); text-align: center; }
+    .sidebar-cta h3 { font-size: 17px; margin-bottom: 10px; }
+    .sidebar-cta p { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .sidebar-cta a { display: block; padding: 12px; background: var(--gold); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; }
+
+    footer { padding: 40px 0; background: var(--navy); margin-top: 80px; }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; color: var(--white); }
+    .footer__logo span { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 860px) {
+      .post-body__inner { grid-template-columns: 1fr; }
+      .post-sidebar { position: static; }
+      .data-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <a href="/blog/" class="nav__back">← חזרה לבלוג</a>
+    </div>
+  </div>
+</nav>
+
+<header class="post-hero">
+  <div class="post-hero__inner">
+    <span class="post-tag">ניתוח שוק</span>
+    <h1>למה נדל"ן בתל אביב הוא עדיין ההשקעה הטובה ביותר בישראל — גם ב-2025</h1>
+    <p class="post-meta"><span>The Investor's Circle TLV</span> · 15 בינואר 2025 · קריאה של 8 דקות</p>
+  </div>
+  <img class="post-hero__img" src="https://images.unsplash.com/photo-1544015759-237f2a4d2579?w=1400&q=80" alt="תל אביב מהאוויר" />
+</header>
+
+<section class="post-body">
+  <div class="container">
+    <div class="post-body__inner">
+      <article class="article">
+
+        <p>בעשור האחרון, כל פעם שמחירי הנדל"ן בתל אביב קפצו, מישהו אמר "זה לא יכול להמשיך." ובכל פעם — הם המשיכו. מה שמניע את שוק הנדל"ן התל אביבי הוא לא ספקולציה — זה שילוב נדיר של כוחות שלא הולכים לשום מקום בזמן הקרוב.</p>
+
+        <div class="highlight">"תל אביב היא לא בועה. היא ביקוש מבני שלא מוצא מספיק היצע."</div>
+
+        <div class="data-box">
+          <div class="data-box__item"><p>+180%</p><p>עליית מחירים ב-10 שנים</p></div>
+          <div class="data-box__item"><p>97%+</p><p>תפוסת שכירות ממוצעת</p></div>
+          <div class="data-box__item"><p>4.2%</p><p>תשואת שכירות שנתית</p></div>
+        </div>
+
+        <h2 id="hitech">מנוע ההיי-טק: הביקוש שלא נעצר</h2>
+        <p>גוש דן מאכלס כיום מעל 6,000 חברות סטארטאפ ועשרות אלפי עובדים עם שכר ממוצע מעל ₪30,000 לחודש. כל מהנדס, מנהל מוצר או מייסד חברה שמגיע לעיר — צריך לגור איפשהו. הביקוש הזה יציב, מדי שנה גדל, ובשנת 2024 לבדה נרשמו 14,000 יחידות משרד חדשות בגוש דן.</p>
+
+        <p>מה זה אומר למשקיע? <strong>שכירות שמחפשים שוכרים איכותיים, מהירים לשלם, ורוצים דירות ברמה גבוהה.</strong> בלי מלחמת מחירים, בלי חוסר וודאות.</p>
+
+        <h2 id="infrastructure">תשתיות שמשנות את המפה</h2>
+        <p>הרכבת הקלה היא אחד הגורמים המשמעותיים ביותר לשינוי ערכי נדל"ן בת"א בשנים הקרובות. מחקרים בינלאומיים מראים שנכסים עד 500 מטר מתחנת רכבת קלה עולים ב-8–22% תוך 3 שנים מפתיחת הקו.</p>
+
+        <ul>
+          <li>קו אדום — כבר פעיל, שכונות כמו שכונת התקווה ונוה שרת כבר רואות עלייה</li>
+          <li>קו ירוק — מחבר צפון ת"א עם מרכז, צפוי לפתיחה 2026</li>
+          <li>קו סגול — עד 2028, יחבר יפו עם הצפון דרך המרכז</li>
+        </ul>
+
+        <h2 id="living">איכות חיים: מה שמסביר את הביקוש הבינלאומי</h2>
+        <p>תל אביב דורגה ב-2024 בין 10 הערים הכי נוחות לחיות בהן בעולם על ידי Mercer. קו החוף, הגסטרונומיה, חיי הלילה, הפארקים, תרבות ויזואלית עשירה — כל אלה יוצרים ביקוש לא רק מישראלים, אלא ממשקיעים ותיירים מכל העולם.</p>
+
+        <div class="highlight">"מי שמשקיע בנדל"ן בתל אביב לא רק קונה נכס — הוא קונה כרטיס כניסה לאחת הערים הכי דינמיות בעולם."</div>
+
+        <h2 id="flexibility">גמישות ייחודית: מגורים, השכרה, או אקזיט</h2>
+        <p>אחת התכונות הנדירות של שוק תל אביב: אותו נכס יכול לשמש אותך בדרכים שונות לאורך זמן. בשנה הראשונה — Airbnb עם תשואה של 7–9%. לאחר מכן — שכירות ארוכת טווח לשוכר יציב. לבסוף — אקזיט בעליית ערך. <strong>הגמישות הזו, שנדיר למצוא בשוקי נדל"ן אחרים, היא חלק מהסיבה שמשקיעים זרים מהווים 14% מהרוכשים — ולמה האחוז הזה עולה.</strong></p>
+
+        <h2 id="conclusion">אז מה המסקנה?</h2>
+        <p>שוק הנדל"ן של תל אביב ב-2025 מציג שילוב שנדיר בעולם: ביקוש מבני גבוה, היצע מוגבל, תשתיות שמשפרות נגישות, מנוע כלכלי (היי-טק) שלא מאט, ואיכות חיים שמושכת הון מכל העולם.</p>
+
+        <p>זה לא אומר שכל עסקה היא טובה — זה אומר שהמשקיע שיודע לבחור נכון, עם הליווי הנכון, נמצא בשוק הנכון בזמן הנכון.</p>
+
+      </article>
+
+      <aside class="post-sidebar">
+        <div class="toc">
+          <p class="toc__title">תוכן העניינים</p>
+          <ul class="toc__list">
+            <li><a href="#hitech">מנוע ההיי-טק</a></li>
+            <li><a href="#infrastructure">תשתיות שמשנות את המפה</a></li>
+            <li><a href="#living">איכות חיים</a></li>
+            <li><a href="#flexibility">גמישות ייחודית</a></li>
+            <li><a href="#conclusion">המסקנה</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <h3>יש לך מיליון פנוי?</h3>
+          <p>בוא לדבר על ההזדמנות הבאה שלך בשוק הזה.</p>
+          <a href="/#contact">בקש ייעוץ פרטי</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
+      <p class="footer__copy">© 2025 · כל הזכויות שמורות</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

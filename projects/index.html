@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>פרויקטים — The Investor's Circle TLV</title>
+  <meta name="description" content="פרויקטי נדל&quot;ן שליווינו בתל אביב — תוצאות אמיתיות, סרטונים, ואפשרות לסיור בנכסים." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --navy2: #1A2E42;
+      --gold: #B8963E; --gold2: #D4AE58;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border: rgba(184,150,62,0.15); --border2: rgba(13,27,42,0.08);
+      --shadow: 0 8px 48px rgba(13,27,42,0.1); --shadow2: 0 2px 20px rgba(13,27,42,0.06);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Frank Ruhl Libre', serif; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+    .label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+      padding: 18px 0; border-bottom: 1px solid var(--border2);
+      position: sticky; top: 0; z-index: 200;
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--navy); text-decoration: none; }
+    .nav__logo span { color: var(--gold); }
+    .nav__links { display: flex; gap: 32px; list-style: none; }
+    .nav__links a { font-size: 12px; letter-spacing: 1px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__links a:hover, .nav__links a.active { color: var(--gold); }
+    .nav__cta { font-size: 12px; font-weight: 500; color: var(--white); background: var(--navy); padding: 10px 22px; text-decoration: none; transition: background 0.3s; }
+    .nav__cta:hover { background: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 100px 0 72px;
+      background: linear-gradient(135deg, var(--offwhite) 0%, var(--glass) 100%);
+      border-bottom: 1px solid var(--border2);
+    }
+    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero h1 { font-size: clamp(32px,4vw,56px); margin-bottom: 20px; line-height: 1.15; }
+    .hero p { font-size: 16px; color: var(--grey); line-height: 1.9; margin-bottom: 36px; }
+    .hero__stats { display: flex; gap: 40px; }
+    .hero__stat-num { font-family: 'Frank Ruhl Libre', serif; font-size: 36px; color: var(--gold); line-height: 1; }
+    .hero__stat-label { font-size: 12px; color: var(--grey); letter-spacing: 1px; }
+    .hero__visual {
+      background: var(--navy); padding: 48px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .hero__tour-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: var(--white);
+      padding: 10px 20px; font-size: 13px; font-weight: 500;
+      cursor: pointer; transition: background 0.3s; border: none;
+      font-family: 'Heebo', sans-serif; letter-spacing: 1px;
+    }
+    .hero__tour-badge:hover { background: var(--gold2); }
+    .hero__tour-note { font-size: 12px; color: rgba(255,255,255,0.5); }
+    .hero__visual h3 { font-size: 20px; color: var(--white); margin-bottom: 8px; }
+    .hero__visual p { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border2);
+      background: var(--white);
+      position: sticky; top: 61px; z-index: 100;
+    }
+    .filter-bar__inner { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
+    .filter-bar__tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-tab {
+      padding: 8px 20px; border: 1px solid var(--border2);
+      background: none; color: var(--grey);
+      font-family: 'Heebo', sans-serif; font-size: 13px;
+      cursor: pointer; transition: all 0.25s; letter-spacing: 0.5px;
+    }
+    .filter-tab:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .filter-bar__sort { font-size: 13px; color: var(--grey); }
+    .filter-bar__sort select {
+      background: none; border: 1px solid var(--border2);
+      color: var(--navy); padding: 8px 14px;
+      font-family: 'Heebo', sans-serif; font-size: 13px;
+      cursor: pointer; outline: none;
+    }
+
+    /* ── PROJECTS GRID ── */
+    .projects { padding: 72px 0; }
+    .projects__grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; background: var(--border2);
+    }
+
+    /* PROJECT CARD */
+    .project-card {
+      background: var(--white);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); z-index: 2; position: relative; }
+
+    /* VIDEO WRAPPER */
+    .project-card__video {
+      position: relative; aspect-ratio: 16/9;
+      background: var(--navy); overflow: hidden;
+    }
+    .project-card__iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: none;
+      display: none;
+    }
+    .project-card__thumb {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: transform 0.4s;
+    }
+    .project-card:hover .project-card__thumb { transform: scale(1.04); }
+    .project-card__thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.6) 0%, transparent 60%);
+    }
+    .project-card__play {
+      position: absolute; top: 50%; right: 50%;
+      transform: translate(50%,-50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s; cursor: pointer; border: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .project-card__play:hover { background: var(--gold); transform: translate(50%,-50%) scale(1.1); }
+    .project-card__play svg { width: 20px; height: 20px; fill: var(--navy); margin-right: -2px; }
+    .project-card__play:hover svg { fill: var(--white); }
+    .project-card__tag {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--gold); color: var(--white);
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      padding: 4px 12px; text-transform: uppercase;
+    }
+    .project-card__duration {
+      position: absolute; bottom: 16px; left: 16px;
+      background: rgba(13,27,42,0.8); color: var(--white);
+      font-size: 11px; padding: 3px 10px; border-radius: 2px;
+    }
+
+    .project-card__body { padding: 28px; }
+    .project-card__location {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .project-card__body h3 { font-size: 18px; margin-bottom: 10px; line-height: 1.3; }
+    .project-card__body p { font-size: 13px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+    .project-card__metrics {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 0; border: 1px solid var(--border2);
+    }
+    .project-card__metric {
+      padding: 12px; text-align: center;
+      border-inline-end: 1px solid var(--border2);
+    }
+    .project-card__metric:last-child { border-inline-end: none; }
+    .project-card__metric-val { font-family: 'Frank Ruhl Libre', serif; font-size: 18px; color: var(--navy); }
+    .project-card__metric-val.gold { color: var(--gold); }
+    .project-card__metric-label { font-size: 10px; color: var(--grey2); letter-spacing: 1px; margin-top: 2px; }
+    .project-card__footer {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border2);
+    }
+    .project-card__type { font-size: 12px; color: var(--grey); }
+    .project-card__tour-btn {
+      font-size: 11px; letter-spacing: 1px; font-weight: 500;
+      color: var(--gold); background: none; border: 1px solid var(--border);
+      padding: 6px 14px; cursor: pointer; font-family: 'Heebo', sans-serif;
+      transition: all 0.25s;
+    }
+    .project-card__tour-btn:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+
+    /* ── TOUR CTA SECTION ── */
+    .tour-cta {
+      padding: 100px 0;
+      background: var(--navy);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .tour-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,150,62,0.08), transparent);
+    }
+    .tour-cta__inner { position: relative; z-index: 1; }
+    .tour-cta .label { color: rgba(184,150,62,0.8); }
+    .tour-cta h2 { font-size: clamp(28px,4vw,52px); color: var(--white); margin-bottom: 20px; }
+    .tour-cta h2 em { font-style: italic; color: var(--gold); }
+    .tour-cta__sub { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto 56px; }
+    .tour-cta__cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 900px; margin: 0 auto 56px; text-align: right; }
+    .tour-cta__card {
+      border: 1px solid rgba(184,150,62,0.2);
+      padding: 32px 28px;
+      background: rgba(255,255,255,0.03);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .tour-cta__card:hover { border-color: rgba(184,150,62,0.5); background: rgba(255,255,255,0.06); }
+    .tour-cta__card-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+    .tour-cta__card h4 { font-size: 16px; color: var(--white); margin-bottom: 8px; }
+    .tour-cta__card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+    /* ── TOUR MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(13,27,42,0.85); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+      padding: 20px;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--white); max-width: 600px; width: 100%;
+      max-height: 90vh; overflow-y: auto;
+      position: relative;
+      transform: translateY(20px); transition: transform 0.3s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal__close {
+      position: absolute; top: 20px; left: 20px;
+      width: 36px; height: 36px; border: 1px solid var(--border2);
+      background: none; cursor: pointer; font-size: 18px;
+      color: var(--grey); transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal__close:hover { background: var(--navy); color: var(--white); }
+    .modal__header {
+      background: var(--navy); padding: 40px 40px 32px;
+      position: relative;
+    }
+    .modal__header::after {
+      content: ''; position: absolute; bottom: 0; right: 40px;
+      width: 60px; height: 2px; background: var(--gold);
+    }
+    .modal__header h2 { font-size: 26px; color: var(--white); margin-bottom: 8px; }
+    .modal__header p { font-size: 14px; color: rgba(255,255,255,0.55); }
+    .modal__body { padding: 40px; }
+    .modal__steps { display: flex; gap: 0; margin-bottom: 32px; }
+    .modal__step {
+      flex: 1; text-align: center; padding: 12px;
+      border-bottom: 2px solid var(--border2);
+      font-size: 12px; color: var(--grey2); letter-spacing: 1px;
+      position: relative;
+    }
+    .modal__step.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 500; }
+    .form__group { margin-bottom: 18px; }
+    .form__label { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
+    .form__input {
+      width: 100%; background: var(--offwhite);
+      border: 1px solid var(--border2); color: var(--navy);
+      padding: 13px 16px; font-size: 14px; font-family: 'Heebo', sans-serif;
+      outline: none; transition: border-color 0.3s; direction: rtl;
+    }
+    .form__input:focus { border-color: var(--gold); background: var(--white); }
+    .form__input::placeholder { color: var(--grey2); }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form__select {
+      width: 100%; background: var(--offwhite);
+      border: 1px solid var(--border2); color: var(--navy);
+      padding: 13px 16px; font-size: 14px; font-family: 'Heebo', sans-serif;
+      cursor: pointer; outline: none; appearance: none; direction: rtl;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8963E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: left 14px center;
+      transition: border-color 0.3s;
+    }
+    .form__select:focus { border-color: var(--gold); }
+    .form__dates {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 24px;
+    }
+    .date-btn {
+      padding: 14px 8px; border: 1px solid var(--border2);
+      background: var(--offwhite); cursor: pointer;
+      font-family: 'Heebo', sans-serif; text-align: center;
+      transition: all 0.2s;
+    }
+    .date-btn:hover, .date-btn.selected { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .date-btn__day { font-size: 11px; color: var(--grey); margin-bottom: 4px; }
+    .date-btn.selected .date-btn__day { color: rgba(255,255,255,0.6); }
+    .date-btn__date { font-family: 'Frank Ruhl Libre', serif; font-size: 20px; }
+    .time-slots { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 24px; }
+    .time-slot {
+      padding: 10px; border: 1px solid var(--border2);
+      background: var(--offwhite); cursor: pointer;
+      font-size: 13px; font-family: 'Heebo', sans-serif;
+      text-align: center; transition: all 0.2s; color: var(--navy);
+    }
+    .time-slot:hover, .time-slot.selected { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .time-slot.disabled { opacity: 0.35; cursor: not-allowed; }
+    .modal__submit {
+      width: 100%; padding: 16px; background: var(--navy); color: var(--white);
+      border: none; cursor: pointer; font-family: 'Heebo', sans-serif;
+      font-size: 13px; font-weight: 500; letter-spacing: 2px;
+      transition: background 0.3s;
+    }
+    .modal__submit:hover { background: var(--gold); }
+    .modal__note { font-size: 12px; color: var(--grey2); text-align: center; margin-top: 14px; }
+    .modal__success { display: none; text-align: center; padding: 40px 20px; }
+    .modal__success-icon { font-size: 48px; margin-bottom: 16px; }
+    .modal__success h3 { font-size: 22px; margin-bottom: 12px; }
+    .modal__success p { font-size: 14px; color: var(--grey); line-height: 1.8; }
+
+    /* ── PROCESS STRIP ── */
+    .process-strip { padding: 72px 0; background: var(--offwhite); border-top: 1px solid var(--border2); }
+    .process-strip h2 { font-size: 32px; text-align: center; margin-bottom: 48px; }
+    .process-strip__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border2); }
+    .process-strip__step { background: var(--offwhite); padding: 36px 28px; text-align: center; }
+    .process-strip__num {
+      font-family: 'Frank Ruhl Libre', serif; font-size: 40px;
+      color: rgba(184,150,62,0.2); line-height: 1; margin-bottom: 16px;
+    }
+    .process-strip__step h4 { font-size: 16px; margin-bottom: 8px; }
+    .process-strip__step p { font-size: 13px; color: var(--grey); }
+
+    /* ── FOOTER ── */
+    footer { padding: 40px 0; background: var(--navy); border-top: 3px solid var(--gold); }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; color: var(--white); }
+    .footer__logo span { color: var(--gold); }
+    .footer__links { display: flex; gap: 24px; list-style: none; }
+    .footer__links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+    .footer__links a:hover { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 960px) {
+      .hero__inner { grid-template-columns: 1fr; }
+      .projects__grid { grid-template-columns: repeat(2,1fr); }
+      .tour-cta__cards { grid-template-columns: 1fr; max-width: 400px; }
+      .process-strip__grid { grid-template-columns: repeat(2,1fr); }
+      .form__row { grid-template-columns: 1fr; }
+      .time-slots { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (max-width: 640px) {
+      .projects__grid { grid-template-columns: 1fr; }
+      .container { padding: 0 20px; }
+      .nav__links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <ul class="nav__links">
+        <li><a href="/">ראשי</a></li>
+        <li><a href="/#tlv">למה ת"א</a></li>
+        <li><a href="/projects/" class="active">פרויקטים</a></li>
+        <li><a href="/blog/">בלוג</a></li>
+        <li><a href="/#faq">שאלות</a></li>
+      </ul>
+      <a href="/#contact" class="nav__cta">בקשת ייעוץ פרטי</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__inner">
+      <div>
+        <span class="label">עבודה שמדברת בעד עצמה</span>
+        <h1>הפרויקטים<br>שלנו — <em class="gold">בפועל.</em></h1>
+        <p>כל פרויקט שמוצג כאן עבר ליווי מלא שלנו — מבדיקת נאותות ועד מכירה או השכרה. המספרים אמיתיים. הסרטונים מהשטח.</p>
+        <div class="hero__stats">
+          <div>
+            <p class="hero__stat-num">47</p>
+            <p class="hero__stat-label">פרויקטים הושלמו</p>
+          </div>
+          <div>
+            <p class="hero__stat-num">₪320M</p>
+            <p class="hero__stat-label">היקף מצטבר</p>
+          </div>
+          <div>
+            <p class="hero__stat-num">22%</p>
+            <p class="hero__stat-label">תשואה ממוצעת</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <h3>סיור בנכסים שלנו</h3>
+        <p>לקוחות שמתקדמים איתנו מקבלים גישה לסיורים פרטיים בנכסים שעברו שיפוץ — לראות מה אפשרי.</p>
+        <button class="hero__tour-badge" onclick="openTourModal()">
+          📍 קבע סיור פרטי ←
+        </button>
+        <p class="hero__tour-note">* לקוחות פעילים ולידים מתקדמים בלבד</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-bar__inner">
+      <div class="filter-bar__tabs">
+        <button class="filter-tab active" data-filter="all">הכל</button>
+        <button class="filter-tab" data-filter="sold">נמכר</button>
+        <button class="filter-tab" data-filter="rented">מושכר</button>
+        <button class="filter-tab" data-filter="renovation">שיפוץ</button>
+        <button class="filter-tab" data-filter="commercial">מסחרי</button>
+      </div>
+      <div class="filter-bar__sort">
+        <select>
+          <option>מיון: עדכני ביותר</option>
+          <option>תשואה גבוהה</option>
+          <option>מחיר עולה</option>
+          <option>מחיר יורד</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS GRID -->
+<section class="projects">
+  <div class="container">
+    <div class="projects__grid">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card fade-up" data-category="sold">
+        <div class="project-card__video">
+          <!-- מחליפים את ה-thumb ב-תמונה שלך, ואת ה-video-id ב-ID של הסרטון ביוטיוב -->
+          <div class="project-card__thumb" style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80')">
+            <div class="project-card__thumb-overlay"></div>
+          </div>
+          <span class="project-card__tag">נמכר</span>
+          <span class="project-card__duration">3:24</span>
+          <button class="project-card__play" onclick="playVideo(this,'dQw4w9WgXcQ')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__location">צפון הישן · תל אביב</p>
+          <h3>דירת גן 4 חדרים — שיפוץ מלא ואקזיט</h3>
+          <p>דירת גן בלב הצפון הישן. רכשנו, שיפצנו לחלוטין ומכרנו תוך 14 חודשים בתשואה יוצאת דופן.</p>
+          <div class="project-card__metrics">
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪3.2M</p>
+              <p class="project-card__metric-label">רכישה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪4.4M</p>
+              <p class="project-card__metric-label">מכירה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val gold">+37%</p>
+              <p class="project-card__metric-label">תשואה</p>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__type">אקזיט · 14 חודשים</span>
+            <button class="project-card__tour-btn" onclick="openTourModal('צפון הישן')">סיור בנכס ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-card fade-up" data-category="rented">
+        <div class="project-card__video">
+          <div class="project-card__thumb" style="background-image:url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=600&q=80')">
+            <div class="project-card__thumb-overlay"></div>
+          </div>
+          <span class="project-card__tag" style="background:var(--navy)">מושכר</span>
+          <span class="project-card__duration">2:47</span>
+          <button class="project-card__play" onclick="playVideo(this,'dQw4w9WgXcQ')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__location">פלורנטין · תל אביב</p>
+          <h3>דופלקס מעוצב — תשואת שכירות 5.4%</h3>
+          <p>דופלקס שהפך לנכס להכנסה פסיבית. שוכר יציב, חוזה ל-3 שנים, ניהול נכס בידינו.</p>
+          <div class="project-card__metrics">
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪1.65M</p>
+              <p class="project-card__metric-label">רכישה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪8,200</p>
+              <p class="project-card__metric-label">שכ"ד/חודש</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val gold">5.4%</p>
+              <p class="project-card__metric-label">תשואה</p>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__type">שכירות ארוכת טווח</span>
+            <button class="project-card__tour-btn" onclick="openTourModal('פלורנטין')">סיור בנכס ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-card fade-up" data-category="renovation">
+        <div class="project-card__video">
+          <div class="project-card__thumb" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80')">
+            <div class="project-card__thumb-overlay"></div>
+          </div>
+          <span class="project-card__tag" style="background:#7c6b2e">בתהליך</span>
+          <span class="project-card__duration">4:12</span>
+          <button class="project-card__play" onclick="playVideo(this,'dQw4w9WgXcQ')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__location">נווה צדק · תל אביב</p>
+          <h3>שיפוץ מיוחד — דירה היסטורית לפנטהאוז</h3>
+          <p>פרויקט שיפוץ מקיף של דירה בת 100 שנה. הסרטון מתעד את כל שלבי הטרנספורמציה.</p>
+          <div class="project-card__metrics">
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪2.8M</p>
+              <p class="project-card__metric-label">רכישה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪320K</p>
+              <p class="project-card__metric-label">שיפוץ</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val gold">₪4.2M</p>
+              <p class="project-card__metric-label">שווי צפוי</p>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__type">שיפוץ · בתהליך</span>
+            <button class="project-card__tour-btn" onclick="openTourModal('נווה צדק')">סיור בנכס ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-card fade-up" data-category="sold">
+        <div class="project-card__video">
+          <div class="project-card__thumb" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80')">
+            <div class="project-card__thumb-overlay"></div>
+          </div>
+          <span class="project-card__tag">נמכר</span>
+          <span class="project-card__duration">2:58</span>
+          <button class="project-card__play" onclick="playVideo(this,'dQw4w9WgXcQ')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__location">אבן גבירול · תל אביב</p>
+          <h3>דירת 3 חדרים — כניסה ויציאה חכמה</h3>
+          <p>זיהינו נכס undervalued על ציר אבן גבירול. קנינו, שדרגנו, מכרנו — תוך 26 חודשים.</p>
+          <div class="project-card__metrics">
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪2.1M</p>
+              <p class="project-card__metric-label">רכישה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪2.8M</p>
+              <p class="project-card__metric-label">מכירה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val gold">33%</p>
+              <p class="project-card__metric-label">תשואה</p>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__type">אקזיט · 26 חודשים</span>
+            <button class="project-card__tour-btn" onclick="openTourModal('אבן גבירול')">סיור בנכס ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="project-card fade-up" data-category="rented">
+        <div class="project-card__video">
+          <div class="project-card__thumb" style="background-image:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80')">
+            <div class="project-card__thumb-overlay"></div>
+          </div>
+          <span class="project-card__tag" style="background:var(--navy)">מושכר</span>
+          <span class="project-card__duration">3:05</span>
+          <button class="project-card__play" onclick="playVideo(this,'dQw4w9WgXcQ')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__location">הצפון החדש · תל אביב</p>
+          <h3>דירת יוקרה 5 חדרים — Airbnb + שכירות</h3>
+          <p>מודל היברידי: חצי שנה Airbnb, חצי שנה שכירות ארוכה. תשואה משולבת של 7.2%.</p>
+          <div class="project-card__metrics">
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪4.1M</p>
+              <p class="project-card__metric-label">רכישה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪24K</p>
+              <p class="project-card__metric-label">הכנסה/חודש</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val gold">7.2%</p>
+              <p class="project-card__metric-label">תשואה</p>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__type">מודל היברידי</span>
+            <button class="project-card__tour-btn" onclick="openTourModal('הצפון החדש')">סיור בנכס ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6 -->
+      <div class="project-card fade-up" data-category="commercial">
+        <div class="project-card__video">
+          <div class="project-card__thumb" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80')">
+            <div class="project-card__thumb-overlay"></div>
+          </div>
+          <span class="project-card__tag" style="background:#2d4a6e">מסחרי</span>
+          <span class="project-card__duration">5:18</span>
+          <button class="project-card__play" onclick="playVideo(this,'dQw4w9WgXcQ')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
+        </div>
+        <div class="project-card__body">
+          <p class="project-card__location">רוטשילד · תל אביב</p>
+          <h3>שטח מסחרי על בולוואר רוטשילד</h3>
+          <p>רכישת שטח מסחרי 180 מ"ר על הבולוואר האיקוני. שוכר ארוך טווח — חברת היי-טק בינלאומית.</p>
+          <div class="project-card__metrics">
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪5.8M</p>
+              <p class="project-card__metric-label">רכישה</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val">₪36K</p>
+              <p class="project-card__metric-label">הכנסה/חודש</p>
+            </div>
+            <div class="project-card__metric">
+              <p class="project-card__metric-val gold">7.4%</p>
+              <p class="project-card__metric-label">תשואה</p>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__type">מסחרי · שכירות 5 שנים</span>
+            <button class="project-card__tour-btn" onclick="openTourModal('רוטשילד')">סיור בנכס ←</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOUR CTA -->
+<section class="tour-cta">
+  <div class="container">
+    <div class="tour-cta__inner">
+      <span class="label">רק ללקוחות מתקדמים</span>
+      <h2>ראה מה אפשרי —<br><em>לפני שתחליט.</em></h2>
+      <p class="tour-cta__sub">לקוחות שמתקדמים בתהליך מקבלים גישה לסיורים פרטיים בנכסים שעברו שיפוץ. ראיה אחת שווה אלף מצגות.</p>
+      <div class="tour-cta__cards">
+        <div class="tour-cta__card">
+          <span class="tour-cta__card-icon">🏠</span>
+          <h4>סיור בנכסים מושלמים</h4>
+          <p>ביקור בנכסים שעברו שיפוץ מלא — לראות את הסטנדרט שאנחנו מספקים.</p>
+        </div>
+        <div class="tour-cta__card">
+          <span class="tour-cta__card-icon">📊</span>
+          <h4>פגישת ייעוץ בשטח</h4>
+          <p>מדברים על פוטנציאל ההשקעה בזמן שאתה רואה את הנכס עם העיניים שלך.</p>
+        </div>
+        <div class="tour-cta__card">
+          <span class="tour-cta__card-icon">🔐</span>
+          <h4>גישה לנכסים off-market</h4>
+          <p>לקוחות בשלב מתקדם מקבלים גישה לנכסים שלא פורסמו לציבור.</p>
+        </div>
+      </div>
+      <button class="hero__tour-badge" onclick="openTourModal()" style="font-size:14px;padding:16px 40px">
+        📍 הזמן סיור פרטי עכשיו ←
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STRIP -->
+<section class="process-strip">
+  <div class="container">
+    <h2>מה קורה <em class="gold">אחרי הסיור?</em></h2>
+    <div class="process-strip__grid">
+      <div class="process-strip__step">
+        <p class="process-strip__num">01</p>
+        <h4>סיור + שיחת ייעוץ</h4>
+        <p>ביקור בנכסים ושיחה על מטרות ההשקעה שלך.</p>
+      </div>
+      <div class="process-strip__step">
+        <p class="process-strip__num">02</p>
+        <h4>פרופיל השקעה</h4>
+        <p>נגדיר יחד את האסטרטגיה, הסיכון והמסגרת.</p>
+      </div>
+      <div class="process-strip__step">
+        <p class="process-strip__num">03</p>
+        <h4>עסקה ראשונה</h4>
+        <p>גישה לעסקאות off-market שמתאימות בדיוק לפרופיל שלך.</p>
+      </div>
+      <div class="process-strip__step">
+        <p class="process-strip__num">04</p>
+        <h4>סגירה ותשואה</h4>
+        <p>אנחנו מנהלים הכל. אתה גוזר קופון.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOUR MODAL -->
+<div class="modal-overlay" id="tourModal">
+  <div class="modal">
+    <button class="modal__close" onclick="closeTourModal()">✕</button>
+    <div class="modal__header">
+      <h2>הזמן סיור פרטי</h2>
+      <p>מלא פרטים ונחזור אליך תוך 24 שעות לאישור.</p>
+    </div>
+    <div class="modal__body">
+      <div class="modal__steps">
+        <div class="modal__step active">פרטים אישיים</div>
+        <div class="modal__step">בחירת תאריך</div>
+        <div class="modal__step">אישור</div>
+      </div>
+
+      <form id="tourForm">
+        <!-- STEP 1 -->
+        <div id="step1">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label">שם פרטי</label>
+              <input type="text" class="form__input" placeholder="דוד" required />
+            </div>
+            <div class="form__group">
+              <label class="form__label">שם משפחה</label>
+              <input type="text" class="form__input" placeholder="כהן" required />
+            </div>
+          </div>
+          <div class="form__group">
+            <label class="form__label">טלפון</label>
+            <input type="tel" class="form__input" placeholder="050-0000000" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label">הון פנוי להשקעה</label>
+            <select class="form__select">
+              <option value="" disabled selected>בחר טווח</option>
+              <option>₪1M – ₪2M</option>
+              <option>₪2M – ₪5M</option>
+              <option>₪5M+</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label class="form__label">איזה נכס מעניין אותך לראות?</label>
+            <select class="form__select" id="tourPropertySelect">
+              <option value="" disabled selected>בחר נכס</option>
+              <option>צפון הישן — דירת גן מושלמת</option>
+              <option>פלורנטין — דופלקס מעוצב</option>
+              <option>נווה צדק — שיפוץ היסטורי</option>
+              <option>הצפון החדש — דירת יוקרה</option>
+              <option>כל הנכסים הזמינים</option>
+            </select>
+          </div>
+          <button type="button" class="modal__submit" onclick="nextStep()">הבא — בחירת תאריך ←</button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div id="step2" style="display:none">
+          <p class="form__label" style="margin-bottom:16px">בחר תאריך מועדף לסיור</p>
+          <div class="form__dates">
+            <button type="button" class="date-btn" onclick="selectDate(this)">
+              <p class="date-btn__day">ראשון</p>
+              <p class="date-btn__date">22/6</p>
+            </button>
+            <button type="button" class="date-btn" onclick="selectDate(this)">
+              <p class="date-btn__day">שלישי</p>
+              <p class="date-btn__date">24/6</p>
+            </button>
+            <button type="button" class="date-btn" onclick="selectDate(this)">
+              <p class="date-btn__day">חמישי</p>
+              <p class="date-btn__date">26/6</p>
+            </button>
+            <button type="button" class="date-btn" onclick="selectDate(this)">
+              <p class="date-btn__day">ראשון</p>
+              <p class="date-btn__date">29/6</p>
+            </button>
+            <button type="button" class="date-btn" onclick="selectDate(this)">
+              <p class="date-btn__day">שלישי</p>
+              <p class="date-btn__date">1/7</p>
+            </button>
+            <button type="button" class="date-btn" onclick="selectDate(this)">
+              <p class="date-btn__day">חמישי</p>
+              <p class="date-btn__date">3/7</p>
+            </button>
+          </div>
+          <p class="form__label" style="margin-bottom:12px">בחר שעה</p>
+          <div class="time-slots">
+            <button type="button" class="time-slot" onclick="selectTime(this)">10:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this)">11:30</button>
+            <button type="button" class="time-slot disabled">13:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this)">14:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this)">16:00</button>
+            <button type="button" class="time-slot disabled">17:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this)">18:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this)">19:00</button>
+          </div>
+          <button type="submit" class="modal__submit">אשר סיור ←</button>
+          <p class="modal__note">לאחר האישור נשלח לך אישור ב-SMS + פרטי הגעה.</p>
+        </div>
+      </form>
+
+      <!-- SUCCESS -->
+      <div class="modal__success" id="tourSuccess">
+        <div class="modal__success-icon">✅</div>
+        <h3>הסיור נקבע!</h3>
+        <p>קיבלנו את פרטיך ונחזור אליך תוך 24 שעות עם אישור סופי ופרטי ההגעה.<br><br>מחכים לפגוש אותך.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
+      <ul class="footer__links">
+        <li><a href="/">ראשי</a></li>
+        <li><a href="/projects/">פרויקטים</a></li>
+        <li><a href="/blog/">בלוג</a></li>
+        <li><a href="/#contact">צור קשר</a></li>
+      </ul>
+      <p class="footer__copy">© 2025 The Investor's Circle TLV</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV SCROLL
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(13,27,42,0.1)' : '';
+  });
+
+  // FADE UP
+  const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // FILTER
+  document.querySelectorAll('.filter-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  // VIDEO PLAY
+  function playVideo(btn, videoId) {
+    const wrapper = btn.closest('.project-card__video');
+    const iframe = wrapper.querySelector('.project-card__iframe');
+    const thumb = wrapper.querySelector('.project-card__thumb');
+    const duration = wrapper.querySelector('.project-card__duration');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    iframe.style.display = 'block';
+    thumb.style.display = 'none';
+    btn.style.display = 'none';
+    if (duration) duration.style.display = 'none';
+  }
+
+  // MODAL
+  function openTourModal(property) {
+    document.getElementById('tourModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (property) {
+      const sel = document.getElementById('tourPropertySelect');
+      for (let opt of sel.options) {
+        if (opt.text.includes(property)) { sel.value = opt.value; break; }
+      }
+    }
+  }
+  function closeTourModal() {
+    document.getElementById('tourModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('tourModal').addEventListener('click', function(e) {
+    if (e.target === this) closeTourModal();
+  });
+
+  // STEP NAVIGATION
+  function nextStep() {
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    document.querySelectorAll('.modal__step')[0].classList.remove('active');
+    document.querySelectorAll('.modal__step')[1].classList.add('active');
+  }
+
+  function selectDate(btn) {
+    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+  function selectTime(btn) {
+    if (btn.classList.contains('disabled')) return;
+    document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+
+  // FORM SUBMIT
+  document.getElementById('tourForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('tourForm').style.display = 'none';
+    document.getElementById('tourSuccess').style.display = 'block';
+    document.querySelectorAll('.modal__step').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.modal__step')[2].classList.add('active');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בלוג — The Investor's Circle TLV</title>
+  <meta name="description" content="תובנות, ניתוחים ומדריכים על שוק הנדל&quot;ן בתל אביב — ממומחים שחיים בתוך השוק." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --gold: #B8963E; --gold2: #D4AE58;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border: rgba(184,150,62,0.15); --border2: rgba(13,27,42,0.08);
+      --shadow: 0 4px 40px rgba(13,27,42,0.08); --shadow2: 0 2px 16px rgba(13,27,42,0.05);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.8; }
+    h1,h2,h3,h4 { font-family: 'Frank Ruhl Libre', serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+
+    nav {
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+      padding: 18px 0; border-bottom: 1px solid var(--border2);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--navy); text-decoration: none; }
+    .nav__logo span { color: var(--gold); }
+    .nav__back { font-size: 12px; letter-spacing: 1px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__back:hover { color: var(--gold); }
+
+    .blog-hero {
+      padding: 80px 0 64px;
+      background: var(--offwhite);
+      border-bottom: 1px solid var(--border2);
+      text-align: center;
+    }
+    .label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .blog-hero h1 { font-size: clamp(32px,4vw,56px); margin-bottom: 16px; }
+    .blog-hero p { font-size: 16px; color: var(--grey); max-width: 520px; margin: 0 auto; }
+
+    .blog-grid {
+      padding: 80px 0;
+    }
+    .blog-grid__inner { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; }
+
+    /* FEATURED POST */
+    .post-featured {
+      border: 1px solid var(--border2);
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: var(--shadow2);
+      transition: box-shadow 0.3s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .post-featured:hover { box-shadow: var(--shadow); }
+    .post-featured__img {
+      width: 100%; height: 320px; object-fit: cover;
+      display: block;
+    }
+    .post-featured__body { padding: 40px; }
+    .post-tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid var(--border); padding: 4px 12px;
+      margin-bottom: 16px;
+    }
+    .post-featured__body h2 { font-size: 26px; margin-bottom: 14px; line-height: 1.3; }
+    .post-featured__body p { font-size: 15px; color: var(--grey); line-height: 1.9; margin-bottom: 24px; }
+    .post-meta { font-size: 12px; color: var(--grey2); letter-spacing: 1px; }
+    .post-meta span { color: var(--gold); }
+
+    /* POST LIST */
+    .posts-list { display: flex; flex-direction: column; gap: 1px; background: var(--border2); }
+    .post-card {
+      background: var(--white); padding: 28px 24px;
+      text-decoration: none; color: inherit;
+      display: block; transition: background 0.3s;
+      border-right: 3px solid transparent;
+    }
+    .post-card:hover { background: var(--glass); border-right-color: var(--gold); }
+    .post-card .post-tag { margin-bottom: 10px; }
+    .post-card h3 { font-size: 17px; margin-bottom: 8px; line-height: 1.4; }
+    .post-card p { font-size: 13px; color: var(--grey); margin-bottom: 12px; }
+    .post-card .post-meta { font-size: 11px; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 90px; }
+    .sidebar__section { margin-bottom: 40px; }
+    .sidebar__title {
+      font-size: 11px; font-weight: 500; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .sidebar__cta {
+      background: var(--navy); padding: 32px;
+      text-align: center; color: var(--white);
+    }
+    .sidebar__cta h3 { font-size: 18px; margin-bottom: 10px; }
+    .sidebar__cta p { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+    .sidebar__cta a {
+      display: block; padding: 12px; background: var(--gold);
+      color: var(--white); text-decoration: none;
+      font-size: 12px; font-weight: 500; letter-spacing: 2px;
+      text-align: center; transition: background 0.3s;
+    }
+    .sidebar__cta a:hover { background: var(--gold2); }
+    .sidebar__topics { list-style: none; }
+    .sidebar__topics li {
+      border-bottom: 1px solid var(--border2);
+    }
+    .sidebar__topics a {
+      display: flex; justify-content: space-between;
+      padding: 12px 0; font-size: 14px; color: var(--navy);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .sidebar__topics a:hover { color: var(--gold); }
+    .sidebar__topics a span { color: var(--grey2); font-size: 12px; }
+
+    footer {
+      padding: 40px 0; background: var(--navy);
+      border-top: 3px solid var(--gold); margin-top: 80px;
+    }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; color: var(--white); }
+    .footer__logo span { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 860px) {
+      .blog-grid__inner { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <a href="/" class="nav__back">← חזרה לאתר</a>
+    </div>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="container">
+    <span class="label">תובנות · ניתוחים · מדריכים</span>
+    <h1>בלוג <em class="gold">השקעות נדל"ן</em></h1>
+    <p>תובנות עמוקות על שוק הנדל"ן בתל אביב — ממומחים שחיים בתוך השוק כל יום.</p>
+  </div>
+</header>
+
+<section class="blog-grid">
+  <div class="container">
+    <div class="blog-grid__inner">
+
+      <div>
+        <!-- FEATURED -->
+        <a href="/blog/why-tel-aviv-real-estate.html" class="post-featured">
+          <img class="post-featured__img" src="https://images.unsplash.com/photo-1544015759-237f2a4d2579?w=800&q=80" alt="תל אביב מהאוויר" />
+          <div class="post-featured__body">
+            <span class="post-tag">ניתוח שוק</span>
+            <h2>למה נדל"ן בתל אביב הוא עדיין ההשקעה הטובה ביותר בישראל — גם ב-2025</h2>
+            <p>מחירים שמטפסים, ביקוש שלא נעצר, רכבת קלה שמשנה את המפה — ניתוח מעמיק של כל הסיבות שהפכו את תל אביב למגנט ההשקעות הגדול ביותר בישראל.</p>
+            <p class="post-meta"><span>ניתוח שוק</span> · 15 בינואר 2025 · קריאה של 8 דקות</p>
+          </div>
+        </a>
+
+        <div style="height:2px;background:var(--border);margin:48px 0;"></div>
+
+        <!-- POST LIST -->
+        <div class="posts-list">
+          <a href="/blog/off-market-deals.html" class="post-card">
+            <span class="post-tag">אסטרטגיה</span>
+            <h3>עסקאות off-market: איך הרשת הנכונה מייצרת תשואה של 15% מעל השוק</h3>
+            <p>85% מהעסקאות הטובות ביותר בת"א לא מגיעות לכלל פרסום. איך ניגשים אליהן?</p>
+            <p class="post-meta"><span>אסטרטגיה</span> · 8 בינואר 2025</p>
+          </a>
+          <a href="/blog/florentin-investment-guide.html" class="post-card">
+            <span class="post-tag">מדריך שכונה</span>
+            <h3>פלורנטין 2025: מדריך המשקיע המלא לשכונה שמשנה פנים</h3>
+            <p>מחירים, תשואות, פרויקטים מתוכננים ולמה היא עשויה להיות ההזדמנות הטובה ביותר השנה.</p>
+            <p class="post-meta"><span>מדריך שכונה</span> · 2 בינואר 2025</p>
+          </a>
+          <a href="/blog/mortgage-guide.html" class="post-card">
+            <span class="post-tag">מימון</span>
+            <h3>משכנתא למשקיעים בת"א: כל מה שצריך לדעת לפני שחותמים</h3>
+            <p>מינוף, ריביות, מסלולים — המדריך המלא לייעול עלות ההון בעסקת נדל"ן 2025.</p>
+            <p class="post-meta"><span>מימון</span> · 22 בדצמבר 2024</p>
+          </a>
+          <a href="/blog/light-rail-effect.html" class="post-card">
+            <span class="post-tag">פיתוח עירוני</span>
+            <h3>הרכבת הקלה ועליית ערך הנכסים: אילו שכונות ירוויחו הכי הרבה?</h3>
+            <p>ניתוח של נתוני עליית ערך בשכונות הסמוכות לקווי הרכבת החדשים ומה זה אומר למשקיע החכם.</p>
+            <p class="post-meta"><span>פיתוח עירוני</span> · 14 בדצמבר 2024</p>
+          </a>
+          <a href="/blog/due-diligence-checklist.html" class="post-card">
+            <span class="post-tag">מדריך</span>
+            <h3>צ'קליסט בדיקת נאותות מלאה לנכס בתל אביב — 27 נקודות שחייבים לבדוק</h3>
+            <p>מה שהמתווך לא יגיד לך. כל הדגלים האדומים, הבדיקות המשפטיות והטכניות שחוסכות לך הפסדים.</p>
+            <p class="post-meta"><span>מדריך</span> · 5 בדצמבר 2024</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar__cta">
+          <h3>יש לך מיליון פנוי?</h3>
+          <p>בוא לדבר. ייעוץ ראשון ללא התחייבות.</p>
+          <a href="/#contact">בקש ייעוץ פרטי</a>
+        </div>
+
+        <div style="height:32px"></div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__title">נושאים</p>
+          <ul class="sidebar__topics">
+            <li><a href="#">ניתוח שוק <span>8</span></a></li>
+            <li><a href="#">מדריכי שכונות <span>12</span></a></li>
+            <li><a href="#">אסטרטגיית השקעה <span>6</span></a></li>
+            <li><a href="#">מימון ומשכנתאות <span>5</span></a></li>
+            <li><a href="#">פיתוח עירוני <span>4</span></a></li>
+            <li><a href="#">משקיעים מחו"ל <span>3</span></a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__title">נתונים עדכניים</p>
+          <div style="background:var(--offwhite);padding:24px;border:1px solid var(--border2)">
+            <div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border2)">
+              <p style="font-size:11px;letter-spacing:1px;color:var(--grey);margin-bottom:4px">מחיר ממוצע ל-מ"ר, ת"א</p>
+              <p style="font-size:24px;font-family:'Frank Ruhl Libre',serif;color:var(--navy)">₪39,400</p>
+            </div>
+            <div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border2)">
+              <p style="font-size:11px;letter-spacing:1px;color:var(--grey);margin-bottom:4px">עלייה שנתית</p>
+              <p style="font-size:24px;font-family:'Frank Ruhl Libre',serif;color:var(--gold)">+8.3%</p>
+            </div>
+            <div>
+              <p style="font-size:11px;letter-spacing:1px;color:var(--grey);margin-bottom:4px">תשואת שכירות ממוצעת</p>
+              <p style="font-size:24px;font-family:'Frank Ruhl Libre',serif;color:var(--navy)">4.2%</p>
+            </div>
+            <p style="font-size:11px;color:var(--grey2);margin-top:16px">נתוני ינואר 2025</p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
+      <p class="footer__copy">© 2025 · כל הזכויות שמורות</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
