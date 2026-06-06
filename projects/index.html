@@ -472,7 +472,7 @@
           </div>
           <div class="project-card__footer">
             <span class="project-card__type">אקזיט · 14 חודשים</span>
-            <button class="project-card__tour-btn" onclick="openTourModal('צפון הישן')">סיור בנכס ←</button>
+            <button class="project-card__tour-btn" onclick="openTourModal('צפון הישן')">בוא נדבר ←</button>
           </div>
         </div>
       </div>
@@ -509,7 +509,7 @@
           </div>
           <div class="project-card__footer">
             <span class="project-card__type">שכירות ארוכת טווח</span>
-            <button class="project-card__tour-btn" onclick="openTourModal('פלורנטין')">סיור בנכס ←</button>
+            <button class="project-card__tour-btn" onclick="openTourModal('פלורנטין')">בוא נדבר ←</button>
           </div>
         </div>
       </div>
@@ -546,7 +546,7 @@
           </div>
           <div class="project-card__footer">
             <span class="project-card__type">שיפוץ · בתהליך</span>
-            <button class="project-card__tour-btn" onclick="openTourModal('נווה צדק')">סיור בנכס ←</button>
+            <button class="project-card__tour-btn" onclick="openTourModal('נווה צדק')">בוא נדבר ←</button>
           </div>
         </div>
       </div>
@@ -562,7 +562,7 @@
           <p style="color:var(--grey2);font-style:italic">הפרויקט הסתיים בהצלחה. פרטים יתווספו בקרוב.</p>
           <div class="project-card__footer">
             <span class="project-card__type">מושכר</span>
-            <button class="project-card__tour-btn" onclick="openTourModal()">סיור בנכס ←</button>
+            <button class="project-card__tour-btn" onclick="openTourModal()">בוא נדבר ←</button>
           </div>
         </div>
       </div>
@@ -578,7 +578,7 @@
           <p style="color:var(--grey2);font-style:italic">הפרויקט הסתיים בהצלחה. פרטים יתווספו בקרוב.</p>
           <div class="project-card__footer">
             <span class="project-card__type">מושכר</span>
-            <button class="project-card__tour-btn" onclick="openTourModal()">סיור בנכס ←</button>
+            <button class="project-card__tour-btn" onclick="openTourModal()">בוא נדבר ←</button>
           </div>
         </div>
       </div>
@@ -594,7 +594,7 @@
           <p style="color:var(--grey2);font-style:italic">הפרויקט הסתיים בהצלחה. פרטים יתווספו בקרוב.</p>
           <div class="project-card__footer">
             <span class="project-card__type">מושכר</span>
-            <button class="project-card__tour-btn" onclick="openTourModal()">סיור בנכס ←</button>
+            <button class="project-card__tour-btn" onclick="openTourModal()">בוא נדבר ←</button>
           </div>
         </div>
       </div>
@@ -607,9 +607,9 @@
 <section class="tour-cta">
   <div class="container">
     <div class="tour-cta__inner">
-      <span class="label">רק ללקוחות מתקדמים</span>
-      <h2>ראה מה אפשרי —<br><em>לפני שתחליט.</em></h2>
-      <p class="tour-cta__sub">לקוחות שמתקדמים בתהליך מקבלים גישה לסיורים פרטיים בנכסים שעברו שיפוץ. ראיה אחת שווה אלף מצגות.</p>
+      <span class="label">רוצה לדעת יותר?</span>
+      <h2>מתחילים בשיחה.<br><em>לא בהבטחות.</em></h2>
+      <p class="tour-cta__sub">בוא נכיר, נבין מה אתה מחפש — ואם יש התאמה, נפתח לך גישה לנכסים ולסיורים. בלי לחץ, בלי מחויבות.</p>
       <div class="tour-cta__cards">
         <div class="tour-cta__card">
           <span class="tour-cta__card-icon">🏠</span>
@@ -628,7 +628,7 @@
         </div>
       </div>
       <button class="hero__tour-badge" onclick="openTourModal()" style="font-size:14px;padding:16px 40px">
-        📍 הזמן סיור פרטי עכשיו ←
+        💬 בוא נדבר ←
       </button>
     </div>
   </div>
@@ -668,14 +668,14 @@
   <div class="modal">
     <button class="modal__close" onclick="closeTourModal()">✕</button>
     <div class="modal__header">
-      <h2>הזמן סיור פרטי</h2>
-      <p>מלא פרטים ונחזור אליך תוך 24 שעות לאישור.</p>
+      <h2>בוא נכיר תחילה</h2>
+      <p>שיחה קצרה — להבין מה אתה מחפש ואיפה אנחנו יכולים לעזור.</p>
     </div>
     <div class="modal__body">
       <div class="modal__steps">
-        <div class="modal__step active">פרטים אישיים</div>
-        <div class="modal__step">בחירת תאריך</div>
-        <div class="modal__step">אישור</div>
+        <div class="modal__step active">פרטים קצרים</div>
+        <div class="modal__step">בחירת זמן</div>
+        <div class="modal__step">נחזור אליך</div>
       </div>
 
       <form id="tourForm">
@@ -705,22 +705,21 @@
             </select>
           </div>
           <div class="form__group">
-            <label class="form__label">איזה נכס מעניין אותך לראות?</label>
+            <label class="form__label">מה אתה מחפש?</label>
             <select class="form__select" id="tourPropertySelect">
-              <option value="" disabled selected>בחר נכס</option>
-              <option>צפון הישן — דירת גן מושלמת</option>
-              <option>פלורנטין — דופלקס מעוצב</option>
-              <option>נווה צדק — שיפוץ היסטורי</option>
-              <option>הצפון החדש — דירת יוקרה</option>
-              <option>כל הנכסים הזמינים</option>
+              <option value="" disabled selected>בחר</option>
+              <option>השקעה לטווח ארוך — שכירות</option>
+              <option>השקעה קצרה — שיפוץ ומכירה</option>
+              <option>נכס למגורים בתל אביב</option>
+              <option>עדיין בוחן אפשרויות</option>
             </select>
           </div>
-          <button type="button" class="modal__submit" onclick="nextStep()">הבא — בחירת תאריך ←</button>
+          <button type="button" class="modal__submit" onclick="nextStep()">הבא — בחירת זמן לשיחה ←</button>
         </div>
 
         <!-- STEP 2 -->
         <div id="step2" style="display:none">
-          <p class="form__label" style="margin-bottom:16px">בחר תאריך מועדף לסיור</p>
+          <p class="form__label" style="margin-bottom:16px">מתי נוח לשיחה קצרה?</p>
           <div class="form__dates">
             <button type="button" class="date-btn" onclick="selectDate(this)">
               <p class="date-btn__day">ראשון</p>
@@ -758,16 +757,16 @@
             <button type="button" class="time-slot" onclick="selectTime(this)">18:00</button>
             <button type="button" class="time-slot" onclick="selectTime(this)">19:00</button>
           </div>
-          <button type="submit" class="modal__submit">אשר סיור ←</button>
-          <p class="modal__note">לאחר האישור נשלח לך אישור ב-SMS + פרטי הגעה.</p>
+          <button type="submit" class="modal__submit">שלח — ניצור קשר בקרוב ←</button>
+          <p class="modal__note">ניצור קשר תוך 24 שעות לתיאום שיחה קצרה.</p>
         </div>
       </form>
 
       <!-- SUCCESS -->
       <div class="modal__success" id="tourSuccess">
         <div class="modal__success-icon">✅</div>
-        <h3>הסיור נקבע!</h3>
-        <p>קיבלנו את פרטיך ונחזור אליך תוך 24 שעות עם אישור סופי ופרטי ההגעה.<br><br>מחכים לפגוש אותך.</p>
+        <h3>תודה, קיבלנו!</h3>
+        <p>ניצור איתך קשר תוך 24 שעות לשיחה קצרה.<br><br>אם תתקדם איתנו — נפתח לך גישה לנכסים ולסיורים.</p>
       </div>
     </div>
   </div>
