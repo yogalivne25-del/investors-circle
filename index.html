@@ -562,6 +562,11 @@
 
     /* ── MOBILE ── */
     @media (max-width: 900px) {
+      /* Hero — תמונה ממורכזת למעלה */
+      .hero__img { background-position: top center !important; }
+      /* שאר תמונות — ממורכזות לימין */
+      .why-tlv__image { background-position: center right !important; }
+
       .nav__links { display: none; }
       .stats__grid { grid-template-columns: repeat(2,1fr); }
       .identification__inner, .process__inner, .faq__inner { grid-template-columns: 1fr; gap: 40px; }
