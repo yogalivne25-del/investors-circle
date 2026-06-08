@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>משכנתא למשקיעים בת"א 2026 — The Investor's Circle TLV</title>
+  <meta name="description" content="מדריך מעודכן למשכנתא על דירה להשקעה בתל אביב — תנאים, ריביות, ומה שחייבים לדעת לפני שחותמים." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white:#FFFFFF; --offwhite:#F8F7F4; --glass:#EEF5FB; --navy:#0D1B2A; --gold:#B8963E; --grey:#6B7280; --grey2:#9CA3AF; --border2:rgba(13,27,42,0.08); }
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.9; }
+    h1,h2,h3 { font-family: 'Frank Ruhl Libre', serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+    nav { background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); padding: 18px 0; border-bottom: 1px solid var(--border2); position: sticky; top: 0; z-index: 100; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--navy); text-decoration: none; }
+    .nav__logo span { color: var(--gold); }
+    .nav__back { font-size: 12px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__back:hover { color: var(--gold); }
+    .post-hero { padding: 72px 0 0; background: var(--offwhite); }
+    .post-hero__inner { max-width: 760px; margin: 0 auto; text-align: center; padding-bottom: 48px; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,150,62,0.3); padding: 5px 14px; margin-bottom: 20px; }
+    .post-hero h1 { font-size: clamp(24px,4vw,44px); line-height: 1.2; margin-bottom: 20px; }
+    .post-meta { font-size: 13px; color: var(--grey2); letter-spacing: 1px; }
+    .post-meta span { color: var(--gold); }
+    .post-hero__img { width: 100%; height: 380px; object-fit: cover; display: block; }
+    .post-body { padding: 72px 0; }
+    .post-body__inner { display: grid; grid-template-columns: 1fr 280px; gap: 64px; }
+    .article p { font-size: 16px; margin-bottom: 24px; color: #2d3748; }
+    .article h2 { font-size: 26px; margin: 48px 0 16px; }
+    .article h3 { font-size: 20px; margin: 32px 0 12px; }
+    .article ul { margin: 0 0 24px 0; padding-right: 24px; }
+    .article ul li { font-size: 15px; color: #2d3748; margin-bottom: 10px; }
+    .article strong { font-weight: 500; color: var(--navy); }
+    .article .highlight { background: var(--glass); border-right: 3px solid var(--gold); padding: 24px 28px; margin: 32px 0; font-size: 18px; font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--navy); }
+    .warning-box { background: #fff8f0; border-right: 3px solid #e67e22; padding: 20px 24px; margin: 28px 0; font-size: 15px; }
+    .data-box { background: var(--offwhite); border: 1px solid var(--border2); padding: 28px; margin: 32px 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: center; }
+    .data-box__item p:first-child { font-family: 'Frank Ruhl Libre', serif; font-size: 32px; color: var(--gold); }
+    .data-box__item p:last-child { font-size: 12px; color: var(--grey); letter-spacing: 1px; margin-top: 4px; }
+    .sources { margin-top: 48px; padding: 24px; background: var(--offwhite); border: 1px solid var(--border2); }
+    .sources h4 { font-size: 13px; letter-spacing: 2px; color: var(--grey); margin-bottom: 12px; }
+    .sources a { font-size: 12px; color: var(--gold); display: block; margin-bottom: 6px; }
+    .cta-box { background: var(--navy); padding: 40px; margin-top: 48px; text-align: center; color: var(--white); }
+    .cta-box h3 { font-size: 22px; margin-bottom: 12px; }
+    .cta-box p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+    .cta-box a { display: inline-block; padding: 14px 40px; background: var(--gold); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; }
+    .sidebar { position: sticky; top: 90px; align-self: start; }
+    .toc { background: var(--offwhite); border: 1px solid var(--border2); padding: 28px; margin-bottom: 28px; }
+    .toc__title { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .toc__list { list-style: none; }
+    .toc__list li { border-bottom: 1px solid var(--border2); }
+    .toc__list a { display: block; padding: 10px 0; font-size: 13px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .toc__list a:hover { color: var(--gold); }
+    footer { padding: 40px 0; background: var(--navy); margin-top: 80px; }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; color: var(--white); }
+    .footer__logo span { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+    @media (max-width: 860px) { .post-body__inner { grid-template-columns: 1fr; } .sidebar { position: static; } .data-box { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .container { padding: 0 20px; } }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <a href="/blog/" class="nav__back">← חזרה לבלוג</a>
+    </div>
+  </div>
+</nav>
+
+<header class="post-hero">
+  <div class="post-hero__inner">
+    <span class="post-tag">מימון</span>
+    <h1>משכנתא למשקיעים בתל אביב 2026: כל מה שצריך לדעת לפני שחותמים</h1>
+    <p class="post-meta"><span>The Investor's Circle TLV</span> · יוני 2026 · קריאה של 7 דקות</p>
+  </div>
+  <img class="post-hero__img" src="https://images.unsplash.com/photo-1605260611019-cd20892c92ec?w=1200&q=80" alt="תל אביב" />
+</header>
+
+<section class="post-body">
+  <div class="container">
+    <div class="post-body__inner">
+      <article class="article">
+
+        <p>אחת הטעויות הנפוצות של משקיעים שמגיעים לשוק הנדל"ן בתל אביב: הם מוצאים עסקה, נרגשים ממנה — ואז מגלים שתנאי המימון על <strong>דירה שנייה להשקעה שונים לגמרי</strong> מדירה ראשונה. הפתעות מחכות. הנה המדריך שמונע אותן.</p>
+
+        <div class="highlight">"המשכנתא על דירה להשקעה היא לא סתם משכנתא — זה מוצר פיננסי אחר לגמרי. מי שלא מבין את ההבדלים משלם יותר."</div>
+
+        <h2 id="rules">הכלל הבסיסי: 50% הון עצמי</h2>
+        <p>בנק ישראל קבע: על דירה שנייה ומעלה, <strong>הבנק יכול לממן עד 50% בלבד</strong> משווי הנכס. משמעות: אם קונים דירה ב-₪3 מיליון — צריך ₪1.5M הון עצמי נזיל, בנוסף לעלויות הנלוות.</p>
+
+        <div class="warning-box">
+          ⚠️ <strong>חשוב:</strong> מס רכישה על דירה שנייה עומד על 8%–10% מהשקל הראשון (נכון ל-2026). על ₪3M זה ₪240,000–₪300,000 נוספים — ולא ניתן לממן אותם במשכנתא.
+        </div>
+
+        <div class="data-box">
+          <div class="data-box__item"><p>50%</p><p>מקסימום מימון בנקאי</p></div>
+          <div class="data-box__item"><p>8–10%</p><p>מס רכישה דירה שנייה</p></div>
+          <div class="data-box__item"><p>2026</p><p>ריבית יציבה יחסית</p></div>
+        </div>
+
+        <h2 id="interest">ריביות — מה לצפות?</h2>
+        <p>ריבית בנק ישראל בתחילת 2026 יציבה יחסית לאחר תקופת עליות. על דירה להשקעה, הריביות <strong>גבוהות יותר מדירה ראשונה</strong> — הבנקים מתמחרים את סיכון ההשקעה.</p>
+        <ul>
+          <li><strong>מסלול פריים:</strong> פריים + 1%–1.5% (תלוי בנק ובפרופיל)</li>
+          <li><strong>קבועה לא צמודה:</strong> 4.5%–5.5% לשנים 20–25</li>
+          <li><strong>משתנה כל 5 שנים:</strong> אופציה נפוצה — ריבית נמוכה יותר בהתחלה</li>
+        </ul>
+        <p>חשוב: <strong>בנקים שונים מציעים תנאים שונים משמעותית.</strong> כדאי מאוד להתמחר אצל לפחות 3 בנקים לפני הסגירה.</p>
+
+        <h2 id="costs">חישוב כל העלויות לפני שמחליטים</h2>
+        <p>כדי לדעת אם עסקה כדאית, צריך לחשב את <strong>עלות ההון האמיתית:</strong></p>
+        <ul>
+          <li>הון עצמי: 50% + מס רכישה + עו"ד + תיווך</li>
+          <li>עלות משכנתא חודשית: קרן + ריבית</li>
+          <li>ארנונה + ועד בית</li>
+          <li>עלויות שיפוץ אם רלוונטי</li>
+          <li>מס על הכנסות שכירות (פטור עד ₪5,654/חודש נכון ל-2026)</li>
+        </ul>
+
+        <h2 id="tips">3 טיפים ממשקיעים שעשו את זה נכון</h2>
+        <ul>
+          <li><strong>קבלו אישור עקרוני לפני שמחפשים</strong> — לא כשמצאתם עסקה. זה מונע אכזבות ומאפשר לנהל משא ומתן כמו קונה רציני</li>
+          <li><strong>השוו בין בנקים עם יועץ</strong> — יועץ משכנתאות עצמאי (לא של הבנק) יכול לחסוך עשרות אלפי שקלים לאורך חיי ההלוואה</li>
+          <li><strong>תכננו את "יום הכניסה"</strong> — מתי תתחיל להכניס שכירות? כמה חודשים תמתינו? הגדרת timeline ברורה מונעת לחץ פיננסי</li>
+        </ul>
+
+        <div class="cta-box">
+          <h3>רוצה לדעת כמה משכנתא תוכל לקחת על הנכס שלך?</h3>
+          <p>לקוחות שלנו מקבלים ייעוץ משכנתאות מקצועי במחיר מוזל.</p>
+          <a href="/#contact">בוא נדבר ←</a>
+        </div>
+
+        <div class="sources">
+          <h4>מקורות</h4>
+          <a href="https://primeinv.co.il/%D7%9E%D7%A9%D7%9B%D7%A0%D7%AA%D7%90-%D7%9C%D7%93%D7%99%D7%A8%D7%94-%D7%A9%D7%A0%D7%99%D7%99%D7%94/" target="_blank">Prime Invest — משכנתא לדירה שנייה 2026</a>
+          <a href="https://mortgage4u.co.il/%D7%9E%D7%A9%D7%9B%D7%A0%D7%AA%D7%90-%D7%9C%D7%93%D7%99%D7%A8%D7%94-%D7%A9%D7%A0%D7%99%D7%94/" target="_blank">Mortgage4U — מדריך מעודכן 2025</a>
+          <a href="https://www.evensapir.co.il/mortgage-personal-equity/" target="_blank">ארז שמש — הון עצמי למשכנתא 2026</a>
+          <a href="https://www.kolzchut.org.il/he/%D7%9E%D7%92%D7%91%D7%9C%D7%95%D7%AA_%D7%A2%D7%9C_%D7%9C%D7%A7%D7%99%D7%97%D7%AA_%D7%9E%D7%A9%D7%9B%D7%A0%D7%AA%D7%90" target="_blank">כל-זכות — מגבלות על משכנתא</a>
+        </div>
+
+      </article>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <p class="toc__title">תוכן העניינים</p>
+          <ul class="toc__list">
+            <li><a href="#rules">כלל ה-50%</a></li>
+            <li><a href="#interest">ריביות 2026</a></li>
+            <li><a href="#costs">חישוב עלויות</a></li>
+            <li><a href="#tips">3 טיפים מנצחים</a></li>
+          </ul>
+        </div>
+        <div style="background:var(--navy);padding:28px;color:var(--white);text-align:center">
+          <h3 style="font-size:17px;margin-bottom:10px">יש לך מיליון פנוי?</h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:20px">בוא נדבר על ההזדמנות הבאה שלך.</p>
+          <a href="/#contact" style="display:block;padding:12px;background:var(--gold);color:var(--white);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:2px">בקש ייעוץ פרטי</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
+      <p class="footer__copy">© 2026 · כל הזכויות שמורות</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

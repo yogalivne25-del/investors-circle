@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>עסקאות off-market בתל אביב — The Investor's Circle TLV</title>
+  <meta name="description" content="איך הרשת הנכונה מביאה עסקאות לפני שהן מגיעות לשוק — ולמה זה שווה לכם יותר." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --gold: #B8963E;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border2: rgba(13,27,42,0.08);
+      --shadow: 0 4px 40px rgba(13,27,42,0.08);
+    }
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.9; }
+    h1,h2,h3 { font-family: 'Frank Ruhl Libre', serif; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+    nav { background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); padding: 18px 0; border-bottom: 1px solid var(--border2); position: sticky; top: 0; z-index: 100; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--navy); text-decoration: none; }
+    .nav__logo span { color: var(--gold); }
+    .nav__back { font-size: 12px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__back:hover { color: var(--gold); }
+    .post-hero { padding: 72px 0 0; background: var(--offwhite); }
+    .post-hero__inner { max-width: 760px; margin: 0 auto; text-align: center; padding-bottom: 48px; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,150,62,0.3); padding: 5px 14px; margin-bottom: 20px; }
+    .post-hero h1 { font-size: clamp(24px,4vw,44px); line-height: 1.2; margin-bottom: 20px; }
+    .post-meta { font-size: 13px; color: var(--grey2); letter-spacing: 1px; }
+    .post-meta span { color: var(--gold); }
+    .post-hero__img { width: 100%; height: 380px; object-fit: cover; display: block; }
+    .post-body { padding: 72px 0; }
+    .post-body__inner { display: grid; grid-template-columns: 1fr 280px; gap: 64px; }
+    .article p { font-size: 16px; margin-bottom: 24px; color: #2d3748; }
+    .article h2 { font-size: 26px; margin: 48px 0 16px; color: var(--navy); }
+    .article h3 { font-size: 20px; margin: 32px 0 12px; color: var(--navy); }
+    .article ul { margin: 0 0 24px 0; padding-right: 24px; }
+    .article ul li { font-size: 15px; color: #2d3748; margin-bottom: 10px; }
+    .article strong { font-weight: 500; color: var(--navy); }
+    .article .highlight { background: var(--glass); border-right: 3px solid var(--gold); padding: 24px 28px; margin: 32px 0; font-size: 18px; font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--navy); }
+    .data-box { background: var(--offwhite); border: 1px solid var(--border2); padding: 28px; margin: 32px 0; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: center; }
+    .data-box__item p:first-child { font-family: 'Frank Ruhl Libre', serif; font-size: 32px; color: var(--gold); }
+    .data-box__item p:last-child { font-size: 12px; color: var(--grey); letter-spacing: 1px; margin-top: 4px; }
+    .sources { margin-top: 48px; padding: 24px; background: var(--offwhite); border: 1px solid var(--border2); }
+    .sources h4 { font-size: 13px; letter-spacing: 2px; color: var(--grey); margin-bottom: 12px; }
+    .sources a { font-size: 12px; color: var(--gold); display: block; margin-bottom: 6px; }
+    .cta-box { background: var(--navy); padding: 40px; margin-top: 48px; text-align: center; color: var(--white); }
+    .cta-box h3 { font-size: 22px; margin-bottom: 12px; }
+    .cta-box p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+    .cta-box a { display: inline-block; padding: 14px 40px; background: var(--gold); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; }
+    .sidebar { position: sticky; top: 90px; align-self: start; }
+    .toc { background: var(--offwhite); border: 1px solid var(--border2); padding: 28px; margin-bottom: 28px; }
+    .toc__title { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .toc__list { list-style: none; }
+    .toc__list li { border-bottom: 1px solid var(--border2); }
+    .toc__list a { display: block; padding: 10px 0; font-size: 13px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .toc__list a:hover { color: var(--gold); }
+    footer { padding: 40px 0; background: var(--navy); margin-top: 80px; }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; color: var(--white); }
+    .footer__logo span { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+    @media (max-width: 860px) { .post-body__inner { grid-template-columns: 1fr; } .sidebar { position: static; } .data-box { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .container { padding: 0 20px; } }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <a href="/blog/" class="nav__back">← חזרה לבלוג</a>
+    </div>
+  </div>
+</nav>
+
+<header class="post-hero">
+  <div class="post-hero__inner">
+    <span class="post-tag">אסטרטגיה</span>
+    <h1>עסקאות off-market בתל אביב: למה הרשת הנכונה שווה יותר מכל חיפוש</h1>
+    <p class="post-meta"><span>The Investor's Circle TLV</span> · יוני 2026 · קריאה של 7 דקות</p>
+  </div>
+  <img class="post-hero__img" src="https://images.unsplash.com/photo-1664989618703-d27a6a70c5ca?w=1200&q=80" alt="תל אביב" />
+</header>
+
+<section class="post-body">
+  <div class="container">
+    <div class="post-body__inner">
+      <article class="article">
+
+        <p>אחד הדברים הראשונים שמשקיע מנוסה לומד על שוק הנדל"ן בתל אביב: <strong>העסקאות הטובות ביותר לא מגיעות ממה שרואים ביד2.</strong> הן נסגרות לפני שמישהו עלה לאוויר — בשיחות בין אנשים שמכירים אנשים.</p>
+
+        <div class="highlight">"מה שמתפרסם בפלטפורמות הציבוריות הוא לרוב מה שנשאר אחרי שהרשת כבר עברה עליו."</div>
+
+        <h2 id="what">מה זה בכלל עסקה off-market?</h2>
+        <p>עסקת off-market היא עסקת נדל"ן שמתבצעת מחוץ לשוק הפתוח — ללא פרסום ביד2, מדלן, נדל"ן מגנט או כל פלטפורמה ציבורית אחרת. הבעלים או המתווך מציעים את הנכס באופן ישיר לרשת קיימת של קונים פוטנציאליים.</p>
+        <p>ב-2025–2026, בשוק שסובל מצמצום עסקאות והיצע מוגבל, עסקאות off-market מהוות חלק משמעותי מהמכירות בשכונות היוקרה של תל אביב — בעיקר הצפון הישן, נווה צדק, לב העיר ורוטשילד.</p>
+
+        <h2 id="why">למה בעלי נכסים מוכרים off-market?</h2>
+        <ul>
+          <li><strong>פרטיות</strong> — לא רוצים שכנים, עובדים או בני משפחה לדעת שמוכרים</li>
+          <li><strong>מהירות</strong> — רוצים לסגור מהר, בלי לחכות שחודש של שיווק יעבור</li>
+          <li><strong>ודאות</strong> — מעדיפים קונה שנבדק מראש ועם הון אמיתי על פני 50 פניות לא רציניות</li>
+          <li><strong>חיסכון בעמלה</strong> — לעיתים מוכרים ישירות ללא מתווך</li>
+        </ul>
+
+        <h2 id="advantage">יתרון המחיר של off-market</h2>
+        <p>בשוק תל אביב, נכסים שנמכרים off-market נוטים להיות מתומחרים ב-<strong>5–12% מתחת למחיר השוק</strong>. הסיבה פשוטה: המוכר לא נחשף לתחרות גלויה ומוכן להסתפק בפחות בתמורה למהירות ולוודאות.</p>
+        <p>עבור משקיע שמוכן לפעול מהר ועם הון מוכן — זה ההפרש בין עסקה טובה לעסקה מצוינת.</p>
+
+        <div class="data-box">
+          <div class="data-box__item"><p>5–12%</p><p>הנחה ממוצעת off-market</p></div>
+          <div class="data-box__item"><p>4–6</p><p>שבועות לפני פרסום ציבורי</p></div>
+          <div class="data-box__item"><p>₪60K+</p><p>מחיר ממוצע למ"ר ת"א 2026</p></div>
+        </div>
+
+        <h2 id="how">איך ניגשים לעסקאות off-market?</h2>
+        <p>זה לא מסתורי — זה עניין של <strong>נוכחות בשוק לאורך זמן.</strong> הנה הדרכים העיקריות:</p>
+        <ul>
+          <li><strong>רשת מתווכים אמינה</strong> — מתווך ותיק שמוכר ומשכיר נכסים בשכונה ספציפית שנים ידע לפני כולם מי שוקל למכור</li>
+          <li><strong>קשרי עורכי דין ויועצים</strong> — עו"ד שמלווה עסקאות רבות לעיתים יודע על נכס שעומד לצאת לשוק</li>
+          <li><strong>קשרי שיפוץ וקבלנות</strong> — קבלן שעובד בבניין ידע ראשון אם דייר שוקל למכור</li>
+          <li><strong>ייעוץ מקצועי עם רשת</strong> — יועץ השקעות שפעיל בשוק במשך שנים צובר קשרים שמביאים עסקאות</li>
+        </ul>
+
+        <h2 id="tlv">למה ת"א במיוחד?</h2>
+        <p>שוק הנדל"ן בתל אביב הוא שוק צמוד ואינטימי בתוכו. אוכלוסיית הצפון הישן, נווה צדק, ורחובות היוקרה — קהילות קטנות שבהן כולם מכירים את כולם. <strong>נכס שיוצא לשוק ביד2 כבר עבר ידיים בשכונה.</strong></p>
+        <p>בשוק של 2026, עם ירידה בכמות העסקאות ומלאי גבוה של דירות חדשות — הנכסים המשומשים האיכותיים בשכונות הביקוש עדיין נסגרים מהר, <strong>אבל רק למי שיש גישה לפני הפרסום.</strong></p>
+
+        <div class="cta-box">
+          <h3>רוצה גישה לעסקאות לפני שכולם רואים אותן?</h3>
+          <p>בוא נדבר. שיחה קצרה — בלי התחייבות.</p>
+          <a href="/#contact">בוא נדבר ←</a>
+        </div>
+
+        <div class="sources">
+          <h4>מקורות</h4>
+          <a href="https://klikatnadlan.co.il/cbssalesnovjan2026/" target="_blank">קליקת הנדל"ן — שוק הנדל"ן 2026</a>
+          <a href="https://www.madlan.co.il/area-info/%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%99%D7%A4%D7%95-%D7%99%D7%A9%D7%A8%D7%90%D7%9C" target="_blank">מדלן — מחירי דירות תל אביב</a>
+          <a href="https://www.calcalist.co.il/real-estate/article/hj700exqcwx" target="_blank">כלכליסט — שפל של 20 שנה בעסקאות</a>
+          <a href="https://ronkin-list.com/tel-aviv-real-estate-prices-2026/" target="_blank">Ronkin List — Tel Aviv Real Estate Prices 2026</a>
+        </div>
+
+      </article>
+
+      <aside class="sidebar">
+        <div class="toc">
+          <p class="toc__title">תוכן העניינים</p>
+          <ul class="toc__list">
+            <li><a href="#what">מה זה off-market?</a></li>
+            <li><a href="#why">למה מוכרים off-market?</a></li>
+            <li><a href="#advantage">יתרון המחיר</a></li>
+            <li><a href="#how">איך ניגשים?</a></li>
+            <li><a href="#tlv">למה ת"א במיוחד?</a></li>
+          </ul>
+        </div>
+        <div style="background:var(--navy);padding:28px;color:var(--white);text-align:center">
+          <h3 style="font-size:17px;margin-bottom:10px">יש לך מיליון פנוי?</h3>
+          <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:20px">בוא נדבר על ההזדמנות הבאה שלך.</p>
+          <a href="/#contact" style="display:block;padding:12px;background:var(--gold);color:var(--white);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:2px">בקש ייעוץ פרטי</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
+      <p class="footer__copy">© 2026 · כל הזכויות שמורות</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
