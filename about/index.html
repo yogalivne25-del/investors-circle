@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אודות — The Investor's Circle TLV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Heebo:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:    #FFFFFF;
+      --offwhite: #F8F7F4;
+      --glass:    #EEF5FB;
+      --navy:     #0D1B2A;
+      --navy2:    #1A2E42;
+      --gold:     #B8963E;
+      --gold2:    #D4AE58;
+      --gold3:    #8A6E2A;
+      --grey:     #6B7280;
+      --grey2:    #9CA3AF;
+      --border:   rgba(184,150,62,0.15);
+      --border2:  rgba(13,27,42,0.08);
+      --shadow:   0 4px 40px rgba(13,27,42,0.08);
+      --shadow2:  0 2px 16px rgba(13,27,42,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Heebo', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--gold); color: var(--white); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--offwhite); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; line-height: 1.2; font-weight: 500; }
+    .gold { color: var(--gold); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .label {
+      display: block; font-size: 11px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block; padding: 16px 44px;
+      background: var(--navy); color: var(--white);
+      font-family: 'Heebo', sans-serif; font-size: 13px;
+      font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none;
+      cursor: pointer; border: none;
+      transition: all 0.3s ease;
+    }
+    .btn:hover { background: var(--gold); }
+    .btn--gold { background: var(--gold); }
+
+    nav {
+      position: fixed; top: 0; inset: 0 0 auto;
+      background: rgba(255,255,255,0.98);
+      padding: 20px 32px;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--gold); }
+
+    section { padding: 96px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .hero { padding-top: 180px; text-align: center; }
+    .hero h1 { font-size: 48px; margin-bottom: 20px; }
+    .hero p { font-size: 18px; color: var(--grey); max-width: 600px; margin: 0 auto 40px; }
+
+    .about-section { margin: 80px 0; }
+    .about-section h2 { font-size: 32px; margin-bottom: 40px; text-align: center; }
+
+    .founders { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin: 60px 0; }
+    .founder { text-align: center; }
+    .founder-avatar { width: 120px; height: 120px; background: linear-gradient(135deg, var(--gold), var(--gold2)); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+    .founder h3 { font-size: 18px; margin: 12px 0 4px; }
+    .founder p { color: var(--grey); font-size: 13px; }
+
+    .how-we-work { background: var(--glass); padding: 64px 32px; margin: 60px 0; border-left: 3px solid var(--gold); }
+    .how-we-work h3 { font-size: 20px; margin-bottom: 24px; }
+    .how-we-work p { margin-bottom: 16px; line-height: 2; font-size: 15px; }
+
+    .pricing { background: var(--offwhite); padding: 64px 32px; margin: 60px 0; border-radius: 8px; }
+    .pricing h3 { font-size: 20px; margin-bottom: 24px; text-align: center; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 40px; }
+    .price-card { background: var(--white); padding: 32px; border: 1px solid var(--border); border-radius: 4px; text-align: center; }
+    .price-card h4 { font-size: 14px; color: var(--grey); margin-bottom: 12px; }
+    .price-card .amount { font-size: 32px; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+    .price-card p { font-size: 13px; color: var(--grey); line-height: 1.7; }
+
+    .questionnaire { background: var(--glass); padding: 64px 32px; margin: 60px 0; border-right: 3px solid var(--gold); }
+    .questionnaire h3 { font-size: 20px; margin-bottom: 24px; }
+    .questionnaire-section { margin-bottom: 32px; }
+    .questionnaire-section h4 { font-size: 16px; margin-bottom: 12px; color: var(--navy2); }
+    .questionnaire-section ul { list-style: none; padding: 0; }
+    .questionnaire-section li { font-size: 14px; padding: 8px 0 8px 24px; position: relative; color: var(--navy); }
+    .questionnaire-section li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
+
+    .cta { text-align: center; padding: 60px 0; }
+    .cta h2 { font-size: 32px; margin-bottom: 24px; }
+    .cta p { font-size: 16px; color: var(--grey); margin-bottom: 32px; }
+
+    footer { background: var(--navy); color: var(--white); padding: 40px 0; text-align: center; font-size: 13px; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 16px; }
+      .hero h1 { font-size: 32px; }
+      .founders { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">The Investor's Circle TLV</a>
+  <a href="/" style="font-weight:normal">← חזרה לבית</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <h1>אודות The Investor's Circle</h1>
+    <p>15 שנות ניסיון בשוק הנדל"ן של תל אביב. מודל עבודה מוכח. מנטליות של שותף, לא של מתווך.</p>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<section class="about-section">
+  <div class="container">
+    <h2>הסיפור שלנו</h2>
+    <div style="max-width:700px;margin:0 auto;text-align:right;line-height:2;font-size:15px;color:var(--navy)">
+      <p style="margin-bottom:20px">
+        התחלנו לא כממתווכים, אלא כמשקיעים. עשרות עסקאות, מאות אלפי שקלים רווח, וקשרים עמוקים עם הבנק, אדריכלים, קבלנים וספקים בתל אביב.
+      </p>
+      <p style="margin-bottom:20px">
+        בשלב מסוים הבנו שיש אנשים שרוצים לעשות את מה שאנחנו עשינו — אבל בלי להיות בלבד בתהליך. כל מישהו צריך שותף שמבין את השוק, שיודע איפה יש פערים, ושיודע איך להופיע אותם בצורה נכונה.
+      </p>
+      <p>
+        ככה התחיל ה-Circle. לא כעסק — כשירות. שירות של ליווי אמיתי.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="about-section">
+  <div class="container">
+    <h2>בעלי החברה</h2>
+    <div class="founders">
+      <div class="founder">
+        <div class="founder-avatar">🏢</div>
+        <h3>דורון</h3>
+        <p>15 שנות ניסיון בתל אביב</p>
+        <p style="font-size:12px;color:var(--grey2);margin-top:12px">זיהוי עסקאות, ניתוח פוטנציאל, תכנון השבחה</p>
+      </div>
+      <div class="founder">
+        <div class="founder-avatar">📐</div>
+        <h3>מיכל</h3>
+        <p>אדריכלית ומנהלת פרויקטים</p>
+        <p style="font-size:12px;color:var(--grey2);margin-top:12px">תכנון מחדש, תיאום בנייה, בקרת איכות</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="about-section">
+  <div class="container">
+    <h2>איך אנחנו עובדים</h2>
+
+    <div class="how-we-work" style="margin-top:40px">
+      <h3>זיהוי אנומליות מחירים</h3>
+      <p>אנחנו מחפשים נכסים שבהם יש <strong>פער משמעותי בין מחיר הרכישה של היום לבין השווי שאפשר ליצור לאחר השבחה נכונה</strong>.</p>
+      <p>זה לא תמיד הדירה היפה ביותר או המשופצת ביותר. זו הדירה שבה קיים הפער הגדול ביותר בין מה שהשוק נותן לה מחיר היום לבין מה שהיא באמת שווה מחר.</p>
+    </div>
+
+    <div class="how-we-work">
+      <h3>סוגי האנומליות שאנחנו מחפשים</h3>
+      <ul style="list-style:none;padding:0">
+        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> דירות מוזנחות במיקום איכותי — מצב פיזי רע, אבל בניין ובשכונה טובים</li>
+        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> חלוקה פנימית לא יעילה — תכנון מחדש יכול לשנות דרמטית את הערך</li>
+        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מוכרים בלחץ — ירושה, גירושין, מעבר דירה מהיר</li>
+        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מטרים לא מנוצלים — מסדרונות מבוזבזים, חדרים גדולים מדי, שטחי שירות עם פוטנציאל</li>
+        <li style="padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> פערי תמחור ביחס לסביבה — דירה זולה משמעותית מנכסים דומים</li>
+      </ul>
+    </div>
+
+    <div class="how-we-work">
+      <h3>תהליך הניתוח</h3>
+      <p>לכל נכס אנחנו בוחנים:</p>
+      <ul style="list-style:none;padding:0;margin-top:12px">
+        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מחיר רכישה למ"ר ומחיר שוק הנוכחי</li>
+        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> פוטנציאל השבחה ועלויות השיפוץ</li>
+        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> השווי הצפוי לאחר השבחה ורווח בשקלים ובאחוזים</li>
+        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> רמת הסיכון והפוטנציאל העתידי של האזור</li>
+      </ul>
+      <p style="margin-top:20px;font-weight:500;color:var(--gold)">אנחנו בוחרים רק נכסים בהם יש יחס יוצא דופן בין סיכון לבין רווח פוטנציאלי.</p>
+    </div>
+
+    <div class="how-we-work">
+      <h3>ביצוע השבחה</h3>
+      <p>אנחנו לא רק מזהים את הפוטנציאל — <strong>אנחנו יודעים לממש אותו</strong>.</p>
+      <p style="margin-top:12px">אנו מנהלים את כל תהליך ההשבחה: תכנון אדריכלי, בניית תקציב, בחירת חומרים, ניהול קבלנים, פיקוח וטוב של איכות. בזכות שנות ניסיון, קשרים עם ספקים ותהליכים מסודרים — אנו יודעים לבצע בעלויות יעילות ובסטנדרט גבוה.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="about-section">
+  <div class="container">
+    <h2>התמחור שלנו</h2>
+    <p style="text-align:center;color:var(--grey);margin-bottom:40px">אנחנו מחויבים לשקיפות מלאה. הנה בדיוק איך זה עובד:</p>
+
+    <div class="pricing">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h4>STEP 1</h4>
+          <div class="amount">₪1,500</div>
+          <p><strong>פגישת אפיון פיננסי</strong></p>
+          <p style="margin-top:12px;font-size:12px">בין שעה לשעתיים של ניתוח מלא של מצבך הפיננסי, יעדיך והזדמנויות שלך</p>
+        </div>
+        <div class="price-card">
+          <h4>STEP 2</h4>
+          <div class="amount" style="font-size:24px">1.5%</div>
+          <p><strong>דמי רכישה</strong></p>
+          <p style="margin-top:12px;font-size:12px">משווי העסקה במעמד הרכישה. כולל איתור, ניתוח, משא ומתן וליווי עד הסיום</p>
+        </div>
+        <div class="price-card">
+          <h4>STEP 3</h4>
+          <div class="amount" style="font-size:24px">0.5%</div>
+          <p><strong>דמי השבחה</strong></p>
+          <p style="margin-top:12px;font-size:12px">משווי העסקה לפני תחילת ההשבחה. כולל תכנון, ניהול בנייה וליווי עד לסיום</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--glass);padding:32px;margin:40px 0;text-align:right;border-right:3px solid var(--gold)">
+      <p style="font-size:14px;color:var(--navy);line-height:2">
+        <strong>הסבר:</strong> ה-₪1,500 היא השקעה חד-פעמית בניתוח עמוק של מצבך. אם נמשיך ביחד לעסקה, זה יספר אל דמי הרכישה. אם לא נמשיך — זה שלך: שאלון אפיון, ניתוח סביבה, וכלים שתוכל להשתמש בהם עם כל יועץ בעתיד.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONNAIRE -->
+<section class="about-section">
+  <div class="container">
+    <h2>שאלון אפיון פיננסי</h2>
+    <p style="text-align:center;color:var(--grey);margin-bottom:40px">בפגישת האפיון, אנחנו עוברים שיטתית על שאלות אלו:</p>
+
+    <div class="questionnaire">
+      <div class="questionnaire-section">
+        <h4>פרטים כלליים</h4>
+        <ul>
+          <li>שם, גיל, מצב משפחתי</li>
+          <li>עיסוק וניסיון בעסקים</li>
+        </ul>
+      </div>
+
+      <div class="questionnaire-section">
+        <h4>מצב פיננסי</h4>
+        <ul>
+          <li>הכנסה חודשית נטו (אישית ומשפחתית)</li>
+          <li>הון זמין להשקעה</li>
+          <li>קרנות גמל, קופות השתלמות, השקעות קיימות</li>
+          <li>נכסי נדל"ן קיימים</li>
+          <li>מקורות הון נוספים אפשריים</li>
+        </ul>
+      </div>
+
+      <div class="questionnaire-section">
+        <h4>התחייבויות</h4>
+        <ul>
+          <li>משכנתאות קיימות</li>
+          <li>הלוואות אחרות</li>
+          <li>התחייבויות חודשיות</li>
+        </ul>
+      </div>
+
+      <div class="questionnaire-section">
+        <h4>מטרות</h4>
+        <ul>
+          <li>למה חשוב להשקיע דווקא עכשיו?</li>
+          <li>מה המטרה העיקרית מההשקעה?</li>
+          <li>איפה אתה רוצה להיות בעוד 3 ו-5 שנים?</li>
+        </ul>
+      </div>
+
+      <div class="questionnaire-section">
+        <h4>ציפיות ותשואה</h4>
+        <ul>
+          <li>אם תשקיע ₪1M היום, כמה תצפה בעוד 3 שנים?</li>
+          <li>איזו תשואה שנתית אתה רוצה?</li>
+          <li>מה ייחשב בעיניך כהצלחה?</li>
+          <li>מה יאכזב אותך בתהליך?</li>
+        </ul>
+      </div>
+
+      <div class="questionnaire-section">
+        <h4>סיכון וקבלת החלטות</h4>
+        <ul>
+          <li>איך אתה מגדיר את רמת הסיכון שלך? (נמוכה / בינונית / גבוהה)</li>
+          <li>חווית בעבר השקעה לא מוצלחת?</li>
+          <li>מה החשש הגדול ביותר שלך?</li>
+        </ul>
+      </div>
+
+      <div class="questionnaire-section">
+        <h4>לסיום</h4>
+        <ul>
+          <li>מה 3 היעדים הכלכליים החשובים ביותר שלך כיום?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background:var(--offwhite);padding:32px;margin:40px 0;text-align:center;border-radius:4px">
+      <p style="font-size:14px;color:var(--navy);line-height:1.9;margin-bottom:20px">
+        בסוף הפגישה, אתה יוצא עם <strong>שאלון אפיון שלם שהוא שלך לחיים</strong> — כלי שתוכל להשתמש בו עם כל יועץ בעתיד.
+      </p>
+      <p style="font-size:13px;color:var(--grey)">הפגישה אינה חיוב לעסקה עתידית. היא כלי כדי שתדע בדיוק איפה אתה עומד.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>מוכנים להתחיל?</h2>
+    <p>פגישת אפיון של שעה או שעתיים שתשנה את ההבנה שלך בנדל"ן.</p>
+    <a href="#contact" class="btn btn--gold">בואו נדבר ←</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p style="margin-bottom:16px">The Investor's <strong>Circle</strong> TLV</p>
+    <p>© 2026 · כל הזכויות שמורות</p>
+  </div>
+</footer>
+
+</body>
+</html>
