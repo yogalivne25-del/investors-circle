@@ -1,0 +1,42 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark blue background -->
+  <rect width="200" height="200" fill="#0D1B2A"/>
+
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#B8963E" stroke-width="3"/>
+
+  <!-- Left laurel wreath -->
+  <g transform="translate(50, 100)">
+    <ellipse cx="0" cy="-5" rx="4" ry="8" fill="#B8963E" transform="rotate(-60)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="8" fill="#B8963E" transform="rotate(-45)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="8" fill="#B8963E" transform="rotate(-30)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="8" fill="#B8963E" transform="rotate(-15)"/>
+    <ellipse cx="0" cy="-5" rx="4" ry="8" fill="#B8963E" transform="rotate(0)"/>
+  </g>
+
+  <!-- Right laurel wreath -->
+  <g transform="translate(150, 100)">
+    <ellipse cx="0" cy="-5" rx="4" ry="8" fill="#B8963E" transform="rotate(60)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="8" fill="#B8963E" transform="rotate(45)"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="8" fill="#B8963E" transform="rotate(30)"/>
+    <ellipse cx="0" cy="-7" rx="4" ry="8" fill="#B8963E" transform="rotate(15)"/>
+    <ellipse cx="0" cy="-5" rx="4" ry="8" fill="#B8963E" transform="rotate(0)"/>
+  </g>
+
+  <!-- Bottom laurel -->
+  <g transform="translate(100, 170)">
+    <ellipse cx="-12" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(-30)"/>
+    <ellipse cx="-8" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(-20)"/>
+    <ellipse cx="-4" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(-10)"/>
+    <ellipse cx="0" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(0)"/>
+    <ellipse cx="4" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(10)"/>
+    <ellipse cx="8" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(20)"/>
+    <ellipse cx="12" cy="0" rx="4" ry="8" fill="#B8963E" transform="rotate(30)"/>
+  </g>
+
+  <!-- TLV text -->
+  <text x="100" y="115" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#B8963E">TLV</text>
+
+  <!-- INVESTOR CIRCLE text -->
+  <text x="100" y="138" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#B8963E" letter-spacing="2">INVESTOR CIRCLE</text>
+</svg>
