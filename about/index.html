@@ -6,11 +6,10 @@
   <title>אודות — The Investor's Circle TLV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Heebo:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --white:    #FFFFFF;
       --offwhite: #F8F7F4;
@@ -19,351 +18,304 @@
       --navy2:    #1A2E42;
       --gold:     #B8963E;
       --gold2:    #D4AE58;
-      --gold3:    #8A6E2A;
       --grey:     #6B7280;
       --grey2:    #9CA3AF;
       --border:   rgba(184,150,62,0.15);
       --border2:  rgba(13,27,42,0.08);
       --shadow:   0 4px 40px rgba(13,27,42,0.08);
-      --shadow2:  0 2px 16px rgba(13,27,42,0.06);
     }
-
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--white);
-      color: var(--navy);
-      font-family: 'Heebo', sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
-      overflow-x: hidden;
-    }
-
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
     ::selection { background: var(--gold); color: var(--white); }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--offwhite); }
-    ::-webkit-scrollbar-thumb { background: var(--gold); }
-
-    h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; line-height: 1.2; font-weight: 500; }
+    h1, h2, h3, h4 { font-family: 'Frank Ruhl Libre', serif; line-height: 1.2; font-weight: 500; }
     .gold { color: var(--gold); }
-
     .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-    .label {
-      display: block; font-size: 11px; font-weight: 500;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-    }
-
-    .btn {
-      display: inline-block; padding: 16px 44px;
-      background: var(--navy); color: var(--white);
-      font-family: 'Heebo', sans-serif; font-size: 13px;
-      font-weight: 500; letter-spacing: 2px;
-      text-transform: uppercase; text-decoration: none;
-      cursor: pointer; border: none;
-      transition: all 0.3s ease;
-    }
+    .label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .btn { display: inline-block; padding: 16px 44px; background: var(--navy); color: var(--white); font-family: 'Heebo', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
     .btn:hover { background: var(--gold); }
     .btn--gold { background: var(--gold); }
 
     nav {
-      position: fixed; top: 0; inset: 0 0 auto;
+      position: sticky; top: 0;
       background: rgba(255,255,255,0.98);
       padding: 20px 32px;
       z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--border);
     }
     nav a { color: var(--navy); text-decoration: none; font-weight: 500; }
     nav a:hover { color: var(--gold); }
 
-    section { padding: 96px 0; }
-    section + section { border-top: 1px solid var(--border); }
+    section { padding: 88px 0; }
+    section + section { border-top: 1px solid var(--border2); }
 
-    .hero { padding-top: 180px; text-align: center; }
-    .hero h1 { font-size: 48px; margin-bottom: 20px; }
-    .hero p { font-size: 18px; color: var(--grey); max-width: 600px; margin: 0 auto 40px; }
+    /* HERO */
+    .hero { padding: 100px 0 80px; background: linear-gradient(135deg, var(--offwhite) 0%, var(--glass) 100%); text-align: center; border-bottom: 1px solid var(--border2); }
+    .hero h1 { font-size: clamp(32px, 4vw, 52px); margin-bottom: 24px; }
+    .hero p { font-size: 17px; color: var(--grey); max-width: 680px; margin: 0 auto; line-height: 1.9; }
 
-    .about-section { margin: 80px 0; }
-    .about-section h2 { font-size: 32px; margin-bottom: 40px; text-align: center; }
+    /* BLOCK */
+    .block { max-width: 760px; margin: 0 auto; }
+    .block p { font-size: 16px; line-height: 2; color: var(--navy); margin-bottom: 24px; }
+    .block p:last-child { margin-bottom: 0; }
 
-    .founders { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin: 60px 0; }
-    .founder { text-align: center; }
-    .founder-avatar { width: 120px; height: 120px; background: linear-gradient(135deg, var(--gold), var(--gold2)); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
-    .founder h3 { font-size: 18px; margin: 12px 0 4px; }
-    .founder p { color: var(--grey); font-size: 13px; }
+    /* HOW WE WORK PANEL */
+    .panel {
+      margin-top: 40px;
+      padding: 36px 40px;
+      background: var(--offwhite);
+      border-right: 3px solid var(--gold);
+    }
+    .panel--navy { background: var(--navy); }
+    .panel h3 { font-size: 20px; margin-bottom: 20px; }
+    .panel--navy h3 { color: var(--white); }
+    .panel p { font-size: 15px; line-height: 1.9; margin-bottom: 14px; }
+    .panel--navy p { color: rgba(255,255,255,0.75); }
+    .panel p:last-child { margin-bottom: 0; }
 
-    .how-we-work { background: var(--glass); padding: 64px 32px; margin: 60px 0; border-left: 3px solid var(--gold); }
-    .how-we-work h3 { font-size: 20px; margin-bottom: 24px; }
-    .how-we-work p { margin-bottom: 16px; line-height: 2; font-size: 15px; }
+    /* BULLET LIST */
+    .gold-list { list-style: none; padding: 0; margin-top: 14px; }
+    .gold-list li { position: relative; padding-right: 22px; font-size: 15px; line-height: 1.8; margin-bottom: 10px; color: var(--navy); }
+    .gold-list li::before { content: "●"; position: absolute; right: 0; color: var(--gold); font-size: 10px; top: 5px; }
+    .panel--navy .gold-list li { color: rgba(255,255,255,0.75); }
 
-    .pricing { background: var(--offwhite); padding: 64px 32px; margin: 60px 0; border-radius: 8px; }
-    .pricing h3 { font-size: 20px; margin-bottom: 24px; text-align: center; }
-    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-    .process-card { background: var(--glass); padding: 40px 32px; border-right: 3px solid var(--gold); text-align: right; }
-    .process-card h3 { font-size: 18px; margin-bottom: 16px; color: var(--navy2); }
-    .process-card p { font-size: 14px; color: var(--navy); line-height: 1.8; }
+    /* PROCESS GRID */
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border2); margin-top: 48px; }
+    .process-card { background: var(--white); padding: 36px 32px; border-right: 3px solid transparent; transition: border-color 0.3s; }
+    .process-card:hover { border-right-color: var(--gold); }
+    .process-card__num { font-family: 'Frank Ruhl Libre', serif; font-size: 36px; color: rgba(184,150,62,0.25); line-height: 1; margin-bottom: 14px; }
+    .process-card h3 { font-size: 17px; margin-bottom: 10px; }
+    .process-card p { font-size: 14px; color: var(--grey); line-height: 1.8; }
+    .process-card--wide { grid-column: 1 / 3; }
 
-    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 40px; }
-    .price-card { background: var(--white); padding: 32px; border: 1px solid var(--border); border-radius: 4px; text-align: center; }
-    .price-card h4 { font-size: 14px; color: var(--grey); margin-bottom: 12px; }
-    .price-card .amount { font-size: 32px; color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border2); margin-top: 48px; }
+    .price-card { background: var(--white); padding: 36px 28px; text-align: center; }
+    .price-card h4 { font-size: 11px; letter-spacing: 2px; color: var(--grey); margin-bottom: 16px; }
+    .price-card .amount { font-family: 'Frank Ruhl Libre', serif; font-size: 36px; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+    .price-card strong { font-size: 14px; display: block; margin-bottom: 10px; }
     .price-card p { font-size: 13px; color: var(--grey); line-height: 1.7; }
 
-    .questionnaire { background: var(--glass); padding: 64px 32px; margin: 60px 0; border-right: 3px solid var(--gold); }
-    .questionnaire h3 { font-size: 20px; margin-bottom: 24px; }
-    .questionnaire-section { margin-bottom: 32px; }
-    .questionnaire-section h4 { font-size: 16px; margin-bottom: 12px; color: var(--navy2); }
-    .questionnaire-section ul { list-style: none; padding: 0; }
-    .questionnaire-section li { font-size: 14px; padding: 8px 0 8px 24px; position: relative; color: var(--navy); }
-    .questionnaire-section li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
+    /* ACCOMP GRID */
+    .accomp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border2); margin-top: 48px; }
+    .accomp-card { background: var(--offwhite); padding: 36px 28px; }
+    .accomp-card h3 { font-size: 16px; margin-bottom: 14px; }
+    .accomp-card p { font-size: 14px; color: var(--navy); line-height: 1.85; }
 
-    .cta { text-align: center; padding: 60px 0; }
-    .cta h2 { font-size: 32px; margin-bottom: 24px; }
-    .cta p { font-size: 16px; color: var(--grey); margin-bottom: 32px; }
+    /* CTA */
+    .cta { text-align: center; }
+    .cta h2 { font-size: clamp(24px, 3vw, 38px); margin-bottom: 20px; }
+    .cta p { font-size: 16px; color: var(--grey); margin-bottom: 36px; max-width: 540px; margin-inline: auto; line-height: 1.9; }
 
     footer { background: var(--navy); color: var(--white); padding: 40px 0; text-align: center; font-size: 13px; }
-    footer a { color: var(--gold); text-decoration: none; }
 
     @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 16px; }
-      .hero h1 { font-size: 32px; }
-      .founders { grid-template-columns: 1fr; }
+      nav { flex-direction: column; gap: 12px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-card--wide { grid-column: auto; }
       .pricing-grid { grid-template-columns: 1fr; }
+      .accomp-grid { grid-template-columns: 1fr; }
       section { padding: 60px 0; }
     }
   </style>
 </head>
 <body>
 
-<nav style="display:flex;justify-content:space-between;align-items:center">
+<nav>
   <a href="/" style="display:flex;align-items:center">
     <img src="/images/logo-light.svg" alt="The Investor's Circle TLV" style="height: 36px; width: auto;">
   </a>
-  <a href="/" style="font-weight:normal">← חזרה לבית</a>
+  <a href="/" style="font-weight:normal;font-size:14px">← חזרה לבית</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="container">
-    <h1>אודות The Investor's Circle</h1>
-    <p>15 שנות ניסיון בשוק הנדל"ן של תל אביב. מודל עבודה מוכח. מנטליות של שותף, לא של מתווך.</p>
+    <span class="label">אודות</span>
+    <h1>The Investor's Circle TLV</h1>
+    <p>מעל 15 שנות ניסיון בשוק הנדל"ן התל־אביבי, עשרות עסקאות והשבחות, וגישה המבוססת על חשיבה יזמית, ניתוח כלכלי וליווי אישי לאורך זמן.<br><br>אנחנו לא רואים בעצמנו מתווכים. אנחנו רואים בעצמנו שותפים לתהליך קבלת ההחלטות של לקוחותינו.</p>
   </div>
 </div>
 
 <!-- POSITIONING -->
-<section class="about-section" style="background:var(--glass);padding:96px 0">
+<section style="background:var(--glass)">
   <div class="container">
-    <div style="max-width:800px;margin:0 auto;text-align:right">
-      <h2 style="font-size:36px;margin-bottom:40px">ייעוץ, לא תיווך.<br><span style="color:var(--gold)">שותפות, לא עסקה.</span></h2>
-      <p style="font-size:16px;line-height:2;color:var(--navy);margin-bottom:32px">
-        אנחנו עובדים עם מעט אנשים בכל פעם — בכוונה. כי ליווי אמיתי דורש זמן, תשומת לב ויחס אישי. לא לוקחים רישומים. לוקחים לקוחות. ויש הבדל גדול בין השניים.
-      </p>
-      <p style="font-size:16px;line-height:2;color:var(--navy)">
-        אנחנו לא כאן לעסקה בודדת. אנחנו כאן לבנות יחסים שמיוצרים עשרות אחוזים של רווח, מאות אלפי שקלים בכל עסקה, ותיק שגדל משנה לשנה. זה לא עסקה. זו שותפות.
-      </p>
+    <div class="block">
+      <span class="label">ייעוץ, לא תיווך</span>
+      <h2 style="font-size:clamp(26px,3vw,38px);margin-bottom:32px">ליווי אסטרטגי, לא תיווך.<br><span class="gold">מערכת יחסים ארוכת טווח, לא עסקה חד־פעמית.</span></h2>
+      <p>אנו בוחרים לעבוד עם מספר מצומצם של לקוחות בכל תקופה, כדי להקדיש לכל אחד מהם את הזמן, תשומת הלב והליווי הנדרשים לקבלת החלטות משמעותיות.</p>
+      <p>המטרה שלנו אינה עסקה אחת מוצלחת, אלא בניית מערכת יחסים ארוכת טווח המבוססת על אמון, קבלת החלטות נכונה ויצירת ערך מתמשך לאורך השנים.</p>
     </div>
   </div>
 </section>
 
 <!-- OUR STORY -->
-<section class="about-section">
+<section>
   <div class="container">
-    <h2>הסיפור שלנו</h2>
-    <div style="max-width:700px;margin:0 auto;text-align:right;line-height:2;font-size:15px;color:var(--navy)">
-      <p style="margin-bottom:20px">
-        התחלנו לא כממתווכים, אלא כמשקיעים. עשרות עסקאות, מאות אלפי שקלים רווח, וקשרים עמוקים עם הבנק, אדריכלים, קבלנים וספקים בתל אביב.
-      </p>
-      <p style="margin-bottom:20px">
-        בשלב מסוים הבנו שיש אנשים שרוצים לעשות את מה שאנחנו עשינו — אבל בלי להיות בלבד בתהליך. כל מישהו צריך שותף שמבין את השוק, שיודע איפה יש פערים, ושיודע איך לממש אותם בצורה נכונה.
-      </p>
-      <p>
-        ככה התחיל ה-Circle. לא כעסק — כשירות. שירות של ליווי אמיתי — מהשיחה הראשונה עד התשואה.
-      </p>
+    <div class="block">
+      <span class="label">הסיפור שלנו</span>
+      <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:32px">מתוך עולם ההשקעות, לא עולם התיווך.</h2>
+      <p>The Investor's Circle הוקם מתוך עולם ההשקעות, לא מתוך עולם התיווך. לאורך השנים פעלנו כמשקיעים, יזמים ומנהלי פרויקטים, וצברנו ניסיון מעשי באיתור הזדמנויות, השבחת נכסים וניהול עסקאות בשוק התל־אביבי.</p>
+      <p>מתוך הניסיון הזה נולד הרעיון להעניק לאנשים פרטיים גישה לאותה מתודולוגיית עבודה שבה אנו משתמשים בעצמנו.</p>
     </div>
   </div>
 </section>
 
+<!-- INVESTOR DEVELOPMENT -->
+<section style="background:var(--navy)">
+  <div class="container">
+    <div class="block">
+      <span class="label" style="color:rgba(184,150,62,0.8)">מה שמבדיל אותנו</span>
+      <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:32px;color:var(--white)">אנחנו לא מלווים רק עסקאות.<br><span class="gold">אנחנו מלווים משקיעים.</span></h2>
+      <p style="color:rgba(255,255,255,0.75)">מעבר למציאת נכס מתאים, אנחנו רואים חשיבות גדולה בפיתוח היכולת של לקוחותינו להבין עסקאות, לזהות פוטנציאל ולקבל החלטות השקעה מושכלות.</p>
+      <p style="color:rgba(255,255,255,0.75)">המטרה היא שבסיום התהליך לא רק תחזיק בנכס איכותי יותר — אלא גם תהפוך למשקיע מנוסה, בטוח ומדויק יותר בקבלת ההחלטות העתידיות שלו.</p>
+    </div>
+  </div>
+</section>
 
 <!-- HOW WE WORK -->
-<section class="about-section">
+<section>
   <div class="container">
-    <h2>איך אנחנו עובדים</h2>
+    <span class="label">גישת ההשקעה</span>
+    <h2 style="font-size:clamp(24px,3vw,36px);max-width:700px;margin-bottom:8px">השקעה יזמית — מעבר לרכישת נכס</h2>
 
-    <div class="how-we-work" style="margin-top:40px;background:var(--offwhite)">
-      <h3>השקעה אבל יזמית — מעבר לקופסא</h3>
-      <p>אתה כבר בנית עסק, הרווחת כסף, והוכחת את עצמך. עכשיו הכסף שלך צריך לעבוד כמו שאתה עבדת — בחכמה, במטרה, ובקשיוק.</p>
-      <p style="margin-top:12px;font-weight:500;color:var(--gold)">אנחנו לא קונים דירות. אנחנו קונים פערי תמחור.</p>
-      <p style="margin-top:12px">אנחנו מחפשים את הפערים שבהם השוק טועה, ואנחנו יודעים לזהות את הערך לפני כולם. אבל זה לא מסתיים בזיהוי — אנחנו יודעים לממש את הפוטנציאל.</p>
+    <div class="panel" style="margin-top:40px">
+      <p style="font-size:16px;font-weight:500;color:var(--gold);margin-bottom:0">אנחנו לא קונים דירות. אנחנו קונים פערי תמחור.</p>
     </div>
 
-    <div class="how-we-work" style="margin-top:40px">
-      <h3>זיהוי אנומליות מחירים</h3>
-      <p>אנחנו מחפשים נכסים שבהם יש <strong>פער משמעותי בין מחיר הרכישה של היום לבין השווי שאפשר ליצור לאחר השבחה נכונה</strong>.</p>
-      <p>זה לא תמיד הדירה היפה ביותר או המשופצת ביותר. זו הדירה שבה קיים הפער הגדול ביותר בין מה שהשוק נותן לה מחיר היום לבין מה שהיא באמת שווה מחר.</p>
+    <div class="panel" style="margin-top:24px">
+      <h3>איתור פערי תמחור והזדמנויות השבחה</h3>
+      <p>אנחנו מחפשים מצבים שבהם קיים פער בין מחיר הנכס כיום לבין הערך שניתן ליצור באמצעות חשיבה, תכנון וביצוע נכונים.</p>
+      <p>זה לא תמיד הדירה היפה ביותר. זו הדירה שבה קיים הפער הגדול ביותר בין מה שהשוק נותן לה מחיר היום לבין מה שהיא שווה לאחר השבחה נכונה.</p>
     </div>
 
-    <div class="how-we-work">
-      <h3>סוגי האנומליות שאנחנו מחפשים</h3>
-      <ul style="list-style:none;padding:0">
-        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> דירות מוזנחות במיקום איכותי — מצב פיזי רע, אבל בניין ובשכונה טובים</li>
-        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> חלוקה פנימית לא יעילה — תכנון מחדש יכול לשנות דרמטית את הערך</li>
-        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מוכרים בלחץ — ירושה, גירושין, מעבר דירה מהיר</li>
-        <li style="margin-bottom:12px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מטרים לא מנוצלים — מסדרונות מבוזבזים, חדרים גדולים מדי, שטחי שירות עם פוטנציאל</li>
-        <li style="padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> פערי תמחור ביחס לסביבה — דירה זולה משמעותית מנכסים דומים</li>
+    <div class="panel" style="margin-top:24px">
+      <h3>מצבים שאנחנו מחפשים</h3>
+      <ul class="gold-list">
+        <li>נכסים הנמכרים בנסיבות מיוחדות — ירושה, גירושין, מעבר מהיר</li>
+        <li>מצב פיזי הדורש השבחה, באזור ובניין איכותיים</li>
+        <li>חלוקה פנימית שאינה מנצלת את מלוא הפוטנציאל של הנכס</li>
+        <li>מטרים לא מנוצלים — מסדרונות, שטחי שירות עם פוטנציאל</li>
+        <li>פערי תמחור ביחס לנכסים דומים באותה סביבה</li>
       </ul>
     </div>
 
-    <div class="how-we-work">
+    <div class="panel" style="margin-top:24px">
       <h3>תהליך הניתוח</h3>
       <p>לכל נכס אנחנו בוחנים:</p>
-      <ul style="list-style:none;padding:0;margin-top:12px">
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מחיר רכישה למ"ר ומחיר שוק הנוכחי</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> פוטנציאל השבחה ועלויות השיפוץ</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> השווי הצפוי לאחר השבחה ורווח בשקלים ובאחוזים</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> רמת הסיכון והפוטנציאל העתידי של האזור</li>
+      <ul class="gold-list">
+        <li>מחיר רכישה למ"ר ביחס לשוק</li>
+        <li>פוטנציאל השבחה ועלויות הביצוע</li>
+        <li>פוטנציאל הערך והתשואה הצפויה בכל תרחיש</li>
+        <li>רמת הסיכון והפוטנציאל העתידי של האזור</li>
       </ul>
-      <p style="margin-top:20px;font-weight:500;color:var(--gold)">אנחנו בוחרים רק נכסים בהם יש יחס יוצא דופן בין סיכון לבין רווח פוטנציאלי.</p>
+      <p style="margin-top:16px;font-weight:500;color:var(--gold)">אנו מתמקדים בנכסים שבהם יחס הסיכון־סיכוי מצדיק את ההשקעה ותואם את האסטרטגיה שהוגדרה.</p>
     </div>
 
-    <div class="how-we-work">
+    <div class="panel" style="margin-top:24px">
       <h3>ביצוע השבחה</h3>
-      <p>אנחנו לא רק מזהים את הפוטנציאל — <strong>אנחנו יודעים לממש אותו</strong>.</p>
-      <p style="margin-top:12px">אנו מנהלים את כל תהליך ההשבחה: תכנון אדריכלי, בניית תקציב, בחירת חומרים, ניהול קבלנים, פיקוח וטוב של איכות. בזכות שנות ניסיון, קשרים עם ספקים ותהליכים מסודרים — אנו יודעים לבצע בעלויות יעילות ובסטנדרט גבוה.</p>
+      <p>אנחנו לא רק מזהים את הפוטנציאל — אנחנו יודעים לממש אותו. אנו מנהלים את כל תהליך ההשבחה: תכנון אדריכלי, בניית תקציב, ניהול קבלנים ופיקוח ובקרת איכות בכל שלב.</p>
+      <p>אנו יודעים לנהל תהליכי השבחה באופן יעיל, מבוקר ומדויק — בזכות ניסיון מצטבר וקשרים עם ספקים ובעלי מקצוע לאורך שנים.</p>
     </div>
 
-    <div class="how-we-work">
-      <h3>יתרון ביצועי משמעותי</h3>
-      <p>בשוק הנדל"ן של היום, לא מספיק לזהות הזדמנות. צריך לממש אותה.</p>
-      <p style="margin-top:12px">אנו מנהלים את כל תהליך ההשבחה מקצה לקצה:</p>
-      <ul style="list-style:none;padding:0;margin-top:12px">
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> ניתוח פוטנציאל הנכס — לא כל שיפוץ שווה לדירה</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> תכנון אדריכלי ופונקציונלי — לקחת דירת 2 חדרים ולהפוך אותה ל-3, ניצול חללים שלא נראו לעין</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> בניית תקציב ותוכנית עבודה מדויקת</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> בחירת חומרי גמר ועיצוב שמקסימים ערך</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> ניהול קבלנים ובעלי מקצוע</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> פיקוח ובקרת איכות בכל שלב</li>
-        <li style="padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> הכנת הנכס למכירה או להשכרה בערכו המקסימלי</li>
+    <div class="panel" style="margin-top:24px">
+      <h3>זיהוי סיכונים מראש</h3>
+      <p>לא כל בעיה בנכס נראית לעין. אנו מביאים בודקים מקצועיים:</p>
+      <ul class="gold-list">
+        <li>בחינת כלל ההיבטים המשפטיים של העסקה</li>
+        <li>ליקויים הנדסיים ותשתיתיים העלולים להשפיע על ערך הנכס בעתיד</li>
+        <li>תשתיות: חשמל, גז, ביוב, בידוד</li>
+        <li>בדיקת פוטנציאל עירוני ותוכניות עירייה לאזור</li>
       </ul>
-      <p style="margin-top:16px">בזכות ניסיון מצטבר, קשרים עם ספקים ובעלי מקצוע ותהליכים מסודרים, אנו יודעים לבצע פרויקטים בעלויות יעילות ותחרותיות יותר מהמקובל בשוק, תוך שמירה על רמת גמר גבוהה.</p>
-    </div>
-
-    <div class="how-we-work">
-      <h3>זיהוי סיכונים שלא נראים לעין</h3>
-      <p>לא כל בעיה בדירה ניראית בעיניים. אנו מביאים בודקים מקצועיים:</p>
-      <ul style="list-style:none;padding:0;margin-top:12px">
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> משפטיים — לוודא שהכל בסדר משפטי</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> הנדסיים — בעיות בתשתיות שיכולות להוות בעיה עתידית</li>
-        <li style="margin-bottom:8px;padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> מומחים בתשתיות — חשמל, גז, ביוב, בידוד</li>
-        <li style="padding-left:20px;position:relative"><strong style="color:var(--gold)">●</strong> בדיקת פוטנציאל עירוני — הבנת תוכניות עירייה לאן השכונה הולכת</li>
-      </ul>
-      <p style="margin-top:16px">כל בעיה נתפסת לפני שאתה מוציא שקל.</p>
+      <p style="margin-top:16px">המטרה היא לזהות סיכונים מבעוד מועד ולקבל החלטות על בסיס מידע מלא.</p>
     </div>
   </div>
 </section>
 
-<!-- OUR PROCESS -->
-<section class="about-section">
+<!-- PROCESS -->
+<section style="background:var(--offwhite)">
   <div class="container">
-    <h2>התהליך שלנו</h2>
+    <span class="label">תהליך העבודה</span>
+    <h2 style="font-size:clamp(24px,3vw,36px)">חמישה שלבים. תהליך אחד.</h2>
 
     <div class="process-grid">
       <div class="process-card">
-        <div style="font-size:32px;font-weight:600;color:var(--gold);margin-bottom:12px">1</div>
-        <h3>פרופיל אסטרטגי</h3>
-        <p>נמפה את ההון, הטווח והסיכון שלך ונגדיר את המסלול האופטימלי.</p>
+        <p class="process-card__num">01</p>
+        <h3>בונים יחד אסטרטגיית השקעה</h3>
+        <p>נמפה את מטרות ההשקעה, ההון העומד לרשותך, טווח הזמן ורמת הסיכון המתאימה — ונבנה מסלול פעולה ברור.</p>
       </div>
-
       <div class="process-card">
-        <div style="font-size:32px;font-weight:600;color:var(--gold);margin-bottom:12px">2</div>
-        <h3>מביאים לך עסקאות</h3>
-        <p>נאתר נכסים שמתאימים בדיוק לאסטרטגיה שבנינו. אנחנו נצא לשטח — ולכל נכס תקבל ניתוח עסקי מלא לפני שתחליט.</p>
+        <p class="process-card__num">02</p>
+        <h3>מאתרים את העסקאות המתאימות ביותר</h3>
+        <p>נאתר הזדמנויות השקעה התואמות את האסטרטגיה שנבנתה עבורך ונציג ניתוח מלא של כל עסקה לפני קבלת החלטה.</p>
       </div>
-
       <div class="process-card">
-        <div style="font-size:32px;font-weight:600;color:var(--gold);margin-bottom:12px">3</div>
-        <h3>בדיקת נאותות מלאה</h3>
-        <p>משפטי, פיננסי, הנדסי ורגולטורי — כל פרט נבדק לפני שאתה מוציא שקל.</p>
+        <p class="process-card__num">03</p>
+        <h3>מבצעים בדיקת נאותות מקיפה</h3>
+        <p>בדיקות משפטיות, תכנוניות, הנדסיות ופיננסיות — כדי לוודא שכל החלטה מתקבלת על בסיס מידע מלא.</p>
       </div>
-
       <div class="process-card">
-        <div style="font-size:32px;font-weight:600;color:var(--gold);margin-bottom:12px">4</div>
-        <h3>ייעוץ מימון, משכנתא ותכנון מיסוי</h3>
-        <p>נמקסם מינוף ונמזער עלות הון — כולל קשרים עם הגופים הפיננסיים הנכונים. חיסכון במס ברכישה ובמכירה, בניית מבני עסקה נכונים, ומקסום התשואה על ההון העצמי.</p>
+        <p class="process-card__num">04</p>
+        <h3>בונים את מבנה המימון והמיסוי</h3>
+        <p>נבחן את אפשרויות המימון, המינוף והתכנון המיסויי, במטרה לשפר את התשואה על ההון העצמי.</p>
       </div>
-
-      <div class="process-card" style="grid-column:1/3">
-        <div style="font-size:32px;font-weight:600;color:var(--gold);margin-bottom:12px">5</div>
-        <h3>סגירה ואחרי</h3>
-        <p>מחתימה לרישום — ואחר כך סקירות תיק שוטפות.</p>
+      <div class="process-card process-card--wide">
+        <p class="process-card__num">05</p>
+        <h3>רוכשים, משביחים ומממשים</h3>
+        <p>משלב המשא ומתן והרכישה, דרך תכנון וביצוע מהלכי ההשבחה ועד למכירה או החזקה ארוכת טווח — אנו מלווים את התהליך בהתאם לאסטרטגיה שנקבעה.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="about-section">
+<section>
   <div class="container">
-    <h2>התמחור שלנו</h2>
-    <p style="text-align:center;color:var(--grey);margin-bottom:40px">אנחנו מחויבים לשקיפות מלאה. הנה בדיוק איך זה עובד:</p>
+    <span class="label">תמחור שקוף</span>
+    <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:12px">אנחנו מחויבים לשקיפות מלאה.</h2>
+    <p style="color:var(--grey);max-width:560px">הנה בדיוק איך זה עובד:</p>
 
-    <div class="pricing">
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h4>STEP 1</h4>
-          <div class="amount">₪1,500</div>
-          <p><strong>פגישת אפיון פיננסי</strong></p>
-          <p style="margin-top:12px;font-size:12px">בין שעה לשעתיים של ניתוח מלא של מצבך הפיננסי, יעדיך והזדמנויות שלך</p>
-        </div>
-        <div class="price-card">
-          <h4>STEP 2</h4>
-          <div class="amount" style="font-size:24px">1.5%</div>
-          <p><strong>דמי רכישה</strong></p>
-          <p style="margin-top:12px;font-size:12px">משווי העסקה במעמד הרכישה. כולל איתור, ניתוח, משא ומתן וליווי עד הסיום</p>
-        </div>
-        <div class="price-card">
-          <h4>STEP 3</h4>
-          <div class="amount" style="font-size:24px">0.5%</div>
-          <p><strong>דמי השבחה</strong></p>
-          <p style="margin-top:12px;font-size:12px">משווי העסקה לפני תחילת ההשבחה. כולל תכנון, ניהול בנייה וליווי עד לסיום</p>
-        </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h4>שלב 1</h4>
+        <div class="amount">₪1,500</div>
+        <strong>פגישת אפיון פיננסי</strong>
+        <p>פגישת האפיון נועדה לבנות תמונה מלאה של מצבך הפיננסי, מטרותיך ואפשרויות הפעולה העומדות בפניך. במידה ונמשיך יחד לתהליך רכישה, סכום זה יקוזז מדמי הליווי.</p>
       </div>
-    </div>
-
-    <div style="background:var(--glass);padding:32px;margin:40px 0;text-align:right;border-right:3px solid var(--gold)">
-      <p style="font-size:14px;color:var(--navy);line-height:2">
-        <strong>הסבר:</strong> ה-₪1,500 היא השקעה חד-פעמית בניתוח עמוק של מצבך. אם נמשיך ביחד לעסקה, זה יספר אל דמי הרכישה. אם לא נמשיך — זה שלך: שאלון אפיון, ניתוח סביבה, וכלים שתוכל להשתמש בהם עם כל יועץ בעתיד.
-      </p>
+      <div class="price-card">
+        <h4>שלב 2</h4>
+        <div class="amount" style="font-size:28px">1.5%</div>
+        <strong>דמי ליווי רכישה</strong>
+        <p>משווי העסקה במעמד הרכישה. כולל איתור, ניתוח, משא ומתן וליווי מלא עד לסיום.</p>
+      </div>
+      <div class="price-card">
+        <h4>שלב 3</h4>
+        <div class="amount" style="font-size:28px">0.5%</div>
+        <strong>דמי ליווי השבחה</strong>
+        <p>משווי העסקה לפני תחילת ההשבחה. כולל תכנון, ניהול ביצוע וליווי עד לסיום.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FULL ACCOMPANIMENT -->
-<section class="about-section" style="background:var(--offwhite)">
+<!-- FULL ACCOMP -->
+<section style="background:var(--offwhite)">
   <div class="container">
-    <h2>ליווי מלא — מהשיחה הראשונה עד התשואה</h2>
+    <span class="label">ליווי מלא</span>
+    <h2 style="font-size:clamp(24px,3vw,36px)">מהשיחה הראשונה עד המימוש.</h2>
 
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:40px">
-      <div style="text-align:right">
-        <h3 style="font-size:18px;margin-bottom:16px;color:var(--navy2)">מהשיחה הראשונה</h3>
-        <p style="font-size:14px;color:var(--navy);line-height:1.8">
-          אנחנו מבינים את המטרות שלך, את הסיכונים שלך, את מגבלות ההון שלך. זה לא שיחה טכנית — זה שיחת אסטרטגיה.
-        </p>
+    <div class="accomp-grid" style="margin-top:48px">
+      <div class="accomp-card">
+        <h3>בהגדרת האסטרטגיה</h3>
+        <p>אנחנו מבינים את המטרות שלך, את הסיכונים שלך ואת מגבלות ההון שלך. זה לא שיחה טכנית — זו שיחת אסטרטגיה.</p>
       </div>
-
-      <div style="text-align:right">
-        <h3 style="font-size:18px;margin-bottom:16px;color:var(--navy2)">דרך התהליך</h3>
-        <p style="font-size:14px;color:var(--navy);line-height:1.8">
-          כל סיכון נכנס בחישוב, כל החלטה מתקבלת ביחד — כשותפים, לא כלקוח וספק.
-        </p>
+      <div class="accomp-card">
+        <h3>לאורך תהליך הרכישה</h3>
+        <p>כל סיכון נכנס בחישוב, כל החלטה מתקבלת ביחד — כשותפים, לא כלקוח וספק.</p>
       </div>
-
-      <div style="text-align:right">
-        <h3 style="font-size:18px;margin-bottom:16px;color:var(--navy2)">לאחר הרכישה</h3>
-        <p style="font-size:14px;color:var(--navy);line-height:1.8">
-          לאחר חתימה אין תשואה, ולכן אנחנו איתך בהתאמת האסטרטגיה והטקטיקות בכל שלב, עד לסיום ההשבחה וההכנה למכירה/השכרה או כל מטרה שתציב. לנכס הראשון וזה שבא אחריו בהמשך.
-        </p>
+      <div class="accomp-card">
+        <h3>גם לאחר הרכישה</h3>
+        <p>מבחינתנו, הרכישה היא תחילתו של התהליך — לא סופו. אנו ממשיכים ללוות את הלקוח גם בשלבי ההשבחה, קבלת ההחלטות והיערכות למימוש, בהתאם לאסטרטגיה שנקבעה.</p>
       </div>
     </div>
   </div>
@@ -372,9 +324,10 @@
 <!-- CTA -->
 <section class="cta">
   <div class="container">
-    <h2>מוכנים להתחיל?</h2>
-    <p>פגישת אפיון של שעה או שעתיים שתשנה את ההבנה שלך בנדל"ן.</p>
-    <a href="#contact" class="btn btn--gold">בואו נדבר ←</a>
+    <span class="label">נתחיל?</span>
+    <h2>פגישת אפיון אישית שבה נבחן את מטרות ההשקעה שלך, נזהה הזדמנויות רלוונטיות ונבנה יחד כיוון פעולה ברור.</h2>
+    <p>עד 8 לקוחות ברבעון. הפגישה בתל אביב.</p>
+    <a href="/#contact" class="btn btn--gold">בואו נדבר ←</a>
   </div>
 </section>
 
