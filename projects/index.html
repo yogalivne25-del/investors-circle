@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>פרויקטים — The Investor's Circle TLV</title>
-  <meta name="description" content="פרויקטי נדל&quot;ן שליווינו בתל אביב — תוצאות אמיתיות, סרטונים, ואפשרות לסיור בנכסים." />
+  <title>עסקאות ומקרי בוחן — The Investor's Circle TLV</title>
+  <meta name="description" content="עסקאות נדל&quot;ן שליווינו בתל אביב — ניתוח תהליך, תוצאות אמיתיות ומתודולוגיית ההשקעה שלנו." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -45,27 +45,12 @@
       background: linear-gradient(135deg, var(--offwhite) 0%, var(--glass) 100%);
       border-bottom: 1px solid var(--border2);
     }
-    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
     .hero h1 { font-size: clamp(32px,4vw,56px); margin-bottom: 20px; line-height: 1.15; }
-    .hero p { font-size: 16px; color: var(--grey); line-height: 1.9; margin-bottom: 36px; }
-    .hero__stats { display: flex; gap: 40px; }
+    .hero p { font-size: 16px; color: var(--grey); line-height: 1.9; margin-bottom: 36px; max-width: 680px; }
+    .hero__stats { display: flex; gap: 48px; flex-wrap: wrap; }
     .hero__stat-num { font-family: 'Frank Ruhl Libre', serif; font-size: 36px; color: var(--gold); line-height: 1; }
-    .hero__stat-label { font-size: 12px; color: var(--grey); letter-spacing: 1px; }
-    .hero__visual {
-      background: var(--navy); padding: 48px;
-      display: flex; flex-direction: column; gap: 20px;
-    }
-    .hero__tour-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--gold); color: var(--white);
-      padding: 10px 20px; font-size: 13px; font-weight: 500;
-      cursor: pointer; transition: background 0.3s; border: none;
-      font-family: 'Heebo', sans-serif; letter-spacing: 1px;
-    }
-    .hero__tour-badge:hover { background: var(--gold2); }
-    .hero__tour-note { font-size: 12px; color: rgba(255,255,255,0.5); }
-    .hero__visual h3 { font-size: 20px; color: var(--white); margin-bottom: 8px; }
-    .hero__visual p { font-size: 14px; color: rgba(255,255,255,0.6); }
+    .hero__stat-label { font-size: 12px; color: var(--grey); letter-spacing: 1px; margin-top: 4px; }
+    .hero__footnote { font-size: 11px; color: var(--grey2); margin-top: 24px; }
 
     /* ── FILTER BAR ── */
     .filter-bar {
@@ -112,7 +97,6 @@
       position: relative; aspect-ratio: 16/9;
       background: var(--navy); overflow: hidden;
     }
-    /* Vertical / Reels videos */
     .project-card__video.reel {
       aspect-ratio: 9/16;
       max-height: 480px;
@@ -150,11 +134,6 @@
       font-size: 10px; font-weight: 600; letter-spacing: 2px;
       padding: 4px 12px; text-transform: uppercase;
     }
-    .project-card__duration {
-      position: absolute; bottom: 16px; left: 16px;
-      background: rgba(13,27,42,0.8); color: var(--white);
-      font-size: 11px; padding: 3px 10px; border-radius: 2px;
-    }
 
     .project-card__body { padding: 28px; }
     .project-card__location {
@@ -180,153 +159,62 @@
       margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border2);
     }
     .project-card__type { font-size: 12px; color: var(--grey); }
-    .project-card__tour-btn {
+    .project-card__cta-btn {
       font-size: 11px; letter-spacing: 1px; font-weight: 500;
       color: var(--gold); background: none; border: 1px solid var(--border);
       padding: 6px 14px; cursor: pointer; font-family: 'Heebo', sans-serif;
-      transition: all 0.25s;
+      transition: all 0.25s; text-decoration: none;
     }
-    .project-card__tour-btn:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .project-card__cta-btn:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
 
-    /* ── TOUR CTA SECTION ── */
-    .tour-cta {
-      padding: 100px 0;
+    /* ── METHODOLOGY ── */
+    .methodology {
+      padding: 80px 0;
       background: var(--navy);
-      text-align: center;
-      position: relative; overflow: hidden;
+      border-top: 3px solid var(--gold);
     }
-    .tour-cta::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,150,62,0.08), transparent);
-    }
-    .tour-cta__inner { position: relative; z-index: 1; }
-    .tour-cta .label { color: rgba(184,150,62,0.8); }
-    .tour-cta h2 { font-size: clamp(28px,4vw,52px); color: var(--white); margin-bottom: 20px; }
-    .tour-cta h2 em { font-style: italic; color: var(--gold); }
-    .tour-cta__sub { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto 56px; }
-    .tour-cta__cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 900px; margin: 0 auto 56px; text-align: right; }
-    .tour-cta__card {
+    .methodology__inner { max-width: 800px; margin: 0 auto; }
+    .methodology h2 { font-size: clamp(24px,3vw,36px); color: var(--white); margin-bottom: 12px; }
+    .methodology__sub { font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 40px; }
+    .methodology__checks { display: flex; flex-direction: column; gap: 20px; }
+    .methodology__check {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 24px;
       border: 1px solid rgba(184,150,62,0.2);
-      padding: 32px 28px;
       background: rgba(255,255,255,0.03);
       transition: border-color 0.3s, background 0.3s;
     }
-    .tour-cta__card:hover { border-color: rgba(184,150,62,0.5); background: rgba(255,255,255,0.06); }
-    .tour-cta__card-icon { font-size: 28px; margin-bottom: 16px; display: block; }
-    .tour-cta__card h4 { font-size: 16px; color: var(--white); margin-bottom: 8px; }
-    .tour-cta__card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+    .methodology__check:hover { border-color: rgba(184,150,62,0.5); background: rgba(255,255,255,0.06); }
+    .methodology__check-mark { color: var(--gold); font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .methodology__check p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    .methodology__note { margin-top: 32px; font-size: 13px; color: rgba(255,255,255,0.4); font-style: italic; }
 
-    /* ── TOUR MODAL ── */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 1000;
-      background: rgba(13,27,42,0.85); backdrop-filter: blur(8px);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none; transition: opacity 0.3s;
-      padding: 20px;
+    /* ── CTA SECTION ── */
+    .deal-cta {
+      padding: 100px 0;
+      background: var(--offwhite);
+      text-align: center;
     }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal {
-      background: var(--white); max-width: 600px; width: 100%;
-      max-height: 90vh; overflow-y: auto;
-      position: relative;
-      transform: translateY(20px); transition: transform 0.3s;
-    }
-    .modal-overlay.open .modal { transform: translateY(0); }
-    .modal__close {
-      position: absolute; top: 20px; left: 20px;
-      width: 36px; height: 36px; border: 1px solid var(--border2);
-      background: none; cursor: pointer; font-size: 18px;
-      color: var(--grey); transition: all 0.2s;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .modal__close:hover { background: var(--navy); color: var(--white); }
-    .modal__header {
-      background: var(--navy); padding: 40px 40px 32px;
-      position: relative;
-    }
-    .modal__header::after {
-      content: ''; position: absolute; bottom: 0; right: 40px;
-      width: 60px; height: 2px; background: var(--gold);
-    }
-    .modal__header h2 { font-size: 26px; color: var(--white); margin-bottom: 8px; }
-    .modal__header p { font-size: 14px; color: rgba(255,255,255,0.55); }
-    .modal__body { padding: 40px; }
-    .modal__steps { display: flex; gap: 0; margin-bottom: 32px; }
-    .modal__step {
-      flex: 1; text-align: center; padding: 12px;
-      border-bottom: 2px solid var(--border2);
-      font-size: 12px; color: var(--grey2); letter-spacing: 1px;
-      position: relative;
-    }
-    .modal__step.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 500; }
-    .form__group { margin-bottom: 18px; }
-    .form__label { display: block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
-    .form__input {
-      width: 100%; background: var(--offwhite);
-      border: 1px solid var(--border2); color: var(--navy);
-      padding: 13px 16px; font-size: 14px; font-family: 'Heebo', sans-serif;
-      outline: none; transition: border-color 0.3s; direction: rtl;
-    }
-    .form__input:focus { border-color: var(--gold); background: var(--white); }
-    .form__input::placeholder { color: var(--grey2); }
-    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form__select {
-      width: 100%; background: var(--offwhite);
-      border: 1px solid var(--border2); color: var(--navy);
-      padding: 13px 16px; font-size: 14px; font-family: 'Heebo', sans-serif;
-      cursor: pointer; outline: none; appearance: none; direction: rtl;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8963E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: left 14px center;
-      transition: border-color 0.3s;
-    }
-    .form__select:focus { border-color: var(--gold); }
-    .form__dates {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 24px;
-    }
-    .date-btn {
-      padding: 14px 8px; border: 1px solid var(--border2);
-      background: var(--offwhite); cursor: pointer;
-      font-family: 'Heebo', sans-serif; text-align: center;
-      transition: all 0.2s;
-    }
-    .date-btn:hover, .date-btn.selected { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .date-btn__day { font-size: 11px; color: var(--grey); margin-bottom: 4px; }
-    .date-btn.selected .date-btn__day { color: rgba(255,255,255,0.6); }
-    .date-btn__date { font-family: 'Frank Ruhl Libre', serif; font-size: 20px; }
-    .time-slots { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 24px; }
-    .time-slot {
-      padding: 10px; border: 1px solid var(--border2);
-      background: var(--offwhite); cursor: pointer;
-      font-size: 13px; font-family: 'Heebo', sans-serif;
-      text-align: center; transition: all 0.2s; color: var(--navy);
-    }
-    .time-slot:hover, .time-slot.selected { background: var(--gold); color: var(--white); border-color: var(--gold); }
-    .time-slot.disabled { opacity: 0.35; cursor: not-allowed; }
-    .modal__submit {
-      width: 100%; padding: 16px; background: var(--navy); color: var(--white);
-      border: none; cursor: pointer; font-family: 'Heebo', sans-serif;
-      font-size: 13px; font-weight: 500; letter-spacing: 2px;
+    .deal-cta h2 { font-size: clamp(28px,3.5vw,44px); margin-bottom: 24px; }
+    .deal-cta h2 em { font-style: italic; color: var(--gold); }
+    .deal-cta__sub { font-size: 16px; color: var(--grey); max-width: 600px; margin: 0 auto 56px; line-height: 1.9; }
+    .deal-cta__cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border2); max-width: 960px; margin: 0 auto 56px; }
+    .deal-cta__card {
+      background: var(--white); padding: 32px 24px; text-align: center;
       transition: background 0.3s;
     }
-    .modal__submit:hover { background: var(--gold); }
-    .modal__note { font-size: 12px; color: var(--grey2); text-align: center; margin-top: 14px; }
-    .modal__success { display: none; text-align: center; padding: 40px 20px; }
-    .modal__success-icon { font-size: 48px; margin-bottom: 16px; }
-    .modal__success h3 { font-size: 22px; margin-bottom: 12px; }
-    .modal__success p { font-size: 14px; color: var(--grey); line-height: 1.8; }
-
-    /* ── PROCESS STRIP ── */
-    .process-strip { padding: 72px 0; background: var(--offwhite); border-top: 1px solid var(--border2); }
-    .process-strip h2 { font-size: 32px; text-align: center; margin-bottom: 48px; }
-    .process-strip__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border2); }
-    .process-strip__step { background: var(--offwhite); padding: 36px 28px; text-align: center; }
-    .process-strip__num {
-      font-family: 'Frank Ruhl Libre', serif; font-size: 40px;
-      color: rgba(184,150,62,0.2); line-height: 1; margin-bottom: 16px;
+    .deal-cta__card:hover { background: var(--glass); }
+    .deal-cta__card-icon { font-size: 28px; display: block; margin-bottom: 16px; }
+    .deal-cta__card h4 { font-size: 15px; margin-bottom: 8px; line-height: 1.4; }
+    .deal-cta__card p { font-size: 13px; color: var(--grey); line-height: 1.8; }
+    .btn--gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--white);
+      padding: 16px 40px; font-size: 14px; font-weight: 500;
+      font-family: 'Heebo', sans-serif; letter-spacing: 1px;
+      text-decoration: none; transition: background 0.3s;
     }
-    .process-strip__step h4 { font-size: 16px; margin-bottom: 8px; }
-    .process-strip__step p { font-size: 13px; color: var(--grey); }
+    .btn--gold:hover { background: var(--navy); }
 
     /* ── FOOTER ── */
     footer { padding: 40px 0; background: var(--navy); border-top: 3px solid var(--gold); }
@@ -344,17 +232,15 @@
 
     /* ── MOBILE ── */
     @media (max-width: 960px) {
-      .hero__inner { grid-template-columns: 1fr; }
       .projects__grid { grid-template-columns: repeat(2,1fr); }
-      .tour-cta__cards { grid-template-columns: 1fr; max-width: 400px; }
-      .process-strip__grid { grid-template-columns: repeat(2,1fr); }
-      .form__row { grid-template-columns: 1fr; }
-      .time-slots { grid-template-columns: repeat(3,1fr); }
+      .deal-cta__cards { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 640px) {
       .projects__grid { grid-template-columns: 1fr; }
+      .deal-cta__cards { grid-template-columns: 1fr; }
       .container { padding: 0 20px; }
       .nav__links { display: none; }
+      .hero__stats { gap: 28px; }
     }
   </style>
 </head>
@@ -364,12 +250,14 @@
 <nav>
   <div class="container">
     <div class="nav__inner">
-      <a href="/" class="nav__logo">The Investor's <span>Circle</span> TLV</a>
+      <a href="/" class="nav__logo">
+        <img src="/images/logo-light.svg" alt="The Investor's Circle TLV" style="height: 32px; width: auto; margin-inline-end: 10px;">
+      </a>
       <ul class="nav__links">
         <li><a href="/">ראשי</a></li>
-        <li><a href="/#tlv">למה ת"א</a></li>
-        <li><a href="/projects/" class="active">פרויקטים</a></li>
-        <li><a href="/blog/">בלוג</a></li>
+        <li><a href="/about/">אודות</a></li>
+        <li><a href="/profiling/">אפיון פיננסי</a></li>
+        <li><a href="/projects/" class="active">עסקאות</a></li>
         <li><a href="/#faq">שאלות</a></li>
       </ul>
       <a href="/#contact" class="nav__cta">בקשת ייעוץ פרטי</a>
@@ -380,35 +268,24 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero__inner">
+    <span class="label">עסקאות ומקרי בוחן</span>
+    <h1>עסקאות אמיתיות.<br><em class="gold">תוצאות שנבנו בתהליך.</em></h1>
+    <p>כל עסקה המוצגת כאן משקפת תהליך מלא של איתור הזדמנות, ניתוח פוטנציאל, קבלת החלטות, ביצוע והשבחה. אלו אינן הדמיות או הבטחות — אלא עסקאות שבוצעו בפועל.</p>
+    <div class="hero__stats">
       <div>
-        <span class="label">עבודה שמדברת בעד עצמה</span>
-        <h1>הפרויקטים<br>שלנו — <em class="gold">בפועל.</em></h1>
-        <p>כל פרויקט שמוצג כאן עבר ליווי מלא שלנו — מבדיקת נאותות ועד מכירה או השכרה. המספרים אמיתיים. הסרטונים מהשטח.</p>
-        <div class="hero__stats">
-          <div>
-            <p class="hero__stat-num">47</p>
-            <p class="hero__stat-label">פרויקטים הושלמו</p>
-          </div>
-          <div>
-            <p class="hero__stat-num">₪320M</p>
-            <p class="hero__stat-label">היקף מצטבר</p>
-          </div>
-          <div>
-            <p class="hero__stat-num">22%</p>
-            <p class="hero__stat-label">תשואה ממוצעת</p>
-          </div>
-        </div>
+        <p class="hero__stat-num">47</p>
+        <p class="hero__stat-label">עסקאות ופרויקטים הושלמו</p>
       </div>
-      <div class="hero__visual">
-        <h3>סיור בנכסים שלנו</h3>
-        <p>לקוחות שמתקדמים איתנו מקבלים גישה לסיורים פרטיים בנכסים שעברו שיפוץ — לראות מה אפשרי.</p>
-        <button class="hero__tour-badge" onclick="openTourModal()">
-          📍 קבע סיור פרטי ←
-        </button>
-        <p class="hero__tour-note">* לקוחות פעילים ולידים מתקדמים בלבד</p>
+      <div>
+        <p class="hero__stat-num">₪320M</p>
+        <p class="hero__stat-label">היקף עסקאות מצטבר</p>
+      </div>
+      <div>
+        <p class="hero__stat-num">22%</p>
+        <p class="hero__stat-label">תשואה ממוצעת בפרויקטי השבחה*</p>
       </div>
     </div>
+    <p class="hero__footnote">*הנתון מבוסס על פרויקטים שהושלמו ואינו מהווה התחייבות לתשואה עתידית.</p>
   </div>
 </section>
 
@@ -418,9 +295,9 @@
     <div class="filter-bar__inner">
       <div class="filter-bar__tabs">
         <button class="filter-tab active" data-filter="all">הכל</button>
-        <button class="filter-tab" data-filter="sold">נמכר</button>
-        <button class="filter-tab" data-filter="rented">מושכר</button>
-        <button class="filter-tab" data-filter="renovation">שיפוץ</button>
+        <button class="filter-tab" data-filter="sold">מומש (אקזיט)</button>
+        <button class="filter-tab" data-filter="rented">להכנסה שוטפת</button>
+        <button class="filter-tab" data-filter="renovation">השבחה</button>
         <button class="filter-tab" data-filter="commercial">מסחרי</button>
       </div>
       <div class="filter-bar__sort">
@@ -440,44 +317,44 @@
   <div class="container">
     <div class="projects__grid">
 
-      <!-- PROJECT 1 -->
+      <!-- DEAL 1 -->
       <div class="project-card fade-up" data-category="sold">
         <div class="project-card__video reel">
           <div class="project-card__thumb" style="background-image:url('https://img.youtube.com/vi/s1MloBGUSC4/hqdefault.jpg')">
             <div class="project-card__thumb-overlay"></div>
           </div>
-          <span class="project-card__tag">נמכר</span>
+          <span class="project-card__tag">מומש</span>
           <button class="project-card__play" onclick="playVideo(this,'s1MloBGUSC4','shorts')">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           </button>
           <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
         </div>
         <div class="project-card__body">
-          <p class="project-card__location">צפון הישן · תל אביב</p>
-          <h3>דירת גן 4 חדרים — שיפוץ מלא ואקזיט</h3>
-          <p>דירת גן בלב הצפון הישן. רכשנו, שיפצנו לחלוטין ומכרנו תוך 14 חודשים בתשואה יוצאת דופן.</p>
+          <p class="project-card__location">יהושע בן נון · תל אביב</p>
+          <h3>השבחת דירת שני חדרים ומימוש ערך</h3>
+          <p>נכס שנרכש מתוך זיהוי פוטנציאל תכנוני והשבחתי. לאחר תכנון וביצוע מהלך השבחה מלא, נמכר במחיר המשקף את הערך שנוצר לאורך התהליך.</p>
           <div class="project-card__metrics">
             <div class="project-card__metric">
               <p class="project-card__metric-val">₪3.2M</p>
-              <p class="project-card__metric-label">רכישה</p>
+              <p class="project-card__metric-label">מחיר רכישה</p>
             </div>
             <div class="project-card__metric">
               <p class="project-card__metric-val">₪4.4M</p>
-              <p class="project-card__metric-label">מכירה</p>
+              <p class="project-card__metric-label">מחיר מכירה</p>
             </div>
             <div class="project-card__metric">
               <p class="project-card__metric-val gold">+37%</p>
-              <p class="project-card__metric-label">תשואה</p>
+              <p class="project-card__metric-label">עליית ערך</p>
             </div>
           </div>
           <div class="project-card__footer">
-            <span class="project-card__type">אקזיט · 14 חודשים</span>
-            <button class="project-card__tour-btn" onclick="openTourModal('צפון הישן')">בוא נדבר ←</button>
+            <span class="project-card__type">תקופת החזקה · 14 חודשים</span>
+            <a href="/#contact" class="project-card__cta-btn">בוא נדבר ←</a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 2 -->
+      <!-- DEAL 2 -->
       <div class="project-card fade-up" data-category="rented">
         <div class="project-card__video reel">
           <div class="project-card__thumb" style="background-image:url('https://img.youtube.com/vi/hEUWST7WUAs/hqdefault.jpg')">
@@ -490,13 +367,13 @@
           <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
         </div>
         <div class="project-card__body">
-          <p class="project-card__location">פלורנטין · תל אביב</p>
-          <h3>דופלקס מעוצב — תשואת שכירות 5.4%</h3>
-          <p>דופלקס שהפך לנכס להכנסה פסיבית. שוכר יציב, חוזה ל-3 שנים, ניהול נכס בידינו.</p>
+          <p class="project-card__location">רחוב הקליר · תל אביב</p>
+          <h3>השבחת נכס להשכרה ארוכת טווח</h3>
+          <p>נכס שנרכש מתוך ראייה ארוכת טווח של יצירת הכנסה שוטפת לצד פוטנציאל השבחה עתידי. לאחר התאמת הנכס והעמדתו להשכרה, הושגה תפוסה מלאה ושכירות יציבה.</p>
           <div class="project-card__metrics">
             <div class="project-card__metric">
               <p class="project-card__metric-val">₪1.65M</p>
-              <p class="project-card__metric-label">רכישה</p>
+              <p class="project-card__metric-label">מחיר רכישה</p>
             </div>
             <div class="project-card__metric">
               <p class="project-card__metric-val">₪8,200</p>
@@ -504,17 +381,17 @@
             </div>
             <div class="project-card__metric">
               <p class="project-card__metric-val gold">5.4%</p>
-              <p class="project-card__metric-label">תשואה</p>
+              <p class="project-card__metric-label">תשואה שוטפת</p>
             </div>
           </div>
           <div class="project-card__footer">
-            <span class="project-card__type">שכירות ארוכת טווח</span>
-            <button class="project-card__tour-btn" onclick="openTourModal('פלורנטין')">בוא נדבר ←</button>
+            <span class="project-card__type">השכרה ארוכת טווח</span>
+            <a href="/#contact" class="project-card__cta-btn">בוא נדבר ←</a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 3 -->
+      <!-- DEAL 3 -->
       <div class="project-card fade-up" data-category="renovation">
         <div class="project-card__video reel">
           <div class="project-card__thumb" style="background-image:url('https://img.youtube.com/vi/yd1AQqbZn74/hqdefault.jpg')">
@@ -527,17 +404,17 @@
           <iframe class="project-card__iframe" allowfullscreen allow="autoplay"></iframe>
         </div>
         <div class="project-card__body">
-          <p class="project-card__location">נווה צדק · תל אביב</p>
-          <h3>שיפוץ מיוחד — דירה היסטורית לפנטהאוז</h3>
-          <p>פרויקט שיפוץ מקיף של דירה בת 100 שנה. הסרטון מתעד את כל שלבי הטרנספורמציה.</p>
+          <p class="project-card__location">שמעון התרסי · תל אביב</p>
+          <h3>מהלך השבחה במסגרת התחדשות עירונית</h3>
+          <p>עסקה המבוססת על שילוב בין פוטנציאל השבחה בטווח הקצר לבין אפשרויות התחדשות עירונית בטווח הבינוני והארוך.</p>
           <div class="project-card__metrics">
             <div class="project-card__metric">
               <p class="project-card__metric-val">₪2.8M</p>
-              <p class="project-card__metric-label">רכישה</p>
+              <p class="project-card__metric-label">מחיר רכישה</p>
             </div>
             <div class="project-card__metric">
               <p class="project-card__metric-val">₪320K</p>
-              <p class="project-card__metric-label">שיפוץ</p>
+              <p class="project-card__metric-label">עלות השבחה</p>
             </div>
             <div class="project-card__metric">
               <p class="project-card__metric-val gold">₪4.2M</p>
@@ -545,13 +422,13 @@
             </div>
           </div>
           <div class="project-card__footer">
-            <span class="project-card__type">שיפוץ · בתהליך</span>
-            <button class="project-card__tour-btn" onclick="openTourModal('נווה צדק')">בוא נדבר ←</button>
+            <span class="project-card__type">השבחה · בתהליך</span>
+            <a href="/#contact" class="project-card__cta-btn">בוא נדבר ←</a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 4 -->
+      <!-- DEAL 4 -->
       <div class="project-card fade-up" data-category="rented">
         <div class="project-card__video" style="background:#f0ece4;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
           <span class="project-card__tag" style="background:var(--navy);position:relative;top:auto;right:auto">מושכר</span>
@@ -559,15 +436,15 @@
         <div class="project-card__body">
           <p class="project-card__location">תל אביב</p>
           <h3>פרטים בקרוב</h3>
-          <p style="color:var(--grey2);font-style:italic">הפרויקט הסתיים בהצלחה. פרטים יתווספו בקרוב.</p>
+          <p style="color:var(--grey2);font-style:italic">העסקה הושלמה בהצלחה. פרטים יתווספו בקרוב.</p>
           <div class="project-card__footer">
-            <span class="project-card__type">מושכר</span>
-            <button class="project-card__tour-btn" onclick="openTourModal()">בוא נדבר ←</button>
+            <span class="project-card__type">להכנסה שוטפת</span>
+            <a href="/#contact" class="project-card__cta-btn">בוא נדבר ←</a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 5 -->
+      <!-- DEAL 5 -->
       <div class="project-card fade-up" data-category="rented">
         <div class="project-card__video" style="background:#f0ece4;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
           <span class="project-card__tag" style="background:var(--navy);position:relative;top:auto;right:auto">מושכר</span>
@@ -575,15 +452,15 @@
         <div class="project-card__body">
           <p class="project-card__location">תל אביב</p>
           <h3>פרטים בקרוב</h3>
-          <p style="color:var(--grey2);font-style:italic">הפרויקט הסתיים בהצלחה. פרטים יתווספו בקרוב.</p>
+          <p style="color:var(--grey2);font-style:italic">העסקה הושלמה בהצלחה. פרטים יתווספו בקרוב.</p>
           <div class="project-card__footer">
-            <span class="project-card__type">מושכר</span>
-            <button class="project-card__tour-btn" onclick="openTourModal()">בוא נדבר ←</button>
+            <span class="project-card__type">להכנסה שוטפת</span>
+            <a href="/#contact" class="project-card__cta-btn">בוא נדבר ←</a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 6 -->
+      <!-- DEAL 6 -->
       <div class="project-card fade-up" data-category="rented">
         <div class="project-card__video" style="background:#f0ece4;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
           <span class="project-card__tag" style="background:var(--navy);position:relative;top:auto;right:auto">מושכר</span>
@@ -591,10 +468,10 @@
         <div class="project-card__body">
           <p class="project-card__location">תל אביב</p>
           <h3>פרטים בקרוב</h3>
-          <p style="color:var(--grey2);font-style:italic">הפרויקט הסתיים בהצלחה. פרטים יתווספו בקרוב.</p>
+          <p style="color:var(--grey2);font-style:italic">העסקה הושלמה בהצלחה. פרטים יתווספו בקרוב.</p>
           <div class="project-card__footer">
-            <span class="project-card__type">מושכר</span>
-            <button class="project-card__tour-btn" onclick="openTourModal()">בוא נדבר ←</button>
+            <span class="project-card__type">להכנסה שוטפת</span>
+            <a href="/#contact" class="project-card__cta-btn">בוא נדבר ←</a>
           </div>
         </div>
       </div>
@@ -603,174 +480,70 @@
   </div>
 </section>
 
-<!-- TOUR CTA -->
-<section class="tour-cta">
+<!-- METHODOLOGY -->
+<section class="methodology">
   <div class="container">
-    <div class="tour-cta__inner">
-      <span class="label">רוצה לדעת יותר?</span>
-      <h2>מתחילים בשיחה.<br><em>לא בהבטחות.</em></h2>
-      <p class="tour-cta__sub">בוא נכיר, נבין מה אתה מחפש — ואם יש התאמה, נפתח לך גישה לנכסים ולסיורים. בלי לחץ, בלי מחויבות.</p>
-      <div class="tour-cta__cards">
-        <div class="tour-cta__card">
-          <span class="tour-cta__card-icon">🏠</span>
-          <h4>סיור בנכסים מושלמים</h4>
-          <p>ביקור בנכסים שעברו שיפוץ מלא — לראות את הסטנדרט שאנחנו מספקים.</p>
+    <div class="methodology__inner">
+      <span class="label" style="color:rgba(184,150,62,0.8)">המתודולוגיה שלנו</span>
+      <h2>איך אנחנו בוחנים עסקה</h2>
+      <p class="methodology__sub">לפני כל השקעה אנחנו בוחנים ארבע שאלות מרכזיות:</p>
+      <div class="methodology__checks">
+        <div class="methodology__check fade-up">
+          <span class="methodology__check-mark">✓</span>
+          <p>האם קיים פער בין מחיר הנכס לערכו הפוטנציאלי?</p>
         </div>
-        <div class="tour-cta__card">
-          <span class="tour-cta__card-icon">📊</span>
-          <h4>פגישת ייעוץ בשטח</h4>
-          <p>מדברים על פוטנציאל ההשקעה בזמן שאתה רואה את הנכס עם העיניים שלך.</p>
+        <div class="methodology__check fade-up">
+          <span class="methodology__check-mark">✓</span>
+          <p>האם קיימת אפשרות ממשית להשבחה או לשינוי ייעוד?</p>
         </div>
-        <div class="tour-cta__card">
-          <span class="tour-cta__card-icon">🔐</span>
-          <h4>גישה לנכסים off-market</h4>
-          <p>לקוחות בשלב מתקדם מקבלים גישה לנכסים שלא פורסמו לציבור.</p>
+        <div class="methodology__check fade-up">
+          <span class="methodology__check-mark">✓</span>
+          <p>האם יחס הסיכון־סיכוי מצדיק את ההשקעה?</p>
+        </div>
+        <div class="methodology__check fade-up">
+          <span class="methodology__check-mark">✓</span>
+          <p>האם העסקה מתאימה לאסטרטגיה שהוגדרה עבור הלקוח?</p>
         </div>
       </div>
-      <button class="hero__tour-badge" onclick="openTourModal()" style="font-size:14px;padding:16px 40px">
-        💬 בוא נדבר ←
-      </button>
+      <p class="methodology__note">זו המתודולוגיה שעומדת מאחורי כל עסקה המוצגת כאן.</p>
     </div>
   </div>
 </section>
 
-<!-- PROCESS STRIP -->
-<section class="process-strip">
+<!-- CTA -->
+<section class="deal-cta">
   <div class="container">
-    <h2>מה קורה <em class="gold">אחרי הסיור?</em></h2>
-    <div class="process-strip__grid">
-      <div class="process-strip__step">
-        <p class="process-strip__num">01</p>
-        <h4>סיור + שיחת ייעוץ</h4>
-        <p>ביקור בנכסים ושיחה על מטרות ההשקעה שלך.</p>
+    <span class="label">מתחילים נכון</span>
+    <h2>כל עסקה מתחילה<br><em>באסטרטגיה.</em></h2>
+    <p class="deal-cta__sub">לפני שמדברים על נכסים, אנחנו מדברים עליך. על ההון העומד לרשותך, על מטרות ההשקעה שלך ועל סוג ההזדמנויות שמתאימות לך. רק לאחר מכן מתחיל תהליך איתור העסקאות.</p>
+    <div class="deal-cta__cards fade-up">
+      <div class="deal-cta__card">
+        <span class="deal-cta__card-icon">🎯</span>
+        <h4>אסטרטגיה לפני נכס</h4>
+        <p>מגדירים מטרות, טווח זמן ורמת סיכון.</p>
       </div>
-      <div class="process-strip__step">
-        <p class="process-strip__num">02</p>
-        <h4>פרופיל השקעה</h4>
-        <p>נגדיר יחד את האסטרטגיה, הסיכון והמסגרת.</p>
+      <div class="deal-cta__card">
+        <span class="deal-cta__card-icon">📈</span>
+        <h4>ניתוח כלכלי מלא</h4>
+        <p>כל עסקה נבחנת לפני קבלת החלטה.</p>
       </div>
-      <div class="process-strip__step">
-        <p class="process-strip__num">03</p>
-        <h4>עסקה ראשונה</h4>
-        <p>גישה לעסקאות off-market שמתאימות בדיוק לפרופיל שלך.</p>
+      <div class="deal-cta__card">
+        <span class="deal-cta__card-icon">🏗️</span>
+        <h4>יצירת ערך</h4>
+        <p>מאתרים פוטנציאל השבחה ותכנון.</p>
       </div>
-      <div class="process-strip__step">
-        <p class="process-strip__num">04</p>
-        <h4>סגירה ותשואה</h4>
-        <p>אנחנו מנהלים הכל. אתה גוזר קופון.</p>
+      <div class="deal-cta__card">
+        <span class="deal-cta__card-icon">🤝</span>
+        <h4>ליווי אישי</h4>
+        <p>ליווי רציף משלב החשיבה ועד למימוש.</p>
       </div>
     </div>
+    <p style="font-size:15px;color:var(--grey);margin-bottom:32px;max-width:560px;margin-inline:auto;line-height:1.85">
+      אנו מלווים את התהליך מקצה לקצה, כדי שתוכל לקבל החלטות מושכלות ולפעול מתוך ביטחון ובהירות.
+    </p>
+    <a href="/#contact" class="btn--gold">בוא נדבר ←</a>
   </div>
 </section>
-
-<!-- TOUR MODAL -->
-<div class="modal-overlay" id="tourModal">
-  <div class="modal">
-    <button class="modal__close" onclick="closeTourModal()">✕</button>
-    <div class="modal__header">
-      <h2>בוא נכיר תחילה</h2>
-      <p>שיחה קצרה — להבין מה אתה מחפש ואיפה אנחנו יכולים לעזור.</p>
-    </div>
-    <div class="modal__body">
-      <div class="modal__steps">
-        <div class="modal__step active">פרטים קצרים</div>
-        <div class="modal__step">בחירת זמן</div>
-        <div class="modal__step">נחזור אליך</div>
-      </div>
-
-      <form id="tourForm">
-        <!-- STEP 1 -->
-        <div id="step1">
-          <div class="form__row">
-            <div class="form__group">
-              <label class="form__label">שם פרטי</label>
-              <input type="text" class="form__input" placeholder="דוד" required />
-            </div>
-            <div class="form__group">
-              <label class="form__label">שם משפחה</label>
-              <input type="text" class="form__input" placeholder="כהן" required />
-            </div>
-          </div>
-          <div class="form__group">
-            <label class="form__label">טלפון</label>
-            <input type="tel" class="form__input" placeholder="050-0000000" required />
-          </div>
-          <div class="form__group">
-            <label class="form__label">הון פנוי להשקעה</label>
-            <select class="form__select">
-              <option value="" disabled selected>בחר טווח</option>
-              <option>₪1M – ₪2M</option>
-              <option>₪2M – ₪5M</option>
-              <option>₪5M+</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label class="form__label">מה אתה מחפש?</label>
-            <select class="form__select" id="tourPropertySelect">
-              <option value="" disabled selected>בחר</option>
-              <option>השקעה לטווח ארוך — שכירות</option>
-              <option>השקעה קצרה — שיפוץ ומכירה</option>
-              <option>נכס למגורים בתל אביב</option>
-              <option>עדיין בוחן אפשרויות</option>
-            </select>
-          </div>
-          <button type="button" class="modal__submit" onclick="nextStep()">הבא — בחירת זמן לשיחה ←</button>
-        </div>
-
-        <!-- STEP 2 -->
-        <div id="step2" style="display:none">
-          <p class="form__label" style="margin-bottom:16px">מתי נוח לשיחה קצרה?</p>
-          <div class="form__dates">
-            <button type="button" class="date-btn" onclick="selectDate(this)">
-              <p class="date-btn__day">ראשון</p>
-              <p class="date-btn__date">22/6</p>
-            </button>
-            <button type="button" class="date-btn" onclick="selectDate(this)">
-              <p class="date-btn__day">שלישי</p>
-              <p class="date-btn__date">24/6</p>
-            </button>
-            <button type="button" class="date-btn" onclick="selectDate(this)">
-              <p class="date-btn__day">חמישי</p>
-              <p class="date-btn__date">26/6</p>
-            </button>
-            <button type="button" class="date-btn" onclick="selectDate(this)">
-              <p class="date-btn__day">ראשון</p>
-              <p class="date-btn__date">29/6</p>
-            </button>
-            <button type="button" class="date-btn" onclick="selectDate(this)">
-              <p class="date-btn__day">שלישי</p>
-              <p class="date-btn__date">1/7</p>
-            </button>
-            <button type="button" class="date-btn" onclick="selectDate(this)">
-              <p class="date-btn__day">חמישי</p>
-              <p class="date-btn__date">3/7</p>
-            </button>
-          </div>
-          <p class="form__label" style="margin-bottom:12px">בחר שעה</p>
-          <div class="time-slots">
-            <button type="button" class="time-slot" onclick="selectTime(this)">10:00</button>
-            <button type="button" class="time-slot" onclick="selectTime(this)">11:30</button>
-            <button type="button" class="time-slot disabled">13:00</button>
-            <button type="button" class="time-slot" onclick="selectTime(this)">14:30</button>
-            <button type="button" class="time-slot" onclick="selectTime(this)">16:00</button>
-            <button type="button" class="time-slot disabled">17:30</button>
-            <button type="button" class="time-slot" onclick="selectTime(this)">18:00</button>
-            <button type="button" class="time-slot" onclick="selectTime(this)">19:00</button>
-          </div>
-          <button type="submit" class="modal__submit">שלח — ניצור קשר בקרוב ←</button>
-          <p class="modal__note">ניצור קשר תוך 24 שעות לתיאום שיחה קצרה.</p>
-        </div>
-      </form>
-
-      <!-- SUCCESS -->
-      <div class="modal__success" id="tourSuccess">
-        <div class="modal__success-icon">✅</div>
-        <h3>תודה, קיבלנו!</h3>
-        <p>ניצור איתך קשר תוך 24 שעות לשיחה קצרה.<br><br>אם תתקדם איתנו — נפתח לך גישה לנכסים ולסיורים.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <footer>
@@ -779,8 +552,8 @@
       <p class="footer__logo">The Investor's <span>Circle</span> TLV</p>
       <ul class="footer__links">
         <li><a href="/">ראשי</a></li>
-        <li><a href="/projects/">פרויקטים</a></li>
-        <li><a href="/blog/">בלוג</a></li>
+        <li><a href="/projects/">עסקאות</a></li>
+        <li><a href="/about/">אודות</a></li>
         <li><a href="/#contact">צור קשר</a></li>
       </ul>
       <p class="footer__copy">© 2025 The Investor's Circle TLV</p>
@@ -815,7 +588,6 @@
     const wrapper = btn.closest('.project-card__video');
     const iframe = wrapper.querySelector('.project-card__iframe');
     const thumb = wrapper.querySelector('.project-card__thumb');
-    const duration = wrapper.querySelector('.project-card__duration');
     const url = type === 'shorts'
       ? `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&loop=1&playlist=${videoId}`
       : `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
@@ -823,54 +595,7 @@
     iframe.style.display = 'block';
     if (thumb) thumb.style.display = 'none';
     btn.style.display = 'none';
-    if (duration) duration.style.display = 'none';
   }
-
-  // MODAL
-  function openTourModal(property) {
-    document.getElementById('tourModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    if (property) {
-      const sel = document.getElementById('tourPropertySelect');
-      for (let opt of sel.options) {
-        if (opt.text.includes(property)) { sel.value = opt.value; break; }
-      }
-    }
-  }
-  function closeTourModal() {
-    document.getElementById('tourModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('tourModal').addEventListener('click', function(e) {
-    if (e.target === this) closeTourModal();
-  });
-
-  // STEP NAVIGATION
-  function nextStep() {
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
-    document.querySelectorAll('.modal__step')[0].classList.remove('active');
-    document.querySelectorAll('.modal__step')[1].classList.add('active');
-  }
-
-  function selectDate(btn) {
-    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-  }
-  function selectTime(btn) {
-    if (btn.classList.contains('disabled')) return;
-    document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-  }
-
-  // FORM SUBMIT
-  document.getElementById('tourForm').addEventListener('submit', e => {
-    e.preventDefault();
-    document.getElementById('tourForm').style.display = 'none';
-    document.getElementById('tourSuccess').style.display = 'block';
-    document.querySelectorAll('.modal__step').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.modal__step')[2].classList.add('active');
-  });
 </script>
 
 </body>
