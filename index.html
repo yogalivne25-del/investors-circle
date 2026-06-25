@@ -1142,27 +1142,30 @@
     <p class="cta__sub">תשאיר פרטים ואחד מהצוות יחזור אליך. בלי מצגות מכירה, בלי לחץ רק שיחה כנה.</p>
     <div class="cta__form">
       <form id="leadForm">
+        <input type="hidden" name="access_key" value="8c802eaf-107d-4fd6-b8eb-ccc8febf1373" />
+        <input type="hidden" name="subject" value="ליד חדש — The Investor's Circle TLV" />
+        <input type="hidden" name="from_name" value="האתר של The Investor's Circle" />
         <div class="form__row">
           <div class="form__group">
             <label class="form__label">שם פרטי</label>
-            <input type="text" class="form__input" placeholder="דוד" required />
+            <input type="text" name="first_name" class="form__input" placeholder="דוד" required />
           </div>
           <div class="form__group">
             <label class="form__label">שם משפחה</label>
-            <input type="text" class="form__input" placeholder="כהן" required />
+            <input type="text" name="last_name" class="form__input" placeholder="כהן" required />
           </div>
         </div>
         <div class="form__group">
           <label class="form__label">דואר אלקטרוני</label>
-          <input type="email" class="form__input" placeholder="david@email.com" required />
+          <input type="email" name="email" class="form__input" placeholder="david@email.com" required />
         </div>
         <div class="form__group">
           <label class="form__label">טלפון</label>
-          <input type="tel" class="form__input" placeholder="050-0000000" required />
+          <input type="tel" name="phone" class="form__input" placeholder="050-0000000" required />
         </div>
         <div class="form__group">
           <label class="form__label">הון פנוי להשקעה</label>
-          <select class="form__select" required>
+          <select name="capital" class="form__select" required>
             <option value="" disabled selected>בחר טווח</option>
             <option>₪1M – ₪2M</option>
             <option>₪2M – ₪5M</option>
@@ -1172,7 +1175,7 @@
         </div>
         <div class="form__group">
           <label class="form__label">מטרת ההשקעה</label>
-          <select class="form__select">
+          <select name="goal" class="form__select">
             <option value="" disabled selected>מה אתה מחפש להשיג?</option>
             <option>הכנסה שוטפת משכירות</option>
             <option>עליית ערך / אקזיט</option>
@@ -1185,7 +1188,7 @@
         <button type="submit" class="form__submit">שלח ניצור קשר בקרוב ←</button>
         <p class="form__note">הפרטים שלך נשארים אצלנו בלבד.</p>
       </form>
-      <div class="form__success" id="formSuccess">
+      <div class="form__success" id="formSuccess" style="display:none;">
         <div class="form__success-icon">◆</div>
         <h3>קיבלנו.</h3>
         <p>אחד מהצוות יחזור אליך תוך 24 שעות. מחכים לדבר איתך.</p>
@@ -1230,10 +1233,32 @@
     });
   });
 
-  document.getElementById('leadForm').addEventListener('submit', e => {
+  document.getElementById('leadForm').addEventListener('submit', async e => {
     e.preventDefault();
-    document.getElementById('leadForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'שולח...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'שלח ניצור קשר בקרוב ←';
+        btn.disabled = false;
+        alert('אירעה שגיאה. נסה שנית.');
+      }
+    } catch {
+      btn.textContent = 'שלח ניצור קשר בקרוב ←';
+      btn.disabled = false;
+      alert('אירעה שגיאה. נסה שנית.');
+    }
   });
 </script>
 </body>
