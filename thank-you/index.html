@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/logo-dark.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>תודה — The Investor's Circle TLV</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white:    #FFFFFF;
+      --offwhite: #F8F7F4;
+      --navy:     #0D1B2A;
+      --gold:     #B8963E;
+      --gold2:    #D4AE58;
+      --grey:     #6B7280;
+      --border:   rgba(184,150,62,0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Heebo', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; font-weight: 400; }
+
+    .logo { margin-bottom: 64px; }
+    .logo img { height: 80px; width: 80px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
+
+    .icon {
+      width: 56px; height: 56px; border: 1.5px solid var(--gold);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 32px;
+      color: var(--gold); font-size: 22px;
+    }
+
+    .label {
+      font-size: 11px; font-weight: 500; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .divider {
+      width: 40px; height: 1px;
+      background: var(--gold); opacity: 0.4;
+      margin: 40px auto;
+    }
+
+    .next-steps {
+      display: flex; flex-direction: column; gap: 16px;
+      max-width: 400px; text-align: right;
+      margin-bottom: 48px;
+    }
+    .step {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 20px;
+    }
+    .step__num {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: 22px; color: var(--gold); opacity: 0.5;
+      line-height: 1; flex-shrink: 0;
+    }
+    .step__text { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+    .btn {
+      display: inline-block; padding: 16px 44px;
+      background: var(--gold); color: var(--white);
+      font-family: 'Heebo', sans-serif; font-size: 13px;
+      font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .btn:hover { background: var(--gold2); }
+
+    @media (max-width: 600px) {
+      .next-steps { text-align: right; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" />
+  </div>
+
+  <div class="icon">◆</div>
+
+  <span class="label">קיבלנו</span>
+  <h1>תודה שפנית אלינו.</h1>
+  <p>אנחנו עוברים על הפרטים ויחזור אליך אחד מהצוות בהקדם.</p>
+  <p>בדרך כלל תוך 24 שעות.</p>
+
+  <div class="divider"></div>
+
+  <div class="next-steps">
+    <div class="step">
+      <span class="step__num">01</span>
+      <span class="step__text">נבחן את הפרטים שמסרת ונבין מה המטרות שלך</span>
+    </div>
+    <div class="step">
+      <span class="step__num">02</span>
+      <span class="step__text">ניצור איתך קשר לתיאום שיחה ראשונה</span>
+    </div>
+    <div class="step">
+      <span class="step__num">03</span>
+      <span class="step__text">נבנה יחד אסטרטגיה מותאמת אישית</span>
+    </div>
+  </div>
+
+  <a href="/" class="btn">חזרה לאתר ←</a>
+
+</body>
+</html>

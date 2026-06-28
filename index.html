@@ -1274,8 +1274,7 @@
       });
       const data = await res.json();
       if (data.success) {
-        form.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
+        window.location.href = '/thank-you/';
       } else {
         btn.textContent = 'שלח ניצור קשר בקרוב ←';
         btn.disabled = false;
