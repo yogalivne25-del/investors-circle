@@ -112,6 +112,30 @@
     }
     .nav__logo svg { flex-shrink: 0; }
     .nav__logo span { color: var(--gold); }
+    .nav__hamburger { display: none; }
+    .nav__mobile-menu {
+      position: fixed; inset: 0; background: var(--navy);
+      z-index: 99; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .nav__mobile-menu.open { opacity: 1; pointer-events: all; }
+    .nav__mobile-menu a {
+      font-family: 'Frank Ruhl Libre', serif;
+      font-size: clamp(22px, 6vw, 32px); color: rgba(255,255,255,0.85);
+      text-decoration: none; padding: 14px 0; letter-spacing: 1px;
+      transition: color 0.2s; border-bottom: 1px solid rgba(255,255,255,0.08);
+      width: 240px; text-align: center;
+    }
+    .nav__mobile-menu a:last-child { border-bottom: none; }
+    .nav__mobile-menu a:hover { color: var(--gold); }
+    .nav__mobile-menu .nav__mobile-cta {
+      margin-top: 32px; padding: 14px 40px;
+      background: var(--gold); color: var(--white) !important;
+      font-family: 'Heebo', sans-serif; font-size: 13px !important;
+      letter-spacing: 2px; border-bottom: none !important;
+    }
     .nav__links { display: flex; gap: 36px; list-style: none; }
     .nav__links a {
       font-size: 12px; letter-spacing: 1px; color: var(--grey);
@@ -581,9 +605,23 @@
       .process__attr { text-align: center; display: block; }
 
       .nav__links { display: none; }
+      .nav__cta { display: none; }
+      .nav__lang { display: none; }
       nav { padding: 8px 0; }
       nav.scrolled { padding: 6px 0; }
       .nav__logo img { height: 70px !important; width: 70px !important; }
+      .nav__hamburger {
+        display: flex; flex-direction: column; justify-content: center;
+        gap: 5px; width: 36px; height: 36px; cursor: pointer;
+        background: none; border: none; padding: 0;
+      }
+      .nav__hamburger span {
+        display: block; height: 1.5px; background: var(--navy);
+        transition: all 0.35s ease; transform-origin: center;
+      }
+      .nav__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .nav__hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .nav__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
       .stats__grid { grid-template-columns: repeat(2,1fr); }
       .identification__inner, .process__inner, .faq__inner { grid-template-columns: 1fr; gap: 40px; }
       .identification__visual { display: none; }
@@ -618,10 +656,25 @@
       <div style="display:flex;align-items:center">
         <a href="/en/" class="nav__lang">EN</a>
         <a href="#contact" class="nav__cta">בקשת ייעוץ פרטי</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="תפריט">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="nav__mobile-menu" id="mobileMenu">
+  <a href="/about/" onclick="closeMobileMenu()">אודות</a>
+  <a href="/profiling/" onclick="closeMobileMenu()">אפיון פיננסי</a>
+  <a href="#tlv" onclick="closeMobileMenu()">למה ת"א</a>
+  <a href="#process" onclick="closeMobileMenu()">התהליך</a>
+  <a href="/projects/" onclick="closeMobileMenu()">פרויקטים</a>
+  <a href="#results" onclick="closeMobileMenu()">עסקאות</a>
+  <a href="#faq" onclick="closeMobileMenu()">שאלות</a>
+  <a href="#contact" class="nav__mobile-cta" onclick="closeMobileMenu()">בקשת ייעוץ פרטי</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -1178,6 +1231,20 @@
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.closeMobileMenu = closeMobileMenu;
 
   const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
