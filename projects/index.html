@@ -121,6 +121,16 @@
       transition: transform 0.4s;
     }
     .project-card:hover .project-card__thumb { transform: scale(1.04); }
+    .project-card__logo-watermark {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .project-card__logo-watermark img {
+      width: 52%; max-width: 180px;
+      opacity: 0.13;
+      filter: brightness(0);
+    }
     .project-card__thumb-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(13,27,42,0.6) 0%, transparent 60%);
@@ -313,8 +323,9 @@
 
       <!-- DEAL 1 -->
       <div class="project-card fade-up" data-category="sold">
-        <div class="project-card__video" style="background:#f0ece4;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
-          <span class="project-card__tag" style="position:relative;top:auto;right:auto">מומש</span>
+        <div class="project-card__video" style="background:#f0ece4;aspect-ratio:4/3;position:relative;">
+          <div class="project-card__logo-watermark"><img src="/images/logo-dark.png" alt="" /></div>
+          <span class="project-card__tag" style="position:absolute;top:16px;right:16px;">מומש</span>
         </div>
         <div class="project-card__body">
           <p class="project-card__location">יהושע בן נון · תל אביב</p>
@@ -343,8 +354,9 @@
 
       <!-- DEAL 2 -->
       <div class="project-card fade-up" data-category="rented">
-        <div class="project-card__video" style="background:#f0ece4;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
-          <span class="project-card__tag" style="background:var(--navy);position:relative;top:auto;right:auto">מושכר</span>
+        <div class="project-card__video" style="background:#f0ece4;aspect-ratio:4/3;position:relative;">
+          <div class="project-card__logo-watermark"><img src="/images/logo-dark.png" alt="" /></div>
+          <span class="project-card__tag" style="background:var(--navy);position:absolute;top:16px;right:16px;">מושכר</span>
         </div>
         <div class="project-card__body">
           <p class="project-card__location">רחוב הקליר · תל אביב</p>
@@ -373,8 +385,9 @@
 
       <!-- DEAL 3 -->
       <div class="project-card fade-up" data-category="renovation">
-        <div class="project-card__video" style="background:#f0ece4;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
-          <span class="project-card__tag" style="background:#7c6b2e;position:relative;top:auto;right:auto">בתהליך</span>
+        <div class="project-card__video" style="background:#f0ece4;aspect-ratio:4/3;position:relative;">
+          <div class="project-card__logo-watermark"><img src="/images/logo-dark.png" alt="" /></div>
+          <span class="project-card__tag" style="background:#7c6b2e;position:absolute;top:16px;right:16px;">בתהליך</span>
         </div>
         <div class="project-card__body">
           <p class="project-card__location">שמעון התרסי · תל אביב</p>
