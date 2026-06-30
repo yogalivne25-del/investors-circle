@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18280097398"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18280097398');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/logo-dark.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Investor's Circle TLV — Private Real Estate Advisory in Tel Aviv</title>
+  <meta name="description" content="Exclusive private advisory for investors with ₪1M+. Luxury real estate in Tel Aviv — full transparency, real returns." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:    #FFFFFF;
+      --offwhite: #F8F7F4;
+      --glass:    #EEF5FB;
+      --navy:     #0D1B2A;
+      --navy2:    #1A2E42;
+      --gold:     #B8963E;
+      --gold2:    #D4AE58;
+      --gold3:    #8A6E2A;
+      --grey:     #6B7280;
+      --grey2:    #9CA3AF;
+      --border:   rgba(184,150,62,0.15);
+      --border2:  rgba(13,27,42,0.08);
+      --shadow:   0 4px 40px rgba(13,27,42,0.08);
+      --shadow2:  0 2px 16px rgba(13,27,42,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--gold); color: var(--white); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--offwhite); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; font-weight: 400; }
+    .gold { color: var(--gold); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .label {
+      display: block; font-size: 11px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0 0 40px;
+    }
+    .divider--center { margin: 0 auto 40px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    .btn {
+      display: inline-block; padding: 16px 44px;
+      background: var(--navy); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: 13px;
+      font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none;
+      cursor: pointer; border: none;
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gold); transform: translateX(-100%);
+      transition: transform 0.35s ease;
+    }
+    .btn:hover::before { transform: translateX(0); }
+    .btn span { position: relative; z-index: 1; }
+    .btn--gold { background: var(--gold); color: var(--white); }
+    .btn--gold::before { background: var(--navy); transform: translateX(100%); }
+    .btn--outline {
+      background: transparent; color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+    .btn--outline::before { background: var(--navy); }
+    .btn--outline:hover { color: var(--white); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 0; transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      padding: 14px 0;
+      box-shadow: var(--shadow2);
+      border-bottom: 1px solid var(--border2);
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav__hamburger { display: none; }
+    .nav__mobile-menu {
+      position: fixed; inset: 0; background: var(--navy);
+      z-index: 99; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .nav__mobile-menu.open { opacity: 1; pointer-events: all; }
+    .nav__mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 6vw, 32px); color: rgba(255,255,255,0.85);
+      text-decoration: none; padding: 14px 0; letter-spacing: 1px;
+      transition: color 0.2s; border-bottom: 1px solid rgba(255,255,255,0.08);
+      width: 240px; text-align: center;
+    }
+    .nav__mobile-menu a:last-child { border-bottom: none; }
+    .nav__mobile-menu a:hover { color: var(--gold); }
+    .nav__mobile-menu .nav__mobile-cta {
+      margin-top: 32px; padding: 14px 40px;
+      background: var(--gold); color: var(--white) !important;
+      font-family: 'Inter', sans-serif; font-size: 13px !important;
+      letter-spacing: 2px; border-bottom: none !important;
+    }
+    .nav__links { display: flex; gap: 36px; list-style: none; }
+    .nav__links a {
+      font-size: 12px; letter-spacing: 1px; color: var(--grey);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__cta {
+      font-size: 12px; letter-spacing: 1px; font-weight: 500;
+      color: var(--white); background: var(--navy);
+      padding: 10px 24px; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .nav__cta:hover { background: var(--gold); }
+    .nav__lang {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid var(--gold); padding: 4px 10px;
+      margin-left: 20px; transition: all 0.3s;
+    }
+    .nav__lang:hover { background: var(--gold); color: var(--white); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 0 100px; position: relative; overflow: hidden;
+    }
+    .hero__img {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1664989618703-d27a6a70c5ca?w=1800&q=85') center/cover no-repeat;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(248,247,244,0.0) 0%,
+        rgba(248,247,244,0.3) 40%,
+        rgba(248,247,244,0.6) 65%,
+        rgba(248,247,244,0.85) 100%
+      );
+    }
+    .hero__content {
+      position: relative; z-index: 1; max-width: 680px;
+      margin-left: auto;
+      background: rgba(248,247,244,0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 48px 52px;
+      border-left: 3px solid var(--gold);
+    }
+    .hero__eyebrow {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 36px;
+    }
+    .hero__eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
+    .hero__eyebrow span {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 1.1; margin-bottom: 28px; color: var(--navy);
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+    .hero__sub {
+      font-size: 16px; line-height: 1.9; color: var(--grey);
+      max-width: 520px; margin-bottom: 48px;
+    }
+    .hero__actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .hero__scroll {
+      position: absolute; bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .hero__scroll span { font-size: 10px; letter-spacing: 3px; color: var(--grey2); }
+    .hero__scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+    /* STATS */
+    .stats {
+      background: var(--navy); padding: 48px 0;
+      border-bottom: 3px solid var(--gold);
+    }
+    .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stats__item {
+      padding: 0 32px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stats__item:last-child { border-right: none; }
+    .stats__num {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px; font-weight: 300; color: var(--gold);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .stats__label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+
+    /* IDENTIFICATION */
+    .identification { padding: 120px 0; background: var(--offwhite); }
+    .identification__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .identification h2 { font-size: clamp(28px,3.5vw,48px); margin-bottom: 20px; }
+    .identification__text { font-size: 16px; color: var(--grey); margin-bottom: 24px; line-height: 1.9; }
+    .identification__list { list-style: none; }
+    .identification__list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid var(--border2);
+      font-size: 15px; color: var(--navy);
+    }
+    .identification__list li:last-child { border-bottom: none; }
+    .identification__list li::before {
+      content: '◆'; color: var(--gold); font-size: 8px; margin-top: 7px; flex-shrink: 0;
+    }
+    .identification__visual {
+      position: relative; border: 1px solid var(--border);
+      background: var(--white); box-shadow: var(--shadow);
+      padding: 48px; aspect-ratio: 4/5;
+      display: flex; flex-direction: column; justify-content: center; gap: 32px;
+    }
+    .identification__corner {
+      position: absolute; width: 18px; height: 18px; border-color: var(--gold); border-style: solid;
+    }
+    .identification__corner--tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .identification__corner--tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+    .identification__corner--bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+    .identification__corner--br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+    .identification__quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 300; font-style: italic;
+      line-height: 1.6; color: var(--navy);
+    }
+    .identification__quote em { color: var(--gold); font-style: normal; }
+    .identification__attr { font-size: 12px; letter-spacing: 2px; color: var(--grey2); }
+
+    /* WHY TEL AVIV */
+    .why-tlv { padding: 120px 0; background: var(--white); }
+    .why-tlv__top { text-align: center; margin-bottom: 80px; }
+    .why-tlv__top h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 20px; }
+    .why-tlv__top p { font-size: 17px; color: var(--grey); max-width: 700px; margin: 0 auto 20px; line-height: 1.9; }
+    .why-tlv__image {
+      width: 100%; height: 420px;
+      background: url('https://images.unsplash.com/photo-1656098024959-35a3763fbbb8?w=1400&q=80') center/cover no-repeat;
+      position: relative; margin-bottom: 80px;
+      box-shadow: var(--shadow);
+    }
+    .why-tlv__image-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(13,27,42,0.5), transparent 60%);
+    }
+    .why-tlv__image-caption {
+      position: absolute; bottom: 40px; left: 48px;
+      color: var(--white);
+    }
+    .why-tlv__image-caption h3 { font-size: 28px; font-weight: 400; margin-bottom: 8px; }
+    .why-tlv__image-caption p { font-size: 14px; opacity: 0.8; }
+    .why-tlv__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border2); }
+    .why-tlv__card {
+      background: var(--white); padding: 44px 36px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+    .why-tlv__card:hover { background: var(--glass); border-bottom-color: var(--gold); }
+    .why-tlv__card-icon { font-size: 32px; margin-bottom: 20px; display: block; }
+    .why-tlv__card h3 { font-size: 18px; margin-bottom: 12px; font-weight: 500; }
+    .why-tlv__card p { font-size: 14px; color: var(--grey); line-height: 1.9; }
+    .why-tlv__bottom {
+      margin-top: 80px;
+      background: var(--glass); border: 1px solid var(--border);
+      padding: 56px 64px;
+    }
+    .why-tlv__bottom h3 { font-size: 28px; margin-bottom: 16px; }
+    .why-tlv__bottom p { font-size: 15px; color: var(--grey); line-height: 1.9; }
+
+    /* PROBLEM */
+    .problem { padding: 120px 0; background: var(--navy); color: var(--white); text-align: center; }
+    .problem .label { color: rgba(184,150,62,0.9); }
+    .problem h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 20px; color: var(--white); }
+    .problem__intro {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 64px;
+    }
+    .problem__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.05); margin-bottom: 64px; }
+    .problem__card {
+      background: rgba(255,255,255,0.03); padding: 48px 36px; text-align: left;
+      transition: background 0.3s;
+    }
+    .problem__card:hover { background: rgba(255,255,255,0.06); }
+    .problem__card-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 300;
+      color: rgba(184,150,62,0.2); line-height: 1; margin-bottom: 20px;
+    }
+    .problem__card h3 { font-size: 18px; margin-bottom: 12px; color: var(--white); }
+    .problem__card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.9; }
+
+    /* PROCESS */
+    .process { padding: 120px 0; background: var(--offwhite); }
+    .process__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .process h2 { font-size: clamp(28px,3.5vw,48px); margin-bottom: 20px; }
+    .process__lead { font-size: 16px; color: var(--grey); line-height: 1.9; margin-bottom: 40px; }
+    .process__lead strong { color: var(--navy); font-weight: 500; }
+    .process__visual {
+      background: var(--white); border: 1px solid var(--border);
+      padding: 48px; box-shadow: var(--shadow);
+    }
+    .process__quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 300; font-style: italic;
+      line-height: 1.7; color: var(--navy); margin-bottom: 28px;
+    }
+    .process__quote em { color: var(--gold); font-style: normal; }
+    .process__attr { font-size: 11px; letter-spacing: 2px; color: var(--grey2); }
+    .process__steps { list-style: none; }
+    .process__step { display: flex; gap: 20px; padding-bottom: 28px; position: relative; }
+    .process__step:not(:last-child)::after {
+      content: '';
+      position: absolute; left: 15px; top: 32px;
+      width: 1px; bottom: 0;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .process__step-dot {
+      width: 32px; height: 32px; flex-shrink: 0;
+      border: 1.5px solid var(--gold); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 500; color: var(--gold);
+      background: var(--offwhite); position: relative; z-index: 1;
+    }
+    .process__step h4 { font-size: 15px; font-weight: 500; margin-bottom: 4px; font-family: 'Inter'; }
+    .process__step p { font-size: 13px; color: var(--grey); }
+
+    /* SOLUTION */
+    .solution { padding: 120px 0; background: var(--white); text-align: center; }
+    .solution h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 16px; }
+    .solution__sub { font-size: 16px; color: var(--grey); max-width: 520px; margin: 0 auto 64px; }
+    .solution__grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--border2); text-align: left;
+      border: 1px solid var(--border2); margin-bottom: 40px;
+    }
+    .solution__item {
+      background: var(--white); padding: 44px 36px;
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .solution__item:hover { background: var(--glass); }
+    .solution__item::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .solution__item:hover::after { transform: scaleX(1); }
+    .solution__num { font-size: 11px; letter-spacing: 2px; color: var(--gold); display: block; margin-bottom: 16px; font-weight: 500; }
+    .solution__item h3 { font-size: 18px; margin-bottom: 10px; font-weight: 500; }
+    .solution__item p { font-size: 14px; color: var(--grey); line-height: 1.9; }
+    .solution__note { font-size: 13px; color: var(--grey2); font-style: italic; }
+
+    /* RESULTS */
+    .results { padding: 120px 0; background: var(--glass); text-align: center; }
+    .results h2 { font-size: clamp(28px,3.5vw,50px); margin-bottom: 64px; }
+    .results__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-bottom: 64px; text-align: left; }
+    .results__card {
+      background: var(--white); border: 1px solid var(--border);
+      padding: 40px 32px; position: relative;
+      box-shadow: var(--shadow2); transition: all 0.3s;
+    }
+    .results__card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .results__card-tag {
+      position: absolute; top: 0; left: 0;
+      background: var(--navy); color: var(--white);
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      padding: 5px 14px;
+    }
+    .results__address { font-family: 'Playfair Display', serif; font-size: 19px; margin: 20px 0; color: var(--navy); }
+    .results__row {
+      display: flex; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid var(--border2);
+      font-size: 13px;
+    }
+    .results__row:last-child { border-bottom: none; }
+    .results__row span:first-child { color: var(--grey); }
+    .results__row span:last-child { color: var(--navy); font-weight: 500; }
+    .results__row .gold { color: var(--gold); }
+
+    /* FAQ */
+    .faq { padding: 120px 0; background: var(--offwhite); }
+    .faq__inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+    .faq__left h2 { font-size: clamp(26px,3vw,42px); margin-bottom: 16px; }
+    .faq__left p { font-size: 15px; color: var(--grey); line-height: 1.9; }
+    .faq__item { border-bottom: 1px solid var(--border2); }
+    .faq__question {
+      width: 100%; text-align: left; background: none; border: none;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; font-size: 16px; font-weight: 400;
+      color: var(--navy); font-family: 'Inter', sans-serif; transition: color 0.3s;
+    }
+    .faq__question:hover { color: var(--gold); }
+    .faq__icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--gold); transition: transform 0.3s;
+    }
+    .faq__item.open .faq__icon { transform: rotate(45deg); }
+    .faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq__answer p { padding-bottom: 22px; font-size: 14px; color: var(--grey); line-height: 1.9; }
+    .faq__item.open .faq__answer { max-height: 300px; }
+
+    /* URGENCY */
+    .urgency { padding: 72px 0; background: var(--gold); }
+    .urgency__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .urgency__text h3 { font-size: 26px; margin-bottom: 6px; color: var(--white); }
+    .urgency__text p { font-size: 15px; color: rgba(255,255,255,0.8); }
+    .urgency__spots { display: flex; gap: 8px; align-items: center; }
+    .urgency__dot { width: 10px; height: 10px; border-radius: 50%; }
+    .urgency__dot--filled { background: var(--white); }
+    .urgency__dot--empty { background: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.4); }
+    .urgency__label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-left: 8px; }
+    .urgency .btn { background: var(--white); color: var(--navy); }
+    .urgency .btn::before { background: var(--navy); }
+    .urgency .btn:hover { color: var(--white); }
+
+    /* CTA / FORM */
+    .cta { padding: 120px 0; background: var(--white); text-align: center; }
+    .cta h2 { font-size: clamp(30px,4vw,56px); margin-bottom: 16px; }
+    .cta__sub { font-size: 16px; color: var(--grey); max-width: 480px; margin: 0 auto 64px; }
+    .cta__form {
+      max-width: 580px; margin: 0 auto;
+      background: var(--offwhite); border: 1px solid var(--border);
+      padding: 56px 48px; box-shadow: var(--shadow);
+      position: relative;
+    }
+    .cta__form::after {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 72px; height: 2px; background: var(--gold);
+    }
+    .form__group { margin-bottom: 18px; text-align: left; }
+    .form__label { display: block; font-size: 11px; letter-spacing: 2px; color: var(--grey); margin-bottom: 8px; text-transform: uppercase; }
+    .form__input {
+      width: 100%; background: var(--white);
+      border: 1px solid var(--border2); color: var(--navy);
+      padding: 13px 16px; font-size: 14px;
+      font-family: 'Inter', sans-serif; outline: none;
+      transition: border-color 0.3s;
+    }
+    .form__input:focus { border-color: var(--gold); }
+    .form__input::placeholder { color: var(--grey2); }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form__select {
+      width: 100%; background: var(--white);
+      border: 1px solid var(--border2); color: var(--navy);
+      padding: 13px 16px; font-size: 14px;
+      font-family: 'Inter', sans-serif; cursor: pointer;
+      outline: none; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B8963E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 16px center;
+      transition: border-color 0.3s;
+    }
+    .form__select:focus { border-color: var(--gold); }
+    .form__submit {
+      width: 100%; margin-top: 8px; padding: 17px;
+      background: var(--navy); color: var(--white); border: none;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      font-size: 13px; font-weight: 500; letter-spacing: 2px;
+      transition: background 0.3s; text-transform: uppercase;
+    }
+    .form__submit:hover { background: var(--gold); }
+    .form__note { font-size: 12px; color: var(--grey2); margin-top: 18px; }
+
+    /* FOOTER */
+    footer { padding: 56px 0; background: var(--navy); }
+    .footer__inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px; }
+    .footer__links { display: flex; gap: 28px; list-style: none; justify-content: center; }
+    .footer__links a { font-size: 12px; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+    .footer__links a:hover { color: var(--gold); }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); text-align: right; }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__cta { display: none; }
+      .nav__lang { display: none; }
+      nav { padding: 8px 0; }
+      nav.scrolled { padding: 6px 0; }
+      .nav__logo img { height: 70px !important; width: 70px !important; }
+      .nav__hamburger {
+        display: flex; flex-direction: column; justify-content: center;
+        gap: 5px; width: 36px; height: 36px; cursor: pointer;
+        background: none; border: none; padding: 0;
+      }
+      .nav__hamburger span {
+        display: block; height: 1.5px; background: var(--navy);
+        transition: all 0.35s ease; transform-origin: center;
+      }
+      .nav__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+      .nav__hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .nav__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+      .stats__grid { grid-template-columns: repeat(2,1fr); }
+      .identification__inner, .process__inner, .faq__inner { grid-template-columns: 1fr; gap: 40px; }
+      .identification__visual { display: none; }
+      .problem__grid, .solution__grid, .results__grid, .why-tlv__grid { grid-template-columns: 1fr; }
+      .why-tlv__bottom { padding: 40px; }
+      .urgency__inner { flex-direction: column; text-align: center; }
+      .cta__form { padding: 40px 24px; }
+      .form__row { grid-template-columns: 1fr; }
+      .footer__inner { grid-template-columns: 1fr; text-align: center; }
+      .footer__copy { text-align: center; }
+      .hero__content { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/en/" class="nav__logo">
+        <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:60px;width:60px;object-fit:contain;">
+      </a>
+      <ul class="nav__links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="#tlv">Why Tel Aviv</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="#results">Deals</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div style="display:flex;align-items:center">
+        <a href="/" class="nav__lang">עב</a>
+        <a href="#contact" class="nav__cta">Let's Talk</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav__mobile-menu" id="mobileMenu">
+  <a href="#contact" class="nav__mobile-cta" onclick="closeMobileMenu()" style="margin-top:0;margin-bottom:32px">Let's Talk →</a>
+  <a href="/about/" onclick="closeMobileMenu()">About</a>
+  <a href="#tlv" onclick="closeMobileMenu()">Why Tel Aviv</a>
+  <a href="#process" onclick="closeMobileMenu()">Process</a>
+  <a href="/projects/" onclick="closeMobileMenu()">Projects</a>
+  <a href="#results" onclick="closeMobileMenu()">Deals</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__img"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <div class="hero__eyebrow-line"></div>
+        <span>Tel Aviv Real Estate · Private Advisory</span>
+      </div>
+      <h1>
+        Most investors search for properties.<br>
+        <em>We search for potential.</em>
+      </h1>
+      <p class="hero__sub">
+        While most investors rely on broad market appreciation, we focus on creating value — identifying market anomalies where a property's price does not yet reflect its true economic potential. That gap, when found and realized correctly, is where exceptional returns are made.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--gold"><span>Let's Talk →</span></a>
+      </div>
+    </div>
+  </div>
+  <span style="position:absolute;bottom:20px;right:28px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(13,27,42,0.35)">Tel Aviv–Jaffa · Mediterranean Coast</span>
+  <div class="hero__scroll">
+    <span>SCROLL</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stats__item fade-up" style="grid-column:1/-1;text-align:center">
+        <div class="stats__num">15+</div>
+        <div class="stats__label">Years of experience in the Tel Aviv real estate market</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIFICATION -->
+<section class="identification" id="about">
+  <div class="container">
+    <div class="identification__inner">
+      <div>
+        <span class="label">Does this sound familiar?</span>
+        <h2>You've built wealth through hard work.<br><em class="gold">Now it's time to make it work smarter.</em></h2>
+        <p class="identification__text">
+          You have capital available and you understand it can do more than sit idle. You're not looking to buy a standard apartment and wait passively for the market to rise.
+        </p>
+        <p class="identification__text">
+          You're looking for deals where value can be actively created — through entrepreneurial thinking, smart renovation, and identifying pricing gaps before the market does.
+        </p>
+        <p class="identification__text">
+          You understand that in the right circumstances, real value is not created by passive holding, but by the ability to spot an opportunity, execute on its potential, and significantly grow your investment within a few years.
+        </p>
+        <ul class="identification__list">
+          <li>You have ₪1M+ available to invest in a calculated real estate move with real growth potential.</li>
+          <li>You understand that the biggest returns come from buying right and creating value — not from waiting passively.</li>
+          <li>You're looking for deals where strategic improvement can generate hundreds of thousands in profit.</li>
+          <li>You want to know exactly where the potential lies, what's required to unlock it, and what the risks are.</li>
+          <li>You're looking for a partner who thinks like an investor and entrepreneur — not a property broker.</li>
+        </ul>
+      </div>
+      <div class="identification__visual">
+        <div class="identification__corner identification__corner--tl"></div>
+        <div class="identification__corner identification__corner--tr"></div>
+        <div class="identification__corner identification__corner--bl"></div>
+        <div class="identification__corner identification__corner--br"></div>
+        <div class="divider"></div>
+        <p class="identification__quote">
+          "We don't sell properties.<br>
+          We guide people through <em>transactions we genuinely believe in</em> — their value and their potential."
+        </p>
+        <div class="divider"></div>
+        <span class="identification__attr">The Investor's Circle TLV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOAL BLOCK -->
+<section style="background:var(--offwhite);padding:72px 0">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <h2 style="font-size:clamp(22px,3vw,32px);color:var(--navy);margin-bottom:24px">Not just finding a property — learning to see value before the market does.</h2>
+      <p style="font-size:17px;line-height:1.85;color:var(--navy);margin-bottom:20px">
+        We aim to guide you through a process that ends with you owning an asset with significant appreciation potential — one whose future value may be substantially higher than the purchase price.
+      </p>
+      <p style="font-size:17px;line-height:1.85;color:var(--navy);margin-bottom:20px">
+        Beyond the financial outcome, you'll gain a deeper understanding of real estate — learning how to analyze deals, identify opportunities, and evaluate risks.
+      </p>
+      <p style="font-size:17px;line-height:1.85;color:var(--navy);font-weight:600">
+        Our goal is that after the first deal, you're a better property owner and a better investor.
+      </p>
+      <div style="margin-top:36px">
+        <a href="#contact" class="btn btn--gold"><span>Let's Talk →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TEL AVIV -->
+<section class="why-tlv" id="tlv">
+  <div class="container">
+    <div class="why-tlv__top fade-up">
+      <span class="label" style="text-align:center;display:block">Why Tel Aviv?</span>
+      <h2>One of the most dynamic and<br><em class="gold">sought-after real estate markets in the world.</em></h2>
+      <p>If you're already in business or tech, you likely know Tel Aviv from the inside — and understand why demand continues at some of Israel's highest levels. But alongside that demand, anomalies exist.</p>
+      <p>In the Old North of Tel Aviv, one of our primary areas of focus, many properties were built decades ago and no longer meet today's residential standards. We specialize in identifying these assets, uncovering the hidden potential within them, and transforming them into premium properties that generate significant value for their owners.</p>
+    </div>
+
+    <div class="why-tlv__image">
+      <div class="why-tlv__image-overlay"></div>
+      <div class="why-tlv__image-caption">
+        <h3>Tel Aviv–Jaffa</h3>
+        <p>The city that never stops</p>
+      </div>
+    </div>
+
+    <div class="why-tlv__grid">
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">💻</span>
+        <h3>Israel's Tech Powerhouse</h3>
+        <p>Greater Tel Aviv is Israel's Silicon Valley — tens of thousands of high-earning tech workers seeking quality housing, keeping demand high and the rental market consistently strong.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">🏙️</span>
+        <h3>Non-Stop Urban Development</h3>
+        <p>Light rail, new residential districts, urban renewal projects and TAMA 38 — all raising property values across entire neighborhoods and creating unique investment opportunities.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">🌊</span>
+        <h3>Exceptional Quality of Life</h3>
+        <p>Mediterranean coastline, world-class food, rich culture, beautiful weather — Tel Aviv has been repeatedly ranked among the world's most exciting cities to live in. Residential demand isn't going anywhere.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">🏥</span>
+        <h3>World-Class Infrastructure</h3>
+        <p>Israel's leading hospitals — Ichilov, Sheba, Assaf Harofeh — all nearby. Tel Aviv University and top academic institutions ensure constant rental demand from students and academics alike.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">✈️</span>
+        <h3>International Connectivity</h3>
+        <p>Direct high-speed rail to Ben Gurion Airport — <strong>just 25 minutes</strong> from city center. Exceptional global connectivity makes Tel Aviv a preferred destination for foreign and Israeli diaspora investors.</p>
+      </div>
+      <div class="why-tlv__card fade-up">
+        <span class="why-tlv__card-icon">📈</span>
+        <h3>Consistent Price Growth</h3>
+        <p>Tel Aviv real estate has appreciated an average of 7–12% per year over the past decade. Even in periods of uncertainty, the city has shown resilience rarely seen in most global cities.</p>
+      </div>
+    </div>
+
+    <div class="why-tlv__bottom">
+      <h3>Short-term exit.<br>Or long-term wealth building.</h3>
+      <p>Some deals are designed to create value through enhancement and profitable sale. Others focus on improvement, cash flow, and long-term urban renewal potential. The right strategy depends on your goals and the nature of the opportunity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section style="background:var(--glass);padding:96px 0;border-top:1px solid var(--border)">
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+      <span class="label" style="text-align:center;display:block">Entry Point</span>
+      <h2>Why Now?</h2>
+      <div style="text-align:left;margin:48px 0;line-height:1.9;color:var(--navy);font-size:15px">
+        <p style="margin-bottom:24px">
+          Recent years have been characterized by elevated security and economic uncertainty. Alongside the challenges, signs of recovery and stabilization are visible across several key indicators.
+        </p>
+        <p style="margin-bottom:24px">
+          Historically, following significant security events, the Israeli real estate market has demonstrated resilience and price appreciation in subsequent years. The current economic environment is supported by stable demographic demand (including immigration), a slowdown in new construction starts, and gradually improving financing conditions.
+        </p>
+        <p style="margin:40px 0;font-size:22px;font-weight:700;color:var(--gold);line-height:1.5;border-left:4px solid var(--gold);padding-left:24px">
+          Right now, there is a unique gap between perceived risk and the actual potential for future returns.
+        </p>
+        <p>
+          This is not a promise of returns — it's a market assessment based on experience, data, and long-term trends. We believe this period offers an interesting entry point for investors who know how to identify the gaps and have the tools to realize the potential.
+        </p>
+      </div>
+      <div style="margin-top:36px;text-align:center">
+        <a href="#contact" class="btn btn--gold"><span>Let's Talk →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="problem">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:300px;width:300px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.15;">
+    </div>
+    <span class="label">How We Work</span>
+    <h2>We don't operate from a fixed inventory.<br><em class="gold">We identify investment opportunities.</em></h2>
+    <p class="problem__intro">Even in a relatively efficient market, it's possible to find properties whose price doesn't yet reflect their full economic potential.</p>
+    <div class="problem__grid">
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">01</div>
+        <h3>Identifying Pricing Gaps</h3>
+        <p>A market filled with varied transactions — inheritances, elderly sellers, urgent sales — naturally creates gaps between a property's price and its true economic value. We locate properties purchasable around ₪2.5M that, through proper planning and smart renovation, can reach substantially higher valuations. These are the kinds of gaps we hunt for our clients.</p>
+      </div>
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">02</div>
+        <h3>Analyzing Enhancement Potential</h3>
+        <p>We don't evaluate a property based on its current state — quite the opposite. We analyze its improvement potential, available realization paths, required investment, timelines, and expected return in each scenario. Every decision is grounded in data, due diligence, and structured financial analysis.</p>
+      </div>
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">03</div>
+        <h3>Long-Term Partnership</h3>
+        <p>Our relationship with clients doesn't end at closing. We view every transaction as part of a broader, ongoing investment strategy — remaining available for consultation, thinking in terms of long-term value creation, risk management, and building a quality property portfolio over the years.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:0 0 72px">
+    <a href="#contact" class="btn btn--outline"><span>Let's Discuss Your Opportunity →</span></a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process__inner">
+      <div>
+        <span class="label">Our Approach</span>
+        <h2>Strategic advisory, not brokerage.<br><em class="gold">A long-term relationship, not a one-off transaction.</em></h2>
+        <p class="process__lead">
+          We work with a select group of clients who are genuinely committed to growing in real estate, providing each one with <strong>personal, in-depth, available support throughout the entire process.</strong>
+        </p>
+        <ul class="process__steps">
+          <li class="process__step">
+            <div class="process__step-dot">1</div>
+            <div>
+              <h4>We Build Your Investment Strategy Together</h4>
+              <p>We map your investment goals, available capital, time horizon, and appropriate risk level — then build a clear action plan.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">2</div>
+            <div>
+              <h4>We Source the Right Deals</h4>
+              <p>We handle the search, screening, and field due diligence — so you're only exposed to properties that match your strategy. Instead of reviewing dozens of options, you'll evaluate a small number of carefully selected opportunities, each accompanied by full business analysis.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">3</div>
+            <div>
+              <h4>We Conduct Comprehensive Due Diligence</h4>
+              <p>Legal, planning, engineering, and financial checks — ensuring every decision is made on the basis of complete information.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">4</div>
+            <div>
+              <h4>We Structure Financing and Tax Planning</h4>
+              <p>We examine financing options, leverage, and tax planning — aiming to structure the deal for the highest possible return on equity.</p>
+            </div>
+          </li>
+          <li class="process__step">
+            <div class="process__step-dot">5</div>
+            <div>
+              <h4>We Acquire, Enhance, and Exit</h4>
+              <p>From negotiation and purchase, through planning and executing improvements, to sale or long-term holding — we accompany the full process in line with the agreed strategy.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="process__visual">
+        <div class="divider"></div>
+        <p class="process__quote">
+          "After 20 years in this market, I can tell you directly — the best deals are the ones where you can identify structural and market gaps, understand the improvement path, and see the future value before everyone else does."
+        </p>
+        <div class="divider"></div>
+        <span class="process__attr">Founder, The Investor's Circle TLV</span>
+        <br /><br />
+        <img src="https://images.unsplash.com/photo-1695910410678-6731d8577dc5?w=600&q=80" alt="Jaffa sunset with Tel Aviv skyline" style="width:100%;height:220px;object-fit:cover;margin-top:24px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <span class="label">What We Do Together</span>
+    <h2>Full advisory support<br><em class="gold">from first conversation to realized return.</em></h2>
+    <p class="solution__sub">A one-time advisory fee. Everything on the table. You know exactly what's happening at every stage.</p>
+    <div class="solution__grid">
+      <div class="solution__item fade-up">
+        <span class="solution__num">01</span>
+        <h3>Define Your Strategy</h3>
+        <p>A personal meeting with one of our experts — we understand what you have, what you want, and build a strategy tailored specifically to you.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">02</span>
+        <h3>Source Investment Opportunities</h3>
+        <p>We handle the search, screening, and field checks — so you're only shown properties that match your strategy. Instead of reviewing dozens, you'll evaluate a focused shortlist, each with full business analysis.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">03</span>
+        <h3>Full Due Diligence</h3>
+        <p>Land registry, floor plans, permits, lease agreements, neighbors, city plans — we check everything before you commit a single shekel.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">04</span>
+        <h3>Financial Optimization</h3>
+        <p>Our financing expert builds the optimal mortgage structure for you — the lowest rate, the right leverage.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">05</span>
+        <h3>Close the Deal</h3>
+        <p>Negotiation, legal checks, preliminary valuation, legal accompaniment, and title registration. Every deal is first reviewed by us and then by additional professionals — ensuring every decision is made after thorough, data-driven examination.</p>
+      </div>
+      <div class="solution__item fade-up">
+        <span class="solution__num">06</span>
+        <h3>Realize the Enhancement Potential</h3>
+        <p>Architectural planning, professional renovation, and interior design that multiply the property's value — and where needed, sale management through maximum exit. <em style="color:var(--grey2);font-size:12px">(Optional, priced separately)</em></p>
+      </div>
+    </div>
+    <p class="solution__note">Advisory fee: 2% of property price, paid after closing.</p>
+    <div style="text-align:center;margin-top:48px">
+      <a href="#contact" class="btn btn--gold"><span>I'm Ready to Start →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="container">
+    <span class="label" style="display:block;text-align:center">Selected Deals</span>
+    <h2>Transactions that speak<br><em class="gold">louder than any promise.</em></h2>
+    <div class="results__grid">
+      <div class="results__card fade-up">
+        <span class="results__card-tag">SOLD</span>
+        <p class="results__address">Yehoshua Ben Nun, TLV</p>
+        <div class="results__row"><span>Conversion</span><span>2-room → 3-room</span></div>
+        <div class="results__row"><span>Purchase price</span><span>₪2.52M</span></div>
+        <div class="results__row"><span>Renovation cost</span><span>~₪350K</span></div>
+        <div class="results__row"><span>Sale price</span><span>₪4.4M</span></div>
+        <div class="results__row"><span>Holding period</span><span>24 months</span></div>
+      </div>
+      <div class="results__card fade-up">
+        <span class="results__card-tag">IN PROGRESS</span>
+        <p class="results__address">Shimon HaTarsi, TLV</p>
+        <div class="results__row"><span>Type</span><span>Urban Renewal</span></div>
+        <div class="results__row"><span>Purchase price</span><span>₪1.7M</span></div>
+        <div class="results__row"><span>Conversion</span><span>2-room → 3-room</span></div>
+        <div class="results__row"><span>Potential</span><span>Demolish & Rebuild</span></div>
+        <div class="results__row"><span>Horizon</span><span>Medium–Long Term</span></div>
+      </div>
+      <div class="results__card fade-up">
+        <span class="results__card-tag">RENTED</span>
+        <p class="results__address">HaKlir St., TLV</p>
+        <div class="results__row"><span>Conversion</span><span>Studio → 2.5-room</span></div>
+        <div class="results__row"><span>Purchase price</span><span>₪2.2M</span></div>
+        <div class="results__row"><span>Monthly rent</span><span>₪8,200</span></div>
+        <div class="results__row"><span>Annual yield</span><span class="gold">4%</span></div>
+        <div class="results__row"><span>Outlook</span><span>Urban Renewal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq__inner">
+      <div class="faq__left">
+        <span class="label">Questions you're probably asking</span>
+        <h2>Straight questions.<br><em class="gold">Straight answers.</em></h2>
+        <p>We have no interest in ambiguity. If something isn't covered here — ask directly. We prefer an honest conversation over any alternative.</p>
+      </div>
+      <ul class="faq__list">
+        <li class="faq__item">
+          <button class="faq__question">
+            What is the minimum capital to work with you?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>We work with clients who have a minimum of ₪1 million available to invest.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            How is the advisory fee structured?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>Financial and strategic profiling session: ₪1,500 + VAT. Full advisory from sourcing through purchase: 1.5% + VAT of the purchase price. Enhancement process management (if required): 0.5% + VAT.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            How long does the process take?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>From first consultation to closing, most deals complete within 60–120 days. For deal sourcing, our clients typically see 2–3 quality opportunities within the first 30 days.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            I'm an Israeli living abroad — is this right for me?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>Absolutely. A significant portion of our clients are Israelis living abroad and foreign investors. We manage the entire process remotely — including power of attorney, Israeli legal counsel, and full management through signing.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            Do you guarantee returns?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>No one can ethically guarantee real estate returns. What we do guarantee: rigorous due diligence, direct data-driven advice, and a fully aligned interest in your deal's success. Our track record comes from strategy — not speculation.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            What does the relationship look like once we begin?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>Once advisory begins, we open a dedicated personal communication channel — including a private WhatsApp group and ongoing updates throughout the process. We're available for questions, deliberations, and decisions at every stage, from sourcing through due diligence, negotiation, purchase, and beyond.</p></div>
+        </li>
+        <li class="faq__item">
+          <button class="faq__question">
+            Can I invest together with a partner?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer"><p>Yes. A joint investment between two or three investors can work well, especially when each brings part of the capital and together you want to access a higher-quality deal. Subject to review of the deal structure, financing, and tax considerations.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;padding:48px 0 72px">
+    <a href="#contact" class="btn btn--outline"><span>I Have a Question — Let's Talk →</span></a>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+  <div class="container">
+    <div class="urgency__inner">
+      <div class="urgency__text">
+        <h3>Q2 2026 — <strong>3 spots remaining</strong></h3>
+        <p>We work with a small number of clients at a time. When we're full, we're full.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
+        <div class="urgency__spots">
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--filled"></div>
+          <div class="urgency__dot urgency__dot--empty"></div>
+          <div class="urgency__dot urgency__dot--empty"></div>
+          <div class="urgency__dot urgency__dot--empty"></div>
+          <span class="urgency__label">5/8 FILLED</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn"><span>Let's Talk →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="cta" id="contact">
+  <div class="container">
+    <span class="label" style="display:block;text-align:center">Let's Connect</span>
+    <h2>A short conversation.<br><em class="gold">No commitment.</em></h2>
+    <p class="cta__sub">Leave your details and a member of our team will be in touch. No sales pitch, no pressure — just an honest conversation.</p>
+    <div class="cta__form">
+      <form id="leadForm">
+        <input type="hidden" name="access_key" value="8c802eaf-107d-4fd6-b8eb-ccc8febf1373" />
+        <input type="hidden" name="subject" value="New Lead (EN) — The Investor's Circle TLV" />
+        <input type="hidden" name="from_name" value="The Investor's Circle Website (EN)" />
+        <input type="hidden" name="cc" value="contact@tlv-investor.com" />
+        <div class="form__row">
+          <div class="form__group">
+            <label class="form__label">First Name</label>
+            <input type="text" name="first_name" class="form__input" placeholder="David" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label">Last Name</label>
+            <input type="text" name="last_name" class="form__input" placeholder="Cohen" required />
+          </div>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Email</label>
+          <input type="email" name="email" class="form__input" placeholder="david@email.com" required />
+        </div>
+        <div class="form__group">
+          <label class="form__label">Phone</label>
+          <input type="tel" name="phone" class="form__input" placeholder="+44 7700 000000" required />
+        </div>
+        <div class="form__group">
+          <label class="form__label">Available Capital</label>
+          <select name="capital" class="form__select" required>
+            <option value="" disabled selected>Select range</option>
+            <option>₪1M – ₪2M</option>
+            <option>₪2M – ₪5M</option>
+            <option>₪5M – ₪10M</option>
+            <option>₪10M+</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Investment Goal</label>
+          <select name="goal" class="form__select">
+            <option value="" disabled selected>What are you looking to achieve?</option>
+            <option>Rental income</option>
+            <option>Capital appreciation / Exit</option>
+            <option>Appreciation / Urban renewal</option>
+            <option>Combined strategy</option>
+            <option>First investment — exploring</option>
+            <option>Pre-sale advisory</option>
+          </select>
+        </div>
+        <button type="submit" class="form__submit">Send — We'll Be in Touch →</button>
+        <p class="form__note">Your details remain strictly with us.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p style="display:flex;align-items:center;gap:12px">
+        <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:150px;width:150px;object-fit:contain;">
+      </p>
+      <ul class="footer__links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="#tlv">Why TLV</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Deals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer__copy">© 2025 The Investor's Circle TLV</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.closeMobileMenu = closeMobileMenu;
+
+  const obs = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq__item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.getElementById('leadForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const data = await res.json();
+      if (data.success) {
+        window.location.href = '/thank-you/';
+      } else {
+        btn.textContent = 'Send — We\'ll Be in Touch →';
+        btn.disabled = false;
+        alert('An error occurred. Please try again.');
+      }
+    } catch {
+      btn.textContent = 'Send — We\'ll Be in Touch →';
+      btn.disabled = false;
+      alert('An error occurred. Please try again.');
+    }
+  });
+</script>
+</body>
+</html>
