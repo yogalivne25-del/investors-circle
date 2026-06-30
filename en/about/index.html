@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18280097398"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18280097398');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/logo-dark.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — The Investor's Circle TLV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --gold: #B8963E; --gold2: #D4AE58;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border: rgba(184,150,62,0.15); --border2: rgba(13,27,42,0.08);
+      --shadow: 0 4px 40px rgba(13,27,42,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--navy); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+    ::selection { background: var(--gold); color: var(--white); }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; font-weight: 400; }
+    .gold { color: var(--gold); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .btn { display: inline-block; padding: 16px 44px; background: var(--navy); color: var(--white); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; }
+    .btn:hover { background: var(--gold); }
+    .btn--gold { background: var(--gold); }
+
+    nav {
+      position: sticky; top: 0;
+      background: rgba(255,255,255,0.98);
+      padding: 20px 32px;
+      z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--gold); }
+    .nav__lang {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      color: var(--gold); border: 1px solid var(--gold);
+      padding: 4px 10px; transition: all 0.3s;
+    }
+    .nav__lang:hover { background: var(--gold); color: var(--white); }
+
+    section { padding: 88px 0; }
+    section + section { border-top: 1px solid var(--border2); }
+
+    .hero {
+      position: relative; padding: 140px 0 100px; text-align: center;
+      background: url('/images/hero.jpg') center/cover no-repeat;
+      border-bottom: 1px solid var(--border2);
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(13,27,42,0.72) 0%, rgba(13,27,42,0.55) 100%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .label { color: var(--gold2); }
+    .hero h1 { font-size: clamp(32px, 4vw, 56px); margin-bottom: 24px; color: var(--white); }
+    .hero p { font-size: 17px; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto; line-height: 1.9; }
+
+    .panel { margin-top: 40px; padding: 36px 40px; background: var(--offwhite); border-left: 3px solid var(--gold); }
+    .panel--navy { background: var(--navy); }
+    .panel h3 { font-size: 20px; margin-bottom: 20px; }
+    .panel--navy h3 { color: var(--white); }
+    .panel p { font-size: 15px; line-height: 1.9; margin-bottom: 14px; }
+    .panel--navy p { color: rgba(255,255,255,0.75); }
+    .panel p:last-child { margin-bottom: 0; }
+
+    .accomp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border2); margin-top: 48px; }
+    .accomp-card { background: var(--offwhite); padding: 36px 28px; }
+    .accomp-card h3 { font-size: 16px; margin-bottom: 14px; }
+    .accomp-card p { font-size: 14px; color: var(--navy); line-height: 1.85; }
+
+    .cta { text-align: center; }
+    .cta h2 { font-size: clamp(24px, 3vw, 38px); margin-bottom: 20px; }
+    .cta p { font-size: 16px; color: var(--grey); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.9; }
+
+    footer { background: var(--navy); color: var(--white); padding: 40px 0; text-align: center; font-size: 13px; }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 12px; }
+      .accomp-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      .story-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" style="display:flex;align-items:center">
+    <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:150px;width:150px;object-fit:contain;">
+  </a>
+  <div style="display:flex;align-items:center;gap:24px">
+    <a href="/about/" class="nav__lang">עב</a>
+    <a href="/en/" style="font-weight:normal;font-size:14px">← Back to Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <span class="label">About</span>
+    <h1>The Investor's Circle TLV</h1>
+    <p>Over 15 years of experience in the Tel Aviv real estate market, dozens of deals and property enhancements, and an approach built on entrepreneurial thinking, economic analysis, and long-term personal advisory.<br><br>We don't see ourselves as brokers. We see ourselves as partners in our clients' decision-making process.</p>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section>
+  <div class="container">
+    <span class="label">The Team</span>
+    <h2 style="margin-bottom:64px">The people behind <em class="gold">The Investor's Circle.</em></h2>
+
+    <!-- Doron -->
+    <div class="story-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:80px">
+      <div>
+        <img src="/images/doron-family.jpg.jpeg" alt="Doron Afriat" style="width:100%;height:460px;object-fit:cover;display:block;" />
+      </div>
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Founder &amp; Managing Partner</p>
+        <h3 style="font-size:30px;margin-bottom:28px">Doron Afriat</h3>
+        <p style="font-size:16px;line-height:2;margin-bottom:20px">Doron Afriat is a real estate entrepreneur with over 15 years of experience identifying opportunities, enhancing properties, and advising investors in Tel Aviv. His expertise is concentrated in the Old North and city center — areas where local familiarity, planning knowledge, and execution experience make the difference between an ordinary asset and a high-potential deal.</p>
+        <p style="font-size:16px;line-height:2;margin-bottom:20px">Over the years, Doron has accompanied numerous transactions and has developed deep knowledge of the local market: deal pricing, demand trends, enhancement potential, and the unique planning and legal aspects of each area.</p>
+        <p style="font-size:16px;line-height:2;margin-bottom:20px">His background combines economics and business administration, deal financing, real estate taxation, project management, and execution. Every deal is examined through three lenses: economic, planning, and commercial.</p>
+        <p style="font-size:16px;line-height:2">Doron's approach is grounded in personal accompaniment, transparency, and data-driven decision-making — from initial profiling, through property identification and due diligence, to purchase, enhancement, and exit. The goal remains consistent: identify the potential, manage the risk, and create real value in every transaction.</p>
+      </div>
+    </div>
+
+    <!-- Separator -->
+    <div style="border-top:1px solid var(--border2);margin-bottom:80px"></div>
+
+    <!-- Yuval -->
+    <div class="story-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Partner, Marketing &amp; Business Development</p>
+        <h3 style="font-size:30px;margin-bottom:28px">Yuval Lev</h3>
+        <p style="font-size:16px;line-height:2;margin-bottom:20px">Yuval Lev brings over a decade of experience in marketing and business development management across companies in Israel and abroad, alongside hands-on activity in the real estate world.</p>
+        <p style="font-size:16px;line-height:2;margin-bottom:20px">His area of expertise is maximizing a property's potential after purchase — with a focus on short-term and long-term rental strategies, correct positioning, pricing, and market preparation. Yuval evaluates every property not only by its purchase price, but also by its ability to generate ongoing income, sustain demand, and support the overall investment strategy.</p>
+        <p style="font-size:16px;line-height:2">His goal is to accompany every client from the initial decision to full realization: from defining objectives, through selecting the rental strategy and operating the property, to sale or continued holding. Throughout the journey, the emphasis is not only on maximizing yield and economic potential, but also on developing the client as a more independent, confident, and precise investor.</p>
+      </div>
+      <div>
+        <div style="width:100%;overflow:hidden;"><img src="/images/yuval-family.jpg.jpg" alt="Yuval Lev" style="width:100%;display:block;margin-bottom:-13%;" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section>
+  <div class="container">
+    <div class="story-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div>
+        <span class="label">Our Story</span>
+        <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:32px">Born from the world of real estate entrepreneurship, not brokerage.</h2>
+        <p style="font-size:16px;line-height:2;color:var(--navy);margin-bottom:24px">The Investor's Circle was founded from within the investment world — not the brokerage world. Over the years we have operated as investors, entrepreneurs, and project managers, accumulating hands-on experience in identifying opportunities, enhancing properties, and managing deals in the Tel Aviv market.</p>
+        <p style="font-size:16px;line-height:2;color:var(--navy)">From that experience came the idea to give private individuals access to the same working methodology we use ourselves.</p>
+      </div>
+      <div style="position:relative">
+        <img src="https://images.unsplash.com/photo-1695910410678-6731d8577dc5?w=800&q=80" alt="Tel Aviv" style="width:100%;height:380px;object-fit:cover;display:block;" />
+        <div style="position:absolute;bottom:0;left:0;background:var(--navy);color:var(--white);padding:20px 28px;">
+          <p style="font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);line-height:1;margin-bottom:4px">15+</p>
+          <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7)">Years of Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTOR DEVELOPMENT -->
+<section style="background:var(--navy)">
+  <div class="container">
+    <div style="max-width:760px">
+      <span class="label" style="color:rgba(184,150,62,0.8)">What Sets Us Apart</span>
+      <h2 style="font-size:clamp(24px,3vw,36px);margin-bottom:32px;color:var(--white)">We don't just accompany transactions.<br><span class="gold">We develop investors.</span></h2>
+      <p style="color:rgba(255,255,255,0.75);margin-bottom:20px">Beyond finding the right property, we place great importance on building our clients' ability to understand deals, identify potential, and make well-informed investment decisions.</p>
+      <p style="color:rgba(255,255,255,0.75)">The goal is that by the end of the process, you not only hold a higher-quality asset — you also become a more experienced, confident, and precise investor in all future decisions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL ACCOMP -->
+<section style="background:var(--offwhite)">
+  <div class="container">
+    <span class="label">Full Advisory Support</span>
+    <h2 style="font-size:clamp(24px,3vw,36px)">From first conversation to final exit.</h2>
+    <div class="accomp-grid">
+      <div class="accomp-card">
+        <h3>Strategy Definition</h3>
+        <p>We understand your goals, your risk tolerance, and your capital constraints. This isn't a technical conversation — it's a strategy session.</p>
+      </div>
+      <div class="accomp-card">
+        <h3>Throughout the Purchase Process</h3>
+        <p>We examine properties from every possible angle. Every decision is made together — as partners, not as client and vendor.</p>
+      </div>
+      <div class="accomp-card">
+        <h3>After the Purchase</h3>
+        <p>For us, the purchase is the beginning of the process — not the end. We continue to accompany the client through enhancement, decision-making, and exit planning, in line with the agreed strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <span class="label">Ready to Start?</span>
+    <h2>A personal strategy session where we'll explore your investment goals, identify relevant opportunities, and build a clear direction together.</h2>
+    <a href="/en/#contact" class="btn btn--gold">Let's Talk →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p style="margin-bottom:16px">
+      <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:150px;width:150px;object-fit:contain;">
+    </p>
+    <p>© 2026 · All rights reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>

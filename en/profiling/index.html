@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18280097398"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18280097398');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/logo-dark.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Profiling — The Investor's Circle TLV</title>
+  <meta name="description" content="A structured financial profiling session — understand your position, your plan, and your opportunities in Tel Aviv real estate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --gold: #B8963E; --gold2: #D4AE58;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border: rgba(184,150,62,0.15); --border2: rgba(13,27,42,0.08);
+      --shadow: 0 4px 40px rgba(13,27,42,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--navy); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; line-height: 1.2; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+    .btn { display: inline-block; padding: 14px 40px; background: var(--navy); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; transition: background 0.3s; }
+    .btn:hover { background: var(--gold); }
+    .btn--gold { background: var(--gold); }
+    .btn--gold:hover { background: var(--navy); }
+
+    nav { background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); padding: 18px 0; border-bottom: 1px solid var(--border2); position: sticky; top: 0; z-index: 100; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__back { font-size: 12px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__back:hover { color: var(--gold); }
+    .nav__lang {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      color: var(--gold); border: 1px solid var(--gold);
+      padding: 4px 10px; text-decoration: none; transition: all 0.3s; margin-right: 20px;
+    }
+    .nav__lang:hover { background: var(--gold); color: var(--white); }
+
+    .hero { padding: 100px 0 60px; background: linear-gradient(135deg, var(--offwhite) 0%, var(--glass) 100%); border-bottom: 1px solid var(--border2); }
+    .hero h1 { font-size: clamp(32px, 4vw, 56px); margin-bottom: 20px; }
+    .hero p { font-size: 16px; color: var(--grey); max-width: 640px; line-height: 1.9; }
+    .hero__meta { font-size: 13px; color: var(--gold); margin-top: 24px; letter-spacing: 1px; }
+
+    .content { padding: 80px 0; }
+    .section { margin-bottom: 80px; }
+    .section h2 { font-size: 36px; margin-bottom: 12px; }
+    .section > p { font-size: 16px; color: var(--grey); max-width: 760px; margin-bottom: 32px; line-height: 1.9; }
+
+    .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 60px; }
+    .step { padding: 32px; background: var(--offwhite); border: 1px solid var(--border2); }
+    .step__num { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--gold); margin-bottom: 8px; }
+    .step h3 { font-size: 18px; margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--grey); line-height: 1.8; }
+
+    .outcomes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 60px 0; }
+    .outcome { padding: 24px; background: var(--glass); border-left: 3px solid var(--gold); text-align: center; }
+    .outcome h3 { font-size: 16px; margin-bottom: 10px; }
+    .outcome p { font-size: 12px; color: var(--grey); }
+
+    .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin: 60px 0; }
+    .testimonial { padding: 32px; background: var(--white); border: 1px solid var(--border2); }
+    .testimonial__text { font-size: 14px; color: var(--navy); margin-bottom: 20px; font-style: italic; line-height: 1.8; }
+    .testimonial__author { font-size: 13px; font-weight: 500; color: var(--navy); }
+    .testimonial__title { font-size: 11px; color: var(--grey); letter-spacing: 1px; }
+
+    .faq__items { margin: 40px 0; }
+    .faq__item { border-bottom: 1px solid var(--border2); padding: 20px 0; }
+    .faq__q { font-size: 15px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq__q:hover { color: var(--gold); }
+    .faq__a { font-size: 14px; color: var(--grey); line-height: 1.8; margin-top: 12px; display: none; }
+    .faq__item.open .faq__a { display: block; }
+
+    .pricing { background: var(--offwhite); padding: 60px 40px; text-align: center; margin: 80px 0; }
+    .pricing h2 { font-size: 36px; margin-bottom: 20px; }
+    .pricing__price { font-family: 'Playfair Display', serif; font-size: 56px; color: var(--gold); margin: 20px 0; }
+    .pricing__desc { font-size: 15px; color: var(--grey); max-width: 600px; margin: 0 auto 40px; }
+
+    .cta { text-align: center; padding: 60px 40px; background: var(--navy); color: var(--white); }
+    .cta h2 { font-size: 32px; margin-bottom: 12px; }
+    .cta p { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    footer { padding: 40px 0; background: var(--navy); border-top: 3px solid var(--gold); }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 960px) { .steps { grid-template-columns: 1fr; } .outcomes { grid-template-columns: repeat(2, 1fr); } .testimonials { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .container { padding: 0 20px; } .hero { padding: 60px 0 40px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/en/">
+        <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:150px;width:150px;object-fit:contain;">
+      </a>
+      <div style="display:flex;align-items:center">
+        <a href="/profiling/" class="nav__lang">עב</a>
+        <a href="/en/" class="nav__back">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Financial Profiling Session</h1>
+    <p>This isn't a phone consultation. It isn't a "let's chat." It's a structured process in which we build a precise map of your situation — so we can understand exactly how you should invest, and what the most suitable path looks like for you.</p>
+    <div class="hero__meta">₪1,500 · 1–2 hours · Yours to keep for life</div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+
+    <div class="section">
+      <h2>What exactly happens in the session?</h2>
+      <p>Not every investor is ready. And not every opportunity is right for you. In this session we analyze precisely:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3>Capital Mapping</h3>
+          <p>How much do you actually have? Income, savings, pension funds, investment portfolios, existing assets — everything.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3>Financing Options</h3>
+          <p>How much can you safely invest? Which banks will extend you a mortgage? What are the rules in 2026?</p>
+        </div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3>Risk Tolerance</h3>
+          <p>Not every investor needs 30% returns. For some, 10% per year is excellent. For others it's not enough. What's your number?</p>
+        </div>
+        <div class="step">
+          <div class="step__num">04</div>
+          <h3>Strategy</h3>
+          <p>A plan for a sequence of deals — not a single transaction. Where you'll start, how you'll grow, what the next steps are.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">05</div>
+          <h3>Value Creation Mindset</h3>
+          <p>Throughout the process you'll learn to look at real estate through entrepreneurial eyes: identifying pricing gaps, understanding enhancement potential, and finding places where value can be created before the market recognizes it.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">06</div>
+          <h3>Profiling Report</h3>
+          <p>At the end of the session you'll receive a personal financial roadmap in the real estate world. With or without us, you'll know exactly where you stand relative to the market, where you want to go, and what paths are available to you.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>By the end of the session, you'll have:</h2>
+      <div class="outcomes">
+        <div class="outcome">
+          <h3>Financial Map</h3>
+          <p>Full clarity on your current position</p>
+        </div>
+        <div class="outcome">
+          <h3>Real Numbers</h3>
+          <p>Exactly how much you can actually invest</p>
+        </div>
+        <div class="outcome">
+          <h3>Strategy</h3>
+          <p>A deal sequence roadmap for the future</p>
+        </div>
+        <div class="outcome">
+          <h3>Your Own Checklist</h3>
+          <p>A tool you'll use for life</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Investors who've been through profiling</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial__text">"This session was the key — suddenly I knew exactly how much I could invest without overextending myself."</div>
+          <div class="testimonial__author">David</div>
+          <div class="testimonial__title">Investor, Tech Industry</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__text">"I didn't think it was even important to do. After the session I understood that everything was going to be different."</div>
+          <div class="testimonial__author">Michal</div>
+          <div class="testimonial__title">Investor, Self-Employed</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__text">"They didn't miss a single detail — taxes, pension funds, bank limits. For once I did this properly."</div>
+          <div class="testimonial__author">Yonatan</div>
+          <div class="testimonial__title">Investor, Business Owner</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq__items">
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What if I'm not ready to invest yet?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">That's exactly the point. The profiling session will tell you whether you're ready — and in what form. Some investors discover they need another year of saving. That's fine. It's better to know now.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Does this commit me to a deal?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">No. The profiling is a tool for you. If after the session you decide not to invest — completely fine. If you decide to invest with someone else — also fine. We're here to give you the tools.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Exactly how long does it take?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">Between one and two hours, depending on the complexity of your situation. We give it the time it needs. If it's shorter — great. If it takes two hours — that's fine too.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Do I need to bring documents?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">Essentially yes. Come with a list of your income, current assets (pension funds, bank accounts, investments), and liabilities (mortgages, loans). You don't need actual documents — just the numbers.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What if we're a couple?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">Ideal to bring you both. A joint profiling is stronger. We discuss everything together — demand, gaps, risks.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Does the checklist really belong to me?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">Yes. Completely yours. You can use it with someone else, with another advisor, at any time. It's a tool — not a contract.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <h2>Pricing</h2>
+      <div class="pricing__price">₪1,500</div>
+      <p class="pricing__desc">A session of one to two hours, full profiling, a personal financial roadmap, and advice on everything ahead of you.</p>
+      <p style="font-size:13px;color:var(--grey2);font-style:italic">This session does not commit you to a future deal. It is a tool so you know exactly where you stand.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Ready to build your roadmap?</h2>
+    <p>A one-to-two-hour session that will transform how you understand real estate.</p>
+    <a href="/en/#contact" class="btn btn--gold">Let's Do the Profiling →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p>
+        <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:150px;width:150px;object-fit:contain;">
+      </p>
+      <p class="footer__copy">© 2026 · All rights reserved</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq__q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
