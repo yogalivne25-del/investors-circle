@@ -1,0 +1,232 @@
+Page,Section,Element,Hebrew Text,Notes
+Home,Navigation,Logo Text,The Investor's Circle TLV,Logo + company name
+Home,Navigation,Nav Link 1,אודות,Link to About page
+Home,Navigation,Nav Link 2,אפיון פיננסי,Link to Profiling page
+Home,Navigation,Nav Link 3,למה ת"א,Anchor link
+Home,Navigation,Nav Link 4,התהליך,Anchor link
+Home,Navigation,Nav Link 5,פרויקטים,Link to Projects
+Home,Navigation,Nav Link 6,עסקאות,Anchor link
+Home,Navigation,Nav Link 7,שאלות,Anchor link
+Home,Navigation,CTA Button,בקשת ייעוץ פרטי,Main CTA button
+Home,Hero,Eyebrow,נדל"ן בתל אביב · ליווי פרטי,Small label above title
+Home,Hero,H1 Part 1,ההון שלך יכול,Main headline part 1
+Home,Hero,H1 Part 2,לעבוד הרבה יותר חכם.,Main headline part 2 (italic)
+Home,Hero,Subtitle,אתה כבר יודע שנדל"ן בתל אביב זה הכיוון. השאלה היא רק עם מי — ואיזו עסקה תפספס אם תחכה עוד רבעון.,Hero subtitle
+Home,Hero,CTA Button,בוא נדבר ←,Primary CTA
+Home,Hero,Note,עד 8 לקוחות ברבעון,Limitation note
+Home,Hero,Photo Credit,תל אביב–יפו · חוף הים התיכון,Image attribution
+Home,Hero,Scroll Text,גלול,Scroll indicator
+Home,Stats,Stat 1 Number,15,Years of experience
+Home,Stats,Stat 1 Label,שנות ניסיון בתל אביב,Experience label
+Home,Stats,Stat 2 Number,₪22,359,Average monthly salary in Tel Aviv
+Home,Stats,Stat 2 Label,שכר ממוצע חודשי בת"א — הגבוה בישראל,Salary label
+Home,Stats,Stat 3 Number,+6%,Rental increase 2026
+Home,Stats,Stat 3 Label,עלייה בשכירות ב-2026,Rental growth label
+Home,Stats,Stat 4 Number,7–12%,Total return average
+Home,Stats,Stat 4 Label,תשואה כוללת ממוצעת (שכירות + השבחה),Return label
+Home,Identification,Label,מכיר את התחושה?,Small label
+Home,Identification,H2 Part 1,כבר עשית את שלך.,Headline part 1
+Home,Identification,H2 Part 2,עכשיו תן לכסף לעשות את שלו.,Headline part 2 (gold)
+Home,Identification,Intro Text,יש אנשים שיש להם הון פנוי, הם יודעים שנדל"ן בתל אביב זה מהלך נכון — אבל לא רוצים לעשות את זה לבד, לא רוצים מתווכים שמכניסים אותם לעסקה שמתאימה לעמלה שלהם. הם רוצים מישהו שחושב כמוהם.,Introduction paragraph
+Home,Identification,List Item 1,יש לך ₪1 מיליון ומעלה פנויים — ואתה מחפש שהם יעבדו כמו שאתה עבדת כדי להשיג אותם,List item 1
+Home,Identification,List Item 2,אתה מחפש שותף שחושב קודם על הכסף שלך — לא על העמלה שלו,List item 2
+Home,Identification,List Item 3,אתה רוצה את העסקאות הטובות — לא את מה שנשאר אחרי שכולם כבר עברו עליהן,List item 3
+Home,Identification,List Item 4,חשוב לך שהכל על השולחן — מחירים, סיכונים, תשואות. בלי הפתעות בדרך,List item 4
+Home,Identification,Quote Part 1,אנחנו לא מוכרים נכסים.,Quote part 1
+Home,Identification,Quote Part 2,אנחנו עושים עסקאות טובות,Quote part 2 (gold)
+Home,Identification,Quote Part 3,עם אנשים שאנחנו מאמינים בהם.,Quote part 3
+Home,Identification,Byline,The Investor's Circle TLV,Quote attribution
+Home,WhyTLV,Label,למה תל אביב?,Section label
+Home,WhyTLV,H2 Part 1,העיר שמעולם לא,Headline part 1
+Home,WhyTLV,H2 Part 2,מפסיקה לגדול.,Headline part 2 (gold)
+Home,WhyTLV,Intro,אם אתה כבר עוסק בעסקים או בהיי-טק — אתה כנראה מכיר את תל אביב מבפנים. אז אתה יודע למה הנדל"ן שלה ממשיך לטפס. הנה הנתונים שמסבירים את זה.,Section intro
+Home,WhyTLV,Image Caption Title,תל אביב–יפו,Image caption title
+Home,WhyTLV,Image Caption Text,עיר שמעולם לא נעצרת,Image caption
+Home,WhyTLV,Card 1 Title,מעצמת ההיי-טק הישראלית,Card 1 title
+Home,WhyTLV,Card 1 Text,גוש דן הוא עמק הסיליקון של ישראל — עשרות אלפי עובדי היי-טק עם שכר ממוצע גבוה מחפשים מגורים איכותיים, מה שמחזיק את הביקוש גבוה ואת שוק השכירות חם כל העת.,Card 1 description
+Home,WhyTLV,Card 2 Title,פיתוח עירוני ללא הפסקה,Card 2 title
+Home,WhyTLV,Card 2 Text,הרכבת הקלה, פיתוח מרחבי מגורים חדשים, פרויקטים של התחדשות עירונית ותמ"א 38 — כל אלה מעלים ערך נכסים באזורים שלמים ויוצרים הזדמנויות השקעה ייחודיות.,Card 2 description
+Home,WhyTLV,Card 3 Title,איכות חיים ייחודית בעולם,Card 3 title
+Home,WhyTLV,Card 3 Text,קו חוף ים תיכוני, אוכל עולמי, תרבות עשירה, מזג אוויר נפלא — תל אביב נבחרה שוב ושוב לאחת הערים המעניינות לחיות בהן. הביקוש למגורים לא הולך לשום מקום.,Card 3 description
+Home,WhyTLV,Card 4 Title,תשתיות בריאות ולימוד,Card 4 title
+Home,WhyTLV,Card 4 Text,בתי החולים המובילים בישראל — איכילוב, שיבא, אסף הרופא — בסמיכות מלאה. כמו כן אוניברסיטת תל אביב ומוסדות לימוד מובילים — מה שמבטיח ביקוש קבוע לשכירות.,Card 4 description
+Home,WhyTLV,Card 5 Title,נגישות בינלאומית,Card 5 title
+Home,WhyTLV,Card 5 Text,רכבת מהירה ישירה לשדה התעופה בן גוריון — 25 דקות בלבד ממרכז העיר. קישוריות בינלאומית יוצאת דופן שהופכת את תל אביב ליעד מועדף למשקיעים זרים וישראלים בחו"ל.,Card 5 description
+Home,WhyTLV,Card 6 Title,מחירים שמטפסים בעקביות,Card 6 title
+Home,WhyTLV,Card 6 Text,מחירי הנדל"ן בתל אביב עלו בממוצע 7–12% בשנה בעשור האחרון. אפילו בתקופות של אי-ודאות, העיר הוכיחה עמידות שלא נראתה ברוב ערי העולם.,Card 6 description
+Home,WhyTLV,Bottom Title,להתגורר או להשקיע —,Bottom section title part 1
+Home,WhyTLV,Bottom Title Gold,הגמישות היא היתרון.,Bottom section title part 2 (gold)
+Home,WhyTLV,Bottom Text,אחד הייחודים של נדל"ן תל אביב: הנכס שלך יכול לשמש אותך למגורים עצמיים, להשכרה לטווח קצר (Airbnb), לשכירות ארוכה, ואחר כך לאקזיט. הגמישות הזו מייצרת ערך שנדיר למצוא בשוקי נדל"ן אחרים.,Bottom section description
+Home,WhyTLV,Bottom Stat 1,שכירות חודשית ממוצעת ב-3 חדרים: ₪7,500–12,000,Rental stat 1
+Home,WhyTLV,Bottom Stat 2,תשואת שכירות ממוצעת: 3.5%–5.5% לשנה,Rental return stat
+Home,WhyTLV,Bottom Stat 3,עליית ערך ממוצעת 10 שנים: +180%,10-year appreciation
+Home,WhyTLV,Bottom Stat 4,ביקוש להשכרה בשפל היסטורי — תפוסה מעל 97%,Occupancy rate
+Home,WhyTLV,Bottom Stat 5,משקיעים זרים מהווים 14% מהרוכשים — וגדל,Foreign investors
+Home,WhyNow,Label,נקודת כניסה,Section label
+Home,WhyNow,H2,למה עכשיו?,Section title
+Home,WhyNow,Para 1,התקופה האחרונה בישראל הייתה קשה — אי-יציבות ביטחונית וכלכלית בעקבות אירועי אוקטובר. אך כעת המשק נכנס לשלב של התייצבות והתאוששות.,Paragraph 1
+Home,WhyNow,Para 2,היסטורית, לאחר עימותים ביטחוניים משמעותיים, שוק הנדל"ן בישראל הוכיח עמידות והראה עליות מחירים בשנים העוקבות. סביבתו כלכלית נתמכת על ידי ביקושים דמוגרפיים יציבים (כולל עלייה לישראל), בטל בהתחלות בנייה, ותנאי מימון הדרגתיים.,Paragraph 2
+Home,WhyNow,Para 3 Gold,בתקופה הנוכחית, יש פער ייחודי בין הסיכון הנתפס לבין הפוטנציאל תשואה העתידי.,Paragraph 3 (gold emphasis)
+Home,WhyNow,Para 4,זו לא ההצהרה שלנו — זו ההסתכלות שלנו על השוק. אנחנו מעריכים שהשלב הזה מציע נקודת כניסה מעניינת למשקיעים שיודעים לזהות את הפערים ויש להם את הכלים לממש את הפוטנציאל.,Paragraph 4
+Home,Problem,Label,איך אנחנו עובדים,Section label
+Home,Problem,H2 Part 1,אנחנו לא מוכרים נכסים.,Headline part 1
+Home,Problem,H2 Part 2,אנחנו מוצאים עסקאות.,Headline part 2 (gold)
+Home,Problem,Intro,בשוק ממש יש מחירים שלא משקפים ערך. אנחנו מוצאים אותם.,Section intro
+Home,Problem,Card 1 Title,זיהוי חריגויות במחיר,Card 1 title
+Home,Problem,Card 1 Text,שוק בעל אלפי עסקאות יוצר פערים — מחירים שלא משקפים פוטנציאל. נכס ששווה ₪3.5M בשוק הפתוח, אחרי חיזוק חכם יכול להגיע ל-₪5M. זה הפוטנציאל שמכפיל את ההון.,Card 1 description
+Home,Problem,Card 2 Title,ניתוח פוטנציאל,Card 2 title
+Home,Problem,Card 2 Text,אנחנו לא מסתכלים על נכס וחושבים "לבנות". אנחנו מחשבים: כמה עובד כרגע, כמה יכול לעבוד אחרי כל שינוי, כמה הוא יעלה, כמה זמן ייקח, ומה ה-ROI. כל מספר על השולחן.,Card 2 description
+Home,Problem,Card 3 Title,שותפות לטווח ארוך,Card 3 title
+Home,Problem,Card 3 Text,אנחנו בונים עם לקוחות שלנו יחס כמו שותפים עסקיים — לא כמוכר שמחכה לעמלה. העסקה הראשונה היא ההתחלה, לא הסוף. אנחנו חושבים על הפרטפוליו שלך כמו שאתה חושב עליו.,Card 3 description
+Home,Problem,CTA Button,בוא נדבר על ההזדמנות שלך ←,CTA button
+Home,Process,Label,הגישה שלנו,Section label
+Home,Process,H2 Part 1,ייעוץ, לא תיווך.,Headline part 1
+Home,Process,H2 Part 2,שותפות, לא עסקה.,Headline part 2 (gold)
+Home,Process,Intro,אנחנו עובדים עם מעט אנשים בכל פעם — בכוונה. כי ליווי אמיתי דורש זמן, תשומת לב ויחס אישי. לא לוקחים רישומים. לוקחים לקוחות. ויש הבדל גדול בין השניים.,Section intro
+Home,Process,Step 1 Title,פרופיל אסטרטגי,Step 1 title
+Home,Process,Step 1 Text,נמפה את ההון, הטווח והסיכון שלך ונגדיר את המסלול האופטימלי.,Step 1 description
+Home,Process,Step 2 Title,מביאים לך עסקאות,Step 2 title
+Home,Process,Step 2 Text,נאתר נכסים שמתאימים בדיוק לאסטרטגיה שבנינו. אנחנו נצא לשטח — ולכל נכס תקבל ניתוח עסקי מלא לפני שתחליט.,Step 2 description
+Home,Process,Step 3 Title,בדיקת נאותות מלאה,Step 3 title
+Home,Process,Step 3 Text,משפטי, פיננסי, הנדסי ורגולטורי — כל פרט נבדק לפני שאתה מוציא שקל.,Step 3 description
+Home,Process,Step 4 Title,ייעוץ מימון, משכנתא ותכנון מיסוי,Step 4 title
+Home,Process,Step 4 Text,נמקסם מינוף ונמזער עלות הון — כולל קשרים עם הגופים הפיננסיים הנכונים. חיסכון במס ברכישה ובמכירה, בניית מבני עסקה נכונים, ומקסום התשואה על ההון העצמי.,Step 4 description
+Home,Process,Step 5 Title,סגירה ואחרי,Step 5 title
+Home,Process,Step 5 Text,מחתימה לרישום — והתחלת עבודה משותפת על השבחה וביצוע של המטרות שהגדרנו. אתה לא בודד עם הנכס — אנחנו כאן.,Step 5 description
+Home,Process,Quote,אחרי 20 שנה בשוק הזה, יכול להגיד לך ישירות — העסקאות הטובות לא מגיעות מחיפוש, הן מגיעות מ,Quote text part 1
+Home,Process,Quote Highlight,אנשים.,Quote text part 2 (gold)
+Home,Process,Quote Continuation,זה מה שאנחנו מביאים לשולחן.,Quote text part 3
+Home,Process,Quote Byline,מייסד — The Investor's Circle TLV,Quote attribution
+Home,Solution,Label,מה אנחנו עושים ביחד,Section label
+Home,Solution,H2 Part 1,ליווי מלא —,Headline part 1
+Home,Solution,H2 Part 2,מהשיחה הראשונה עד התשואה.,Headline part 2 (gold)
+Home,Solution,Intro,דמי ייעוץ חד-פעמיים. הכל על השולחן. אתה יודע בדיוק מה קורה בכל שלב.,Section intro
+Home,Solution,Item 1 Num,01 —,Item number
+Home,Solution,Item 1 Title,מכירים אותך קודם,Item 1 title
+Home,Solution,Item 1 Text,פגישה אישית עם אחד מהמומחים שלנו — נבין מה יש לך, מה אתה רוצה שיהיה לך, ונבנה ביחד אסטרטגיה שמתאימה לך ספציפית.,Item 1 description
+Home,Solution,Item 2 Num,02 —,Item number
+Home,Solution,Item 2 Title,מביאים לך עסקאות,Item 2 title
+Home,Solution,Item 2 Text,נאתר נכסים שמתאימים בדיוק לאסטרטגיה שבנינו. נצא ביחד לשטח — ולכל נכס תקבל ניתוח עסקי מלא לפני שתחליט.,Item 2 description
+Home,Solution,Item 3 Num,03 —,Item number
+Home,Solution,Item 3 Title,הופכים כל אבן,Item 3 title
+Home,Solution,Item 3 Text,טאבו, תשריטים, היתרים, חוזי שכירות, שכנים, תוכניות עירוניות — אנחנו בודקים כל דבר לפני שאתה מתחייב לשקל.,Item 3 description
+Home,Solution,Item 4 Num,04 —,Item number
+Home,Solution,Item 4 Title,אופטימיזציה פיננסית,Item 4 title
+Home,Solution,Item 4 Text,מומחה המימון שלנו בונה את תמהיל המשכנתא הטוב ביותר עבורך — הריבית הנמוכה, המינוף הנכון. לקוחות שלנו מקבלים ייעוץ במחיר מוזל.,Item 4 description
+Home,Solution,Item 5 Num,05 —,Item number
+Home,Solution,Item 5 Title,סוגרים בשבילך,Item 5 title
+Home,Solution,Item 5 Text,משא ומתן, בדיקות משפטיות, עורך דין, חתימות, רישום בטאבו — אתה מגיע לחתום. אנחנו מסדרים את כל השאר.,Item 5 description
+Home,Solution,Item 6 Num,06 —,Item number
+Home,Solution,Item 6 Title,מביאים את הערך,Item 6 title
+Home,Solution,Item 6 Text,תכנון אדריכלי, שיפוץ מקצועי ועיצוב פנים שמכפילים את ערך הנכס — ובמידת הצורך, ליווי מכירה עד האקזיט המקסימלי. (אופציונלי, מתומחר בנפרד),Item 6 description
+Home,Solution,Pricing Note,דמי ייעוץ: 2% ממחיר הנכס, בתשלום אחרי סגירה. פגישת ייעוץ ראשונה: ₪1,500 + מע"מ (מזוכה מהדמי הסופיים).,Pricing details
+Home,Solution,CTA Button,אני רוצה להתחיל ←,CTA button
+Home,Results,Label,עסקאות נבחרות,Section label
+Home,Results,H2 Part 1,עסקאות שמדברות,Headline part 1
+Home,Results,H2 Part 2,חזק מכל הבטחה.,Headline part 2 (gold)
+Home,Results,Card 1 Tag,נמכר,Status tag
+Home,Results,Card 1 Address,יהושוע בן נון, ת"א,Property address
+Home,Results,Card 1 Conversion Label,המרה,Conversion label
+Home,Results,Card 1 Conversion Value,2 חדרים שהפכו לשלוש חדרים,Conversion details
+Home,Results,Card 1 Price,מחיר רכישה,Price label
+Home,Results,Card 1 Price Value,₪2.52M,Purchase price
+Home,Results,Card 1 Enhancement,עלות השבחה,Enhancement cost label
+Home,Results,Card 1 Enhancement Value,~₪350K,Enhancement cost
+Home,Results,Card 1 Sale Price,מחיר מכירה,Sale price label
+Home,Results,Card 1 Sale Price Value,₪4.4M,Final sale price
+Home,Results,Card 1 Hold Time,תקופת החזקה,Holding period label
+Home,Results,Card 1 Hold Time Value,24 חודשים,Holding period
+Home,Results,Card 2 Tag,בתהליך,Status tag
+Home,Results,Card 2 Address,שמעון התרסי, ת"א,Property address
+Home,Results,Card 2 Type Label,סוג,Type label
+Home,Results,Card 2 Type Value,התחדשות עירונית,Urban renewal
+Home,Results,Card 2 Price,מחיר רכישה,Price label
+Home,Results,Card 2 Price Value,₪1.7M,Purchase price
+Home,Results,Card 2 Conversion,המרה,Conversion label
+Home,Results,Card 2 Conversion Value,2 חדרים שהפכו לשלוש חדרים + סטודיו שהפך ל-2.5,Conversion details
+Home,Results,Card 2 Potential,פוטנציאל,Potential label
+Home,Results,Card 2 Potential Value,פינוי-בינוי,Potential type
+Home,Results,Card 2 Timeline,אופק,Timeline label
+Home,Results,Card 2 Timeline Value,בינוני-ארוך,Timeline
+Home,Results,Card 3 Tag,מושכר,Status tag
+Home,Results,Card 3 Address,רח' אקליר, ת"א,Property address
+Home,Results,Card 3 Conversion,המרה,Conversion label
+Home,Results,Card 3 Conversion Value,סטודיו שהפך לחלל 2.5 חדרים,Conversion details
+Home,Results,Card 3 Price,מחיר רכישה,Price label
+Home,Results,Card 3 Price Value,₪2.2M,Purchase price
+Home,Results,Card 3 Rent,שכ"ד חודשי,Monthly rent label
+Home,Results,Card 3 Rent Value,₪8,200,Monthly rent
+Home,Results,Card 3 Yield,תשואה שנתית,Annual yield label
+Home,Results,Card 3 Yield Value,4%,Annual yield
+Home,Results,Card 3 Outlook,צפי,Outlook label
+Home,Results,Card 3 Outlook Value,תחדשות עירונית,Urban renewal potential
+Home,Trust,Label,מה אומרים עלינו,Section label
+Home,Trust,H2 Part 1,אנשים שעשו,Headline part 1
+Home,Trust,H2 Part 2,עסקאות טובות.,Headline part 2 (gold)
+Home,Trust,Subtitle,בדברים שלהם, לא שלנו.,Section subtitle
+Home,Trust,Testimonial 1,ישבתי על 1.8 מיליון שנתיים. ידעתי שצריך לעשות משהו, סתם לא ידעתי עם מי. ארבעה חודשים אחרי שהתחלנו לדבר — יש לי דירה בצפון הישן שעלתה כבר 18%.,Testimonial 1
+Home,Trust,Testimonial 1 Name,דוד ר.,Testimonial 1 name
+Home,Trust,Testimonial 1 Role,יזם היי-טק, תל אביב,Testimonial 1 role
+Home,Trust,Testimonial 2,העסקה שקיבלתי לא הייתה ביד2, לא בנדל"ן מגנט, לא בשום מקום. היא הגיעה אלי ישירות דרכם — מתחת לשווי, בדיוק בשכונה שרציתי. זו הסיבה שעובדים עם אנשים.,Testimonial 2
+Home,Trust,Testimonial 2 Name,מיה ש.,Testimonial 2 name
+Home,Trust,Testimonial 2 Role,מנהלת כספים, הרצליה,Testimonial 2 role
+Home,Trust,Testimonial 3,גר בלונדון, לא רצה לעשות את זה בלי מישהו שאני סומך עליו מאה אחוז. הם ניהלו הכל מרחוק — בדיקות, משא ומתן, חתימה. הגעתי לישראל רק לחתום.,Testimonial 3
+Home,Trust,Testimonial 3 Name,יואב כ.,Testimonial 3 name
+Home,Trust,Testimonial 3 Role,ישראלי בלונדון,Testimonial 3 role
+Home,Trust,CTA Button,רוצה עסקה כזו? בוא נדבר ←,CTA button
+Home,FAQ,Label,כמה שאלות שבטח עולות,Section label
+Home,FAQ,H2 Part 1,שאלות ישרות,,Headline part 1
+Home,FAQ,H2 Part 2,תשובות ישרות.,Headline part 2 (gold)
+Home,FAQ,Intro,אין לנו עניין בעמימות. אם משהו לא מופיע כאן — שאל ישירות. אנחנו מעדיפים שיחה כנה על כל אלטרנטיבה.,Section intro
+Home,FAQ,Q1,מה ההון המינימלי כדי לעבוד אתכם?,Question 1
+Home,FAQ,A1,אנחנו עובדים עם לקוחות שיש להם מינימום ₪1 מיליון פנוי להשקעה. זה מאפשר גישה לעסקאות משמעותיות בלוקיישנים פריים בתל אביב. אין מקסימום — ליווינו עסקאות עד ₪12 מיליון.,Answer 1
+Home,FAQ,Q2,איך בנויים דמי הייעוץ?,Question 2
+Home,FAQ,A2,דמי ייעוץ של 2% ממחיר הרכישה — משולמים רק אחרי סגירה מוצלחת. פגישת ייעוץ ראשונה עולה ₪1,500 + מע"מ ומזוכה מהדמי הסופיים. אנחנו לא מרוויחים עמלות ממוכרים, בנקים או גורמים אחרים — רק ממך, בהתאמה מלאה לאינטרסים שלך.,Answer 2
+Home,FAQ,Q3,כמה זמן לוקח התהליך?,Question 3
+Home,FAQ,A3,מפגישת ייעוץ ראשונה ועד סגירה, רוב העסקאות נסגרות תוך 60–120 יום. לאיתור נכסים — לקוחותינו רואים בדרך כלל 2–3 הצעות איכותיות בתוך 30 הימים הראשונים.,Answer 3
+Home,FAQ,Q4,אני ישראלי בחו"ל — זה מתאים לי?,Question 4
+Home,FAQ,A4,בהחלט. חלק ניכר מלקוחותינו הם ישראלים בחו"ל ומשקיעים זרים. אנחנו מנהלים את כל התהליך מרחוק — כולל ייפוי כוח, ייעוץ משפטי ישראלי, ניהול עד לחתימה.,Answer 4
+Home,FAQ,Q5,האם אתם מבטיחים תשואה?,Question 5
+Home,FAQ,A5,אף אחד לא יכול להבטיח תשואות נדל"ן באופן אתי. מה שאנחנו מבטיחים: בדיקת נאותות קפדנית, ייעוץ ישיר ומבוסס נתונים, ואינטרס מלא שהעסקה תצליח. ה-19% תשואה שנתית ממוצעת שלנו הגיעה מאסטרטגיה — לא מהימור.,Answer 5
+Home,FAQ,Q6,למה מספר הלקוחות מוגבל?,Question 6
+Home,FAQ,A6,כי אנחנו מסרבים לפגוע באיכות. כל לקוח מקבל את תשומת לבנו המלאה — לא שירות תבנית. אנחנו מקבלים מקסימום 8 לקוחות חדשים ברבעון כדי שכל עסקה תקבל את עומק הניתוח שהיא מגיעה לה.,Answer 6
+Home,Urgency,Title,Q2 2026 — נותרו 3 מקומות פנויים,Urgency title
+Home,Urgency,Subtitle,אנחנו עובדים עם מעט אנשים בכל פעם. כשאנחנו מלאים — אנחנו מלאים.,Urgency subtitle
+Home,Urgency,Filled,5/8 מלא,Filled spots indicator
+Home,Urgency,CTA Button,בוא נדבר ←,CTA button
+Home,CTA,Label,בוא נכיר,Section label
+Home,CTA,H2 Part 1,שיחה קצרה.,Headline part 1
+Home,CTA,H2 Part 2,בלי התחייבות.,Headline part 2 (gold)
+Home,CTA,Intro,תשאיר פרטים ואחד מהצוות יחזור אליך. בלי מצגות מכירה, בלי לחץ — רק שיחה כנה.,Section intro
+Home,CTA Form,First Name Label,שם פרטי,Form label
+Home,CTA Form,First Name Placeholder,דוד,Form placeholder
+Home,CTA Form,Last Name Label,שם משפחה,Form label
+Home,CTA Form,Last Name Placeholder,כהן,Form placeholder
+Home,CTA Form,Email Label,דואר אלקטרוני,Form label
+Home,CTA Form,Email Placeholder,david@email.com,Form placeholder
+Home,CTA Form,Phone Label,טלפון,Form label
+Home,CTA Form,Phone Placeholder,050-0000000,Form placeholder
+Home,CTA Form,Capital Label,הון פנוי להשקעה,Form label
+Home,CTA Form,Capital Option 1,₪1M – ₪2M,Capital range option
+Home,CTA Form,Capital Option 2,₪2M – ₪5M,Capital range option
+Home,CTA Form,Capital Option 3,₪5M – ₪10M,Capital range option
+Home,CTA Form,Capital Option 4,₪10M+,Capital range option
+Home,CTA Form,Goal Label,מטרת ההשקעה,Form label
+Home,CTA Form,Goal Placeholder,מה אתה מחפש להשיג?,Form placeholder
+Home,CTA Form,Goal Option 1,הכנסה שוטפת משכירות,Investment goal option
+Home,CTA Form,Goal Option 2,עליית ערך / אקזיט,Investment goal option
+Home,CTA Form,Goal Option 3,אסטרטגיה משולבת,Investment goal option
+Home,CTA Form,Goal Option 4,השקעה ראשונה — בשלב בדיקה,Investment goal option
+Home,CTA Form,Submit Button,שלח — ניצור קשר בקרוב ←,Submit button
+Home,CTA Form,Privacy Note,הפרטים שלך נשארים אצלנו בלבד.,Privacy note
+Home,CTA Form,Success Icon,◆,Success icon
+Home,CTA Form,Success Title,קיבלנו.,Success title
+Home,CTA Form,Success Message,אחד מהצוות יחזור אליך תוך 24 שעות. מחכים לדבר איתך.,Success message
+Home,Footer,Logo,The Investor's Circle TLV,Footer logo
+Home,Footer,Link 1,אודות,Footer link
+Home,Footer,Link 2,למה ת"א,Footer link
+Home,Footer,Link 3,תהליך,Footer link
+Home,Footer,Link 4,עסקאות,Footer link
+Home,Footer,Link 5,צור קשר,Footer link
+Home,Footer,Link 6,בלוג,Footer link
+Home,Footer,Copyright,© 2025 The Investor's Circle TLV,Copyright notice

@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npx serve . -p $PORT"
+  },
+  "devDependencies": {
+    "html-pdf": "^3.0.1",
+    "puppeteer": "^25.1.0"
   }
 }
