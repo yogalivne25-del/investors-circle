@@ -643,10 +643,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section style="background:var(--navy);padding:72px 0;border-top:3px solid var(--gold)">
   <div class="container">
     <div style="text-align:center;direction:ltr">
-      <p style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Premium advisory for real estate investors in Tel Aviv</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;direction:ltr;margin-top:12px">
+      <p style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:32px">Premium advisory for real estate investors in Tel Aviv</p>
 
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <style>
+        .process-steps-en { display:flex; align-items:center; justify-content:center; gap:0; direction:ltr; }
+        .process-step-en { display:flex; flex-direction:column; align-items:center; gap:6px; }
+        .process-arrow-en { display:flex; align-items:center; padding:0 12px; margin-bottom:20px; }
+        @media(max-width:600px){
+          .process-steps-en { flex-direction:column; gap:0; }
+          .process-arrow-en { transform:rotate(90deg); margin-bottom:0; padding:8px 0; }
+        }
+      </style>
+
+      <div class="process-steps-en">
+
+        <div class="process-step-en">
           <div style="width:48px;height:48px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
@@ -654,11 +665,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="font-size:11px;color:rgba(255,255,255,0.45);margin:0">the potential</p>
         </div>
 
-        <div style="display:flex;align-items:center;padding:0 12px;margin-bottom:20px">
+        <div class="process-arrow-en">
           <svg width="28" height="12" viewBox="0 0 28 12" fill="none"><path d="M0 6h22M18 1l6 5-6 5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
 
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div class="process-step-en">
           <div style="width:48px;height:48px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
@@ -666,11 +677,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="font-size:11px;color:rgba(255,255,255,0.45);margin:0">the right asset</p>
         </div>
 
-        <div style="display:flex;align-items:center;padding:0 12px;margin-bottom:20px">
+        <div class="process-arrow-en">
           <svg width="28" height="12" viewBox="0 0 28 12" fill="none"><path d="M0 6h22M18 1l6 5-6 5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
 
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div class="process-step-en">
           <div style="width:48px;height:48px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
@@ -678,11 +689,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p style="font-size:11px;color:rgba(255,255,255,0.45);margin:0">and upgrade</p>
         </div>
 
-        <div style="display:flex;align-items:center;padding:0 12px;margin-bottom:20px">
+        <div class="process-arrow-en">
           <svg width="28" height="12" viewBox="0 0 28 12" fill="none"><path d="M0 6h22M18 1l6 5-6 5" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
 
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div class="process-step-en">
           <div style="width:48px;height:48px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gold);font-family:'Inter',Arial,sans-serif">€</div>
           <p style="font-size:12px;font-weight:600;letter-spacing:1px;color:var(--gold);margin:0">Profit</p>
           <p style="font-size:11px;color:rgba(255,255,255,0.45);margin:0">and keep growing</p>
