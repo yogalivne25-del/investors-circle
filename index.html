@@ -701,23 +701,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero__img"></div>
   <div class="hero__overlay"></div>
   <div class="container">
-    <div class="hero__content">
-      <div class="hero__eyebrow">
-        <div class="hero__eyebrow-line"></div>
-        <span>נדל"ן בתל אביב · ליווי פרטי</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;width:100%;position:relative;z-index:1" class="hero__grid">
+      <div class="hero__content" style="max-width:none;margin:0;background:none;backdrop-filter:none;padding:0;border:none">
+        <h2 style="font-family:'Frank Ruhl Libre',serif;font-size:clamp(16px,1.8vw,22px);font-weight:400;color:var(--gold);margin-bottom:20px;letter-spacing:0.5px">ליווי פרימיום למשקיעי ויזמי נדל"ן בתל אביב</h2>
+        <h1>
+          רוב המשקיעים מחפשים נכסים.<br>
+          <em>אנחנו מחפשים פוטנציאל.</em>
+        </h1>
+        <p class="hero__sub">
+          אנו מתמקדים באיתור אנומליות שוק — מצבים שבהם מחיר הנכס אינו משקף את הפוטנציאל הכלכלי האמיתי שלו. זו יכולה להיות דירה עם תכנון לא יעיל, נכס במצב פיזי ירוד באזור מבוקש, או פוטנציאל תכנוני שלא מומש.<br><br>
+          ערך לא נוצר במקרה — הוא מזוהה, מתוכנן וממומש.
+        </p>
       </div>
-      <h1>
-        רוב המשקיעים מחפשים נכסים.<br>
-        <em>אנחנו מחפשים פוטנציאל.</em>
-      </h1>
-      <p class="hero__sub">
-        בעוד שרוב המשקיעים מסתמכים על עליית מחירים כללית בשוק, אנחנו שואפים לייצר תשואה באמצעות יצירת ערך. הסוד אינו לקנות את מה שכולם רוצים, אלא לזהות את מה שכולם עדיין לא רואים.<br><br>
-        אנו מתמקדים באיתור אנומליות שוק מצבים שבהם מחיר הנכס אינו משקף את הפוטנציאל הכלכלי האמיתי שלו. אלו המקרים הנדירים שבהם ניתן לזהות פער משמעותי בין שווי הנכס כיום לבין הערך שניתן ליצור באמצעות אסטרטגיה נכונה, השבחה מושכלת ותכנון מדויק.<br><br>
-        זו יכולה להיות דירה עם תכנון לא יעיל, נכס במצב פיזי ירוד באזור מבוקש, פוטנציאל תכנוני שלא מומש או פער תמחור שנוצר מנסיבות מכירה ייחודיות. אלו בדיוק סוגי ההזדמנויות שאנו מחפשים.<br><br>
-        מבחינתנו, הערך האמיתי נוצר כאשר מצליחים לזהות את הפוטנציאל לפני השוק, לממש אותו בצורה נכונה וליהנות מתשואה שאינה נשענת רק על תנאי השוק, אלא על החלטות נכונות. ערך לא נוצר במקרה הוא מזוהה, מתוכנן וממומש.
-      </p>
-      <div class="hero__actions">
-        <a href="#contact" class="btn btn--gold"><span>בוא נדבר ←</span></a>
+
+      <div style="background:rgba(13,27,42,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:36px;border:1px solid rgba(184,150,62,0.25)">
+        <p style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">בוא נכיר</p>
+        <h3 style="font-family:'Frank Ruhl Libre',serif;font-size:22px;color:var(--white);font-weight:400;margin-bottom:24px">שיחה קצרה. <em style="color:var(--gold)">בלי התחייבות.</em></h3>
+        <form id="heroForm">
+          <input type="hidden" name="access_key" value="8c802eaf-107d-4fd6-b8eb-ccc8febf1373" />
+          <input type="hidden" name="subject" value="ליד חדש (הירו) — The Investor's Circle TLV" />
+          <input type="hidden" name="from_name" value="האתר של The Investor's Circle" />
+          <input type="hidden" name="cc" value="contact@tlv-investor.com" />
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+            <div>
+              <label style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px">שם פרטי</label>
+              <input type="text" name="first_name" placeholder="דוד" required style="width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(184,150,62,0.3);color:var(--white);padding:10px 14px;font-size:14px;font-family:'Heebo',sans-serif;outline:none" />
+            </div>
+            <div>
+              <label style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px">שם משפחה</label>
+              <input type="text" name="last_name" placeholder="כהן" required style="width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(184,150,62,0.3);color:var(--white);padding:10px 14px;font-size:14px;font-family:'Heebo',sans-serif;outline:none" />
+            </div>
+          </div>
+          <div style="margin-bottom:12px">
+            <label style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px">דואר אלקטרוני</label>
+            <input type="email" name="email" placeholder="david@email.com" required style="width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(184,150,62,0.3);color:var(--white);padding:10px 14px;font-size:14px;font-family:'Heebo',sans-serif;outline:none" />
+          </div>
+          <div style="margin-bottom:12px">
+            <label style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px">טלפון</label>
+            <input type="tel" name="phone" placeholder="050-0000000" required style="width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(184,150,62,0.3);color:var(--white);padding:10px 14px;font-size:14px;font-family:'Heebo',sans-serif;outline:none" />
+          </div>
+          <div style="margin-bottom:12px">
+            <label style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px">הון פנוי להשקעה</label>
+            <select name="capital" required style="width:100%;background:rgba(13,27,42,0.95);border:1px solid rgba(184,150,62,0.3);color:var(--white);padding:10px 14px;font-size:14px;font-family:'Heebo',sans-serif;outline:none">
+              <option value="" disabled selected>בחר טווח</option>
+              <option>₪1M – ₪2M</option>
+              <option>₪2M – ₪5M</option>
+              <option>₪5M – ₪10M</option>
+              <option>₪10M+</option>
+            </select>
+          </div>
+          <div style="margin-bottom:20px">
+            <label style="font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px">מטרת ההשקעה</label>
+            <select name="goal" style="width:100%;background:rgba(13,27,42,0.95);border:1px solid rgba(184,150,62,0.3);color:var(--white);padding:10px 14px;font-size:14px;font-family:'Heebo',sans-serif;outline:none">
+              <option value="" disabled selected>מה אתה מחפש להשיג?</option>
+              <option>הכנסה שוטפת משכירות</option>
+              <option>עליית ערך / אקזיט</option>
+              <option>עליית ערך / התחדשות עירונית</option>
+              <option>אסטרטגיה משולבת</option>
+              <option>השקעה ראשונה בשלב בדיקה</option>
+              <option>ייעוץ לפני מכירה</option>
+            </select>
+          </div>
+          <button type="submit" style="width:100%;background:var(--gold);color:var(--white);border:none;padding:14px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Heebo',sans-serif;transition:background 0.3s" onmouseover="this.style.background='var(--navy)'" onmouseout="this.style.background='var(--gold)'">שלח ניצור קשר בקרוב ←</button>
+          <p style="font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-top:12px">הפרטים שלך נשארים אצלנו בלבד.</p>
+        </form>
+        <div id="heroFormSuccess" style="display:none;text-align:center;padding:24px 0">
+          <div style="color:var(--gold);font-size:28px;margin-bottom:16px">◆</div>
+          <h3 style="color:var(--white);font-family:'Frank Ruhl Libre',serif;font-weight:400;margin-bottom:8px">קיבלנו.</h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:14px">אחד מהצוות יחזור אליך תוך 24 שעות.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -727,6 +779,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero__scroll-line"></div>
   </div>
 </section>
+
+<style>
+  @media(max-width:768px){
+    .hero__grid { grid-template-columns:1fr !important; gap:40px !important; }
+  }
+</style>
+
+<script>
+document.getElementById('heroForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const data = new FormData(this);
+  const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
+  const json = await res.json();
+  if (json.success) {
+    this.style.display = 'none';
+    document.getElementById('heroFormSuccess').style.display = 'block';
+    setTimeout(() => { window.location.href = '/thank-you/'; }, 1500);
+  }
+});
+</script>
 
 <!-- STATS -->
 <div class="stats">
