@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ייעוץ מכירה — The Investor's Circle TLV</title>
+  <meta name="description" content="ייעוץ מכירה מקצועי לדירות בתל אביב — כיצד למכור נכון, במחיר הנכון, בזמן הנכון." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #FFFFFF; --offwhite: #F8F7F4; --glass: #EEF5FB;
+      --navy: #0D1B2A; --navy2: #1A2E42;
+      --gold: #B8963E; --gold2: #D4AE58;
+      --grey: #6B7280; --grey2: #9CA3AF;
+      --border: rgba(184,150,62,0.15); --border2: rgba(13,27,42,0.08);
+      --shadow: 0 4px 40px rgba(13,27,42,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--navy); font-family: 'Heebo', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; font-weight: 500; line-height: 1.2; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .gold { color: var(--gold); }
+    .label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .btn { display: inline-block; padding: 14px 40px; background: var(--navy); color: var(--white); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; transition: background 0.3s; }
+    .btn:hover { background: var(--gold); }
+    .btn--gold { background: var(--gold); }
+    .btn--gold:hover { background: var(--navy); }
+
+    /* NAV */
+    nav { background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); padding: 18px 0; border-bottom: 1px solid var(--border2); position: sticky; top: 0; z-index: 100; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Frank Ruhl Libre', serif; font-size: 17px; color: var(--navy); text-decoration: none; }
+    .nav__back { font-size: 12px; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav__back:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero { padding: 100px 0 60px; background: linear-gradient(135deg, var(--offwhite) 0%, var(--glass) 100%); border-bottom: 1px solid var(--border2); }
+    .hero h1 { font-size: clamp(32px, 4vw, 56px); margin-bottom: 20px; }
+    .hero p { font-size: 16px; color: var(--grey); max-width: 640px; line-height: 1.9; }
+    .hero p + p { margin-top: 16px; }
+    .hero__meta { font-size: 13px; color: var(--gold); margin-top: 24px; letter-spacing: 1px; }
+
+    /* CONTENT */
+    .content { padding: 80px 0; }
+    .section { margin-bottom: 80px; }
+    .section h2 { font-size: 36px; margin-bottom: 12px; }
+    .section > p { font-size: 16px; color: var(--grey); max-width: 760px; margin-bottom: 32px; line-height: 1.9; }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 60px; }
+    .step { padding: 32px; background: var(--offwhite); border: 1px solid var(--border2); }
+    .step__num { font-family: 'Frank Ruhl Libre', serif; font-size: 48px; color: var(--gold); margin-bottom: 8px; }
+    .step h3 { font-size: 18px; margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--grey); line-height: 1.8; }
+
+    /* OUTCOMES */
+    .outcomes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 60px 0; }
+    .outcome { padding: 24px; background: var(--glass); border-right: 3px solid var(--gold); text-align: center; }
+    .outcome h3 { font-size: 16px; margin-bottom: 10px; }
+    .outcome p { font-size: 12px; color: var(--grey); }
+
+    /* MISTAKES */
+    .mistakes { background: var(--navy); color: var(--white); padding: 60px 40px; margin: 80px 0; }
+    .mistakes h2 { font-size: 30px; margin-bottom: 32px; color: var(--white); }
+    .mistakes__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .mistake { padding: 28px; background: rgba(255,255,255,0.04); border-right: 2px solid rgba(184,150,62,0.4); }
+    .mistake h3 { font-size: 16px; margin-bottom: 10px; color: var(--white); }
+    .mistake p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+
+    /* TESTIMONIALS */
+    .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin: 60px 0; }
+    .testimonial { padding: 32px; background: var(--white); border: 1px solid var(--border2); }
+    .testimonial__text { font-size: 14px; color: var(--navy); margin-bottom: 20px; font-style: italic; line-height: 1.8; }
+    .testimonial__author { font-size: 13px; font-weight: 500; color: var(--navy); }
+    .testimonial__title { font-size: 11px; color: var(--grey); letter-spacing: 1px; }
+
+    /* FAQ */
+    .faq__items { margin: 40px 0; }
+    .faq__item { border-bottom: 1px solid var(--border2); padding: 20px 0; }
+    .faq__q { font-size: 15px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq__q:hover { color: var(--gold); }
+    .faq__a { font-size: 14px; color: var(--grey); line-height: 1.8; margin-top: 12px; display: none; }
+    .faq__item.open .faq__a { display: block; }
+
+    /* PRICING */
+    .pricing { background: var(--offwhite); padding: 60px 40px; text-align: center; margin: 80px 0; }
+    .pricing h2 { font-size: 36px; margin-bottom: 20px; }
+    .pricing__price { font-family: 'Frank Ruhl Libre', serif; font-size: 56px; color: var(--gold); margin: 20px 0; }
+    .pricing__desc { font-size: 15px; color: var(--grey); max-width: 600px; margin: 0 auto 40px; }
+
+    /* CTA */
+    .cta { text-align: center; padding: 60px 40px; background: var(--navy); color: var(--white); }
+    .cta h2 { font-size: 32px; margin-bottom: 12px; }
+    .cta p { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    /* FOOTER */
+    footer { padding: 40px 0; background: var(--navy); border-top: 3px solid var(--gold); }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 960px) { .steps { grid-template-columns: 1fr; } .outcomes { grid-template-columns: repeat(2, 1fr); } .testimonials { grid-template-columns: 1fr; } .mistakes__grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .container { padding: 0 20px; } .hero { padding: 60px 0 40px; } .mistakes { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height: 150px; width: 150px; object-fit: contain;">
+      </a>
+      <a href="/" class="nav__back">← חזרה לבית</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <span class="label">שירות מכירה</span>
+    <h1>ייעוץ מכירה לדירה שלך<br><em class="gold" style="font-style:italic">בתל אביב.</em></h1>
+    <p>מכירת דירה בתל אביב אינה רק עניין של תמחור — היא שילוב של עיתוי, הצגה, מיצוב וניהול משא ומתן. טעות קטנה עלולה לעלות עשרות עד מאות אלפי שקלים.</p>
+    <p>אנו מלווים מוכרים לפני שהם יוצאים לשוק — כדי להבטיח שהנכס יוצג בצורה הנכונה, יתומחר נכון, וימשוך את הקונים הרציניים ביותר.</p>
+    <div class="hero__meta">פגישת ייעוץ · ת"א · תוצאה: מחיר מקסימלי</div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+
+    <!-- WHAT WE DO -->
+    <div class="section">
+      <h2>מה עושים בייעוץ?</h2>
+      <p>לפני שהדירה שלך יוצאת לשוק, אנחנו עוצרים ושואלים: האם הנכס הזה מוצג בצורה שמייצרת את המחיר הגבוה ביותר שניתן? בפגישת הייעוץ אנו בוחנים:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3>ניתוח שוק מדויק</h3>
+          <p>מה עסקאות דומות נמכרו בסביבתך ב-6 החודשים האחרונים, מה בשוק כרגע ומה הקונים מחפשים — כדי לתמחר נכון, לא לפי תחושות.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3>אסטרטגיית תמחור</h3>
+          <p>תמחור גבוה מדי מאיים על מכירה, תמחור נמוך מוותר על רווח. נקבע ביחד את המחיר האופטימלי שמייצר תחרות על הנכס שלך.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3>הצגת הנכס</h3>
+          <p>מה צריך לתקן, לצבוע, לסדר או לפנות לפני הצילומים? איך מסתירים חסרונות ומדגישים יתרונות? אנחנו הולכים ממש דירה דירה.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">04</div>
+          <h3>מיצוב לקונה הנכון</h3>
+          <p>דירה בצפון הישן נמכרת אחרת מדירה בפלורנטין. מי הקונה האידיאלי, מה חשוב לו ואיך מדברים אליו — זה מה שמשנה.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">05</div>
+          <h3>ניהול מו"מ</h3>
+          <p>כמה לרדת, מתי להחזיק, מתי לוותר — ניהול שלב המשא ומתן נכון עשוי להיות שווה עשרות אלפי שקלים לטובתך.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">06</div>
+          <h3>תכנון מס וסגירה</h3>
+          <p>מיסוי מכירת דירה בישראל יכול להיות מורכב. נסביר לך מה צפוי ומתי כדאי לסגור — כדי שלא תופתע בסוף.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="section">
+      <h2>בסוף הייעוץ יש לך:</h2>
+      <div class="outcomes">
+        <div class="outcome">
+          <h3>מחיר מדויק</h3>
+          <p>מבוסס עסקאות אמיתיות</p>
+        </div>
+        <div class="outcome">
+          <h3>תוכנית הצגה</h3>
+          <p>מה לעשות לפני פרסום</p>
+        </div>
+        <div class="outcome">
+          <h3>אסטרטגיית מכירה</h3>
+          <p>עיתוי, ערוצים, קונה יעד</p>
+        </div>
+        <div class="outcome">
+          <h3>ביטחון</h3>
+          <p>להיכנס לשוק מוכן</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMON MISTAKES -->
+    <div class="mistakes">
+      <h2>הטעויות הנפוצות שמורידות את המחיר</h2>
+      <div class="mistakes__grid">
+        <div class="mistake">
+          <h3>תמחור לפי תקרה רגשית</h3>
+          <p>הרבה מוכרים מתמחרים לפי "כמה שילמתי" או "כמה אני צריך" — לא לפי מה שהשוק מוכן לשלם. התוצאה: הדירה "נשרפת" ויורדת בסוף בכל מקרה.</p>
+        </div>
+        <div class="mistake">
+          <h3>יציאה לשוק לפני מוכנות</h3>
+          <p>צילומים גרועים, דירה לא מסודרת, ריחות, בעיות גלויות — קונה שרואה דירה לא מוצגת כראוי יוריד מחיר או יעבור הלאה.</p>
+        </div>
+        <div class="mistake">
+          <h3>מו"מ לא מנוהל</h3>
+          <p>לרדת מהר מדי, לא לנהל תחרות בין מספר מציעים, לא לדעת מה גבול הגמישות — שלב זה לבדו עלול לעלות עשרות אלפי שקלים.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="section">
+      <h2>מוכרים שעבדו איתנו</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial__text">"חשבתי שאני יודע כמה הדירה שלי שווה. אחרי הייעוץ הבנתי שהייתי מפספס כ-200 אלף ₪. שווה כל שקל."</div>
+          <div class="testimonial__author">אמיר</div>
+          <div class="testimonial__title">מכר דירה בצפון הישן</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__text">"עצרו אותי לפני שיצאתי לשוק עם מחיר שגוי. שלושה שבועות לאחר מכן — דירה מכורה ב-180 אלף מעל מחיר הפתיחה המקורי שלי."</div>
+          <div class="testimonial__author">יעל</div>
+          <div class="testimonial__title">מכרה דירה ברחביה</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__text">"הם יצרו תחרות בין שני קונים רציניים — משהו שלא ידעתי שאפשרי. זה עלה לי שעה, ועשה לי מאות אלפים."</div>
+          <div class="testimonial__author">רן</div>
+          <div class="testimonial__title">מכר דירה בפלורנטין</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <h2>שאלות נפוצות</h2>
+      <div class="faq__items">
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>האם הייעוץ מחייב אותי למכור דרככם?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">לא. הייעוץ הוא כלי עצמאי — תוכל לממש אותו עם כל מתווך, לבד, או עם מי שתבחר. אנחנו כאן לתת לך את המידע והאסטרטגיה, לא לנעול אותך.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>מתי כדאי לעשות את הייעוץ?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">כמה שיותר מוקדם לפני שיוצאים לשוק — אידיאלית 4–8 שבועות לפני. זה מאפשר לבצע שיפורים, תיקונים וצילומים כשהנכס כבר מוכן.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>האם צריך לשפץ לפני מכירה?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">לא תמיד. חלק מהשיפוצים מחזירים את עצמם כפול, וחלקם לא שווים. אנחנו עוזרים להחליט מה כן — ומה לא — כדי לא לזרוק כסף.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>האם הייעוץ מתאים גם אם הדירה כבר בשוק?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">כן. אם הדירה תקועה, לא מקבלים פניות, או שקיבלת הצעות נמוכות — אפשר לעצור, לאפס ולצאת שוב נכון. יש לכך אסטרטגיה.</div>
+        </div>
+        <div class="faq__item">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            <span>כמה זמן לוקחת הפגישה?</span>
+            <span style="color:var(--gold)">+</span>
+          </div>
+          <div class="faq__a">בדרך כלל שעה עד שעה וחצי — חלק מהזמן בדירה עצמה, וחלקו דיון אסטרטגי ובחינת נתוני שוק יחד.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pricing">
+      <h2>התמחור</h2>
+      <div class="pricing__price">צרו קשר</div>
+      <p class="pricing__desc">פגישת ייעוץ מקצועית שכוללת ניתוח שוק, אסטרטגיית תמחור ותכנית הצגה מותאמת אישית לנכס שלכם.</p>
+      <p style="font-size:13px;color:var(--grey2);font-style:italic">הייעוץ אינו מחייב מכירה דרכנו — זהו כלי שנשאר אתכם.</p>
+      <div style="margin-top:36px">
+        <a href="/#contact" class="btn btn--gold"><span>לפרטים ותיאום ←</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>מוכנים למכור נכון?</h2>
+    <p>פגישה אחת יכולה להיות שווה מאות אלפי שקלים.</p>
+    <a href="/#contact" class="btn btn--gold"><span>בואו נדבר ←</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p>
+        <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height: 150px; width: 150px; object-fit: contain;">
+      </p>
+      <p class="footer__copy">© 2026 · כל הזכויות שמורות</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq__q').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
