@@ -232,7 +232,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── STATS ── */
     .stats {
-      background: var(--navy); padding: 48px 0;
+      background: var(--navy); padding: 100px 0;
       border-bottom: 3px solid var(--gold);
     }
     .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); }
@@ -243,10 +243,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .stats__item:last-child { border-inline-end: none; }
     .stats__num {
       font-family: 'Frank Ruhl Libre', serif;
-      font-size: 44px; font-weight: 300; color: var(--gold);
-      line-height: 1; margin-bottom: 8px;
+      font-size: clamp(90px, 14vw, 180px); font-weight: 300; color: var(--gold);
+      line-height: 1; margin-bottom: 16px;
     }
-    .stats__label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+    .stats__label { font-size: clamp(16px, 2vw, 22px); letter-spacing: 2px; color: rgba(255,255,255,0.7); }
 
     /* ── IDENTIFICATION ── */
     .identification { padding: 120px 0; background: var(--offwhite); }
@@ -847,7 +847,7 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
         .process-arrow { display:flex; align-items:center; padding:0 12px; margin-bottom:20px; transform:scaleX(-1); }
         @media(max-width:600px){
           .process-steps { flex-direction:column; gap:0; }
-          .process-arrow { transform:rotate(90deg) scaleX(-1); margin-bottom:0; padding:8px 0; }
+          .process-arrow { transform:rotate(90deg); margin-bottom:0; padding:8px 0; }
         }
       </style>
 

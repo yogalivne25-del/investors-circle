@@ -231,10 +231,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .stats__item:last-child { border-right: none; }
     .stats__num {
       font-family: 'Playfair Display', serif;
-      font-size: 44px; font-weight: 300; color: var(--gold);
-      line-height: 1; margin-bottom: 8px;
+      font-size: clamp(90px, 14vw, 180px); font-weight: 300; color: var(--gold);
+      line-height: 1; margin-bottom: 16px;
     }
-    .stats__label { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+    .stats__label { font-size: clamp(16px, 2vw, 22px); letter-spacing: 2px; color: rgba(255,255,255,0.7); }
 
     /* IDENTIFICATION */
     .identification { padding: 120px 0; background: var(--offwhite); }
