@@ -61,7 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ::-webkit-scrollbar-thumb { background: var(--gold); }
 
     /* ── TYPOGRAPHY ── */
-    h1, h2, h3 { font-family: 'Frank Ruhl Libre', serif; line-height: 1.2; font-weight: 500; }
+    h1, h2, h3 { font-family: 'Heebo', sans-serif; line-height: 1.2; font-weight: 500; }
     .gold { color: var(--gold); }
     .italic { font-style: italic; }
 
@@ -198,6 +198,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -webkit-backdrop-filter: blur(8px);
       padding: 48px 52px;
       border-right: 3px solid var(--gold);
+      margin-inline-start: auto;
     }
     .hero__eyebrow {
       display: flex; align-items: center; gap: 14px; margin-bottom: 36px;
@@ -791,7 +792,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option>ייעוץ לפני מכירה</option>
             </select>
           </div>
-          <button type="submit" style="width:100%;background:var(--gold);color:var(--white);border:none;padding:16px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Heebo',sans-serif;transition:background 0.3s" onmouseover="this.style.background='#8A6E2A'" onmouseout="this.style.background='var(--gold)'">שלח ניצור קשר בקרוב ←</button>
+          <button type="submit" style="width:100%;background:var(--gold);color:var(--white);border:none;padding:16px;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Heebo',sans-serif;transition:background 0.3s" onmouseover="this.style.background='#8A6E2A'" onmouseout="this.style.background='var(--gold)'">שלח ←</button>
         </form>
         <div id="heroFormSuccess" style="display:none;text-align:center;padding:32px 0">
           <div style="color:var(--gold);font-size:28px;margin-bottom:16px">◆</div>
@@ -828,6 +829,7 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
   <div class="container">
     <div class="stats__grid">
       <div class="stats__item fade-up" style="grid-column:1/-1;text-align:center">
+        <div style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:24px">ניסיון שאי אפשר לקנות</div>
         <div class="stats__num">15+</div>
         <div class="stats__label">שנות ניסיון בשוק הנדל"ן התל־אביבי</div>
       </div>
@@ -904,6 +906,7 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
 <section style="background:var(--navy);padding:80px 0;border-top:3px solid var(--gold)">
   <div class="container">
     <div style="max-width:780px;margin:0 auto;text-align:center">
+      <p style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:40px">משקיעים שעברו איתנו תהליך מספרים</p>
       <div style="color:var(--gold);font-size:48px;line-height:1;margin-bottom:32px;opacity:0.6">"</div>
       <p style="font-family:'Frank Ruhl Libre',serif;font-size:clamp(17px,2.2vw,22px);color:rgba(255,255,255,0.92);line-height:2;margin-bottom:40px">
         יש הרבה אנשים שיודעים למצוא דירה, אבל מעט מאוד אנשים שיודעים באמת ללוות אותך לאורך כל הדרך. מבחינתי, זה בדיוק מה שקיבלתי מ-TLV Investor.
@@ -954,27 +957,6 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
         </p>
         <div class="divider"></div>
         <span class="identification__attr">The Investor's Circle TLV</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GOAL BLOCK -->
-<section style="background:var(--offwhite);padding:72px 0">
-  <div class="container">
-    <div style="max-width:760px;margin:0 auto;text-align:center">
-      <h2 style="font-size:clamp(22px,3vw,32px);color:var(--navy);margin-bottom:24px">לא רק למצוא נכס ללמוד לזהות ערך לפני השוק.</h2>
-      <p style="font-size:17px;line-height:1.85;color:var(--navy);margin-bottom:20px">
-        אנחנו שואפים ללוות אותך בתהליך שבסופו תהיה בעלים של נכס בעל פוטנציאל השבחה משמעותי כזה שערכו העתידי עשוי להיות גבוה באופן מהותי ממחיר הרכישה.
-      </p>
-      <p style="font-size:17px;line-height:1.85;color:var(--navy);margin-bottom:20px">
-        אך מעבר לתוצאה הכלכלית, תרכוש הבנה עמוקה יותר של עולם הנדל"ן, תלמד כיצד לנתח עסקאות, לזהות הזדמנויות ולבחון סיכונים.
-      </p>
-      <p style="font-size:17px;line-height:1.85;color:var(--navy);font-weight:600">
-        המטרה שלנו היא שלאחר העסקה הראשונה תהיה בעל נכס טוב יותר ומשקיע טוב יותר.
-      </p>
-      <div style="margin-top:36px">
-        <a href="#contact" class="btn btn--gold"><span>בוא נדבר ←</span></a>
       </div>
     </div>
   </div>
@@ -1035,132 +1017,6 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
       <div>
         <h3>אקזיט בטווח הקרוב.<br>או בניית הון לטווח הארוך.</h3>
         <p>חלק מהעסקאות מיועדות ליצירת ערך באמצעות השבחה ומכירה ברווח, ואחרות מתמקדות בהשבחה, תזרים שוטף ופוטנציאל עתידי של התחדשות עירונית. האסטרטגיה הנכונה תלויה במטרות שלך ובאופי ההזדמנות.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY NOW -->
-<section style="background:var(--glass);padding:96px 0;border-top:1px solid var(--border)">
-  <div class="container">
-    <div style="max-width:800px;margin:0 auto;text-align:center">
-      <span class="label" style="text-align:center;display:block">נקודת כניסה</span>
-      <h2>למה עכשיו?</h2>
-
-      <div style="text-align:right;margin:48px 0;line-height:1.9;color:var(--navy);font-size:15px">
-        <p style="margin-bottom:24px">
-          השנים האחרונות התאפיינו ברמה גבוהה של אי־ודאות ביטחונית וכלכלית. לצד האתגרים, ניתן לזהות תהליכי התאוששות והתייצבות במספר מדדים מרכזיים.
-        </p>
-
-        <p style="margin-bottom:24px">
-          היסטורית, לאחר עימותים ביטחוניים משמעותיים, שוק הנדל"ן בישראל הוכיח עמידות והראה עליות מחירים בשנים העוקבות. סביבתה הכלכלית נתמכת על ידי ביקושים דמוגרפיים יציבים (כולל עלייה לישראל), בטל בהתחלות בנייה, ותנאי מימון הדרגתיים.
-        </p>
-
-        <p style="margin:40px 0;font-size:22px;font-weight:700;color:var(--gold);line-height:1.5;border-right:4px solid var(--gold);padding-right:24px">
-          בתקופה הנוכחית, יש פער ייחודי בין הסיכון הנתפס לבין הפוטנציאל תשואה העתידי.
-        </p>
-
-        <p>
-          אין מדובר בהבטחת תשואה, אלא בהערכת שוק המבוססת על ניסיון, נתונים ומגמות ארוכות טווח. אנחנו מעריכים שהשלב הזה מציע נקודת כניסה מעניינת למשקיעים שיודעים לזהות את הפערים ויש להם את הכלים לממש את הפוטנציאל.
-        </p>
-      </div>
-      <div style="margin-top:36px;text-align:center">
-        <a href="#contact" class="btn btn--gold"><span>בוא נדבר ←</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px">
-      <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:300px;width:300px;object-fit:contain;">
-    </div>
-    <span class="label">איך אנחנו עובדים</span>
-    <h2>איננו פועלים מתוך מלאי נכסים קבוע.<br><em class="gold">אנחנו מאתרים הזדמנויות השקעה.</em></h2>
-    <p class="problem__intro">גם בשוק יעיל יחסית ניתן למצוא נכסים שמחירם אינו משקף את מלוא הפוטנציאל הכלכלי שלהם.</p>
-    <div class="problem__grid">
-      <div class="problem__card fade-up">
-        <div class="problem__card-num">01</div>
-        <h3>איתור פערי תמחור</h3>
-        <p>שוק הכולל מיני עסקאות שונות בהבדלן לדוגמא, (ירושות, דירות סבתא) מייצר באופן טבעי פערים בין מחיר הנכס לבין ערכו הכלכלי האמיתי. לעיתים ניתן לאתר נכסים שנרכשים סביב 2.5 מיליון ש"ח, ובאמצעות תכנון נכון, השבחה מושכלת ומימוש הפוטנציאל הגלום בהם, להגיע לשווי גבוה משמעותית לאורך זמן. אלו סוגי הפערים שאנו מחפשים עבור לקוחותינו.</p>
-      </div>
-      <div class="problem__card fade-up">
-        <div class="problem__card-num">02</div>
-        <h3>ניתוח פוטנציאל ההשבחה</h3>
-        <p>אנחנו לא בוחנים נכס לפי מצבו הנוכחי, להפך הוא הנכון. אנו מנתחים את פוטנציאל ההשבחה שלו, את אפשרויות המימוש העומדות בפניו, את ההשקעה הנדרשת, את לוחות הזמנים ואת התשואה הצפויה בכל תרחיש. כל החלטה נשענת על נתונים, בדיקות והערכה כלכלית סדורה.</p>
-      </div>
-      <div class="problem__card fade-up">
-        <div class="problem__card-num">03</div>
-        <h3>שותפות לטווח ארוך</h3>
-        <p>הקשר שלנו עם הלקוחות אינו מסתיים במועד הרכישה. אנו רואים בכל עסקה חלק מאסטרטגיית השקעה רחבה ומתמשכת, ופועלים לצד לקוחותינו מתוך שותפות, זמינים להתייעציות ומסתכלים בראייה ארוכת טווח של יצירת ערך, ניהול סיכונים ובניית תיק נכסים איכותי לאורך השנים.</p>
-      </div>
-    </div>
-  </div>
-  <!-- CTA after problem -->
-  <div style="text-align:center;padding:0 0 72px">
-    <a href="#contact" class="btn btn--outline"><span>בוא נדבר על ההזדמנות שלך ←</span></a>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="container">
-    <div class="process__inner">
-      <div>
-        <span class="label">הגישה שלנו</span>
-        <h2>ליווי אסטרטגי, לא תיווך.<br><em class="gold">מערכת יחסים ארוכת טווח, לא עסקה חד־פעמית.</em></h2>
-        <p class="process__lead">
-          אנחנו עובדים עם מספר מצומצם של לקוחות בעלי רצון אמיתי לצמוח ולהתפתח בעולם הנדל"ן, כדי להעניק לכל אחד מהם <strong>ליווי אישי, מעמיק וזמין לאורך כל התהליך.</strong>
-        </p>
-        <ul class="process__steps">
-          <li class="process__step">
-            <div class="process__step-dot">1</div>
-            <div>
-              <h4>בונים יחד אסטרטגיית השקעה</h4>
-              <p>נמפה את מטרות ההשקעה, ההון העומד לרשותך, טווח הזמן ורמת הסיכון המתאימה לך ונבנה מסלול פעולה ברור.</p>
-            </div>
-          </li>
-          <li class="process__step">
-            <div class="process__step-dot">2</div>
-            <div>
-              <h4>מאתרים את העסקאות המתאימות ביותר</h4>
-              <p>אנו מבצעים את עבודת האיתור, הסינון והבדיקה בשטח, כך שאתה נחשף רק לנכסים המתאימים לאסטרטגיה שלך. במקום לעבור על עשרות אפשרויות, תבחן מספר מצומצם של הזדמנויות שנבחרו בקפידה ומלוות בניתוח עסקי מלא.</p>
-            </div>
-          </li>
-          <li class="process__step">
-            <div class="process__step-dot">3</div>
-            <div>
-              <h4>מבצעים בדיקת נאותות מקיפה</h4>
-              <p>בדיקות משפטיות, תכנוניות, הנדסיות ופיננסיות כדי לוודא שכל החלטה מתקבלת על בסיס מידע מלא.</p>
-            </div>
-          </li>
-          <li class="process__step">
-            <div class="process__step-dot">4</div>
-            <div>
-              <h4>בונים את מבנה המימון והמיסוי</h4>
-              <p>נבחן את אפשרויות המימון, המינוף והתכנון המיסויי, במטרה לייצר את העסקה עם התשואה הגבוהה ביותר על ההון העצמי.</p>
-            </div>
-          </li>
-          <li class="process__step">
-            <div class="process__step-dot">5</div>
-            <div>
-              <h4>רוכשים, משביחים ומממשים</h4>
-              <p>משלב המשא ומתן והרכישה, דרך תכנון וביצוע מהלכי ההשבחה ועד למכירה או החזקה ארוכת טווח אנו מלווים את התהליך בהתאם לאסטרטגיה שנקבעה.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="process__visual">
-        <div class="divider"></div>
-        <p class="process__quote">
-          "אחרי 20 שנה בשוק הזה, יכול להגיד לך ישירות העסקאות האיכותיות ביותר הן אלו שבהן יודעים לזהות פערי מבנה ושוק, להבין את מסלול ההשבחה, ולראות את הערך העתידי עוד לפני שהוא גלוי לכולם."
-        </p>
-        <div class="divider"></div>
-        <span class="process__attr">מייסד The Investor's Circle TLV</span>
-        <br /><br />
-        <img src="https://images.unsplash.com/photo-1695910410678-6731d8577dc5?w=600&q=80" alt="שקיעה מיפו עם סקיילין תל אביב" style="width:100%;height:220px;object-fit:cover;margin-top:24px;" />
       </div>
     </div>
   </div>
@@ -1250,6 +1106,70 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
 
 <!-- TRUST -->
 
+<!-- WHY NOW -->
+<section style="background:var(--glass);padding:96px 0;border-top:1px solid var(--border)">
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto;text-align:center">
+      <span class="label" style="text-align:center;display:block">נקודת כניסה</span>
+      <h2>למה עכשיו?</h2>
+
+      <div style="text-align:right;margin:48px 0;line-height:1.9;color:var(--navy);font-size:15px">
+        <p style="margin-bottom:24px">
+          השנים האחרונות התאפיינו ברמה גבוהה של אי־ודאות ביטחונית וכלכלית. לצד האתגרים, ניתן לזהות תהליכי התאוששות והתייצבות במספר מדדים מרכזיים.
+        </p>
+
+        <p style="margin-bottom:24px">
+          היסטורית, לאחר עימותים ביטחוניים משמעותיים, שוק הנדל"ן בישראל הוכיח עמידות והראה עליות מחירים בשנים העוקבות. סביבתה הכלכלית נתמכת על ידי ביקושים דמוגרפיים יציבים (כולל עלייה לישראל), בטל בהתחלות בנייה, ותנאי מימון הדרגתיים.
+        </p>
+
+        <p style="margin:40px 0;font-size:22px;font-weight:700;color:var(--gold);line-height:1.5;border-right:4px solid var(--gold);padding-right:24px">
+          בתקופה הנוכחית, יש פער ייחודי בין הסיכון הנתפס לבין הפוטנציאל תשואה העתידי.
+        </p>
+
+        <p>
+          אין מדובר בהבטחת תשואה, אלא בהערכת שוק המבוססת על ניסיון, נתונים ומגמות ארוכות טווח. אנחנו מעריכים שהשלב הזה מציע נקודת כניסה מעניינת למשקיעים שיודעים לזהות את הפערים ויש להם את הכלים לממש את הפוטנציאל.
+        </p>
+      </div>
+      <div style="margin-top:36px;text-align:center">
+        <a href="#contact" class="btn btn--gold"><span>בוא נדבר ←</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <img src="/images/logo-dark.png" alt="The Investor's Circle TLV" style="height:300px;width:300px;object-fit:contain;">
+    </div>
+    <span class="label">איך אנחנו עובדים</span>
+    <h2>איננו פועלים מתוך מלאי נכסים קבוע.<br><em class="gold">אנחנו מאתרים הזדמנויות השקעה.</em></h2>
+    <p class="problem__intro">גם בשוק יעיל יחסית ניתן למצוא נכסים שמחירם אינו משקף את מלוא הפוטנציאל הכלכלי שלהם.</p>
+    <div class="problem__grid">
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">01</div>
+        <h3>איתור פערי תמחור</h3>
+        <p>שוק הכולל מיני עסקאות שונות בהבדלן לדוגמא, (ירושות, דירות סבתא) מייצר באופן טבעי פערים בין מחיר הנכס לבין ערכו הכלכלי האמיתי. לעיתים ניתן לאתר נכסים שנרכשים סביב 2.5 מיליון ש"ח, ובאמצעות תכנון נכון, השבחה מושכלת ומימוש הפוטנציאל הגלום בהם, להגיע לשווי גבוה משמעותית לאורך זמן. אלו סוגי הפערים שאנו מחפשים עבור לקוחותינו.</p>
+      </div>
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">02</div>
+        <h3>ניתוח פוטנציאל ההשבחה</h3>
+        <p>אנחנו לא בוחנים נכס לפי מצבו הנוכחי, להפך הוא הנכון. אנו מנתחים את פוטנציאל ההשבחה שלו, את אפשרויות המימוש העומדות בפניו, את ההשקעה הנדרשת, את לוחות הזמנים ואת התשואה הצפויה בכל תרחיש. כל החלטה נשענת על נתונים, בדיקות והערכה כלכלית סדורה.</p>
+      </div>
+      <div class="problem__card fade-up">
+        <div class="problem__card-num">03</div>
+        <h3>שותפות לטווח ארוך</h3>
+        <p>הקשר שלנו עם הלקוחות אינו מסתיים במועד הרכישה. אנו רואים בכל עסקה חלק מאסטרטגיית השקעה רחבה ומתמשכת, ופועלים לצד לקוחותינו מתוך שותפות, זמינים להתייעציות ומסתכלים בראייה ארוכת טווח של יצירת ערך, ניהול סיכונים ובניית תיק נכסים איכותי לאורך השנים.</p>
+      </div>
+    </div>
+  </div>
+  <!-- CTA after problem -->
+  <div style="text-align:center;padding:0 0 72px">
+    <a href="#contact" class="btn btn--outline"><span>בוא נדבר על ההזדמנות שלך ←</span></a>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
@@ -1322,7 +1242,7 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
   <div class="container">
     <div class="urgency__inner">
       <div class="urgency__text">
-        <h3>Q2 2026 <strong>נותרו 3 מקומות פנויים</strong></h3>
+        <h3>Q3 2026 <strong>נותרו 3 מקומות פנויים</strong></h3>
         <p>אנחנו עובדים עם מעט אנשים בכל פעם. כשאנחנו מלאים אנחנו מלאים.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
@@ -1339,6 +1259,27 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
         </div>
       </div>
       <a href="#contact" class="btn"><span>בוא נדבר ←</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GOAL BLOCK -->
+<section style="background:var(--navy);padding:96px 0;border-top:3px solid var(--gold)">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto;text-align:center;border:1px solid rgba(184,150,62,0.35);padding:64px 56px;position:relative">
+      <div style="position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:var(--gold)"></div>
+      <span style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);display:block;margin-bottom:32px">הערך שאתה מקבל</span>
+      <h2 style="color:var(--white);font-size:clamp(24px,3vw,38px);margin-bottom:32px;line-height:1.35">לא רק למצוא נכס,<br><em style="color:var(--gold)">ללמוד לזהות ערך לפני השוק.</em></h2>
+      <p style="font-size:17px;line-height:1.9;color:rgba(255,255,255,0.65);margin-bottom:20px">
+        אנחנו שואפים ללוות אותך בתהליך שבסופו תהיה בעלים של נכס בעל פוטנציאל השבחה משמעותי כזה שערכו העתידי עשוי להיות גבוה באופן מהותי ממחיר הרכישה.
+      </p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(255,255,255,0.65);margin-bottom:32px">
+        אך מעבר לתוצאה הכלכלית, תרכוש הבנה עמוקה יותר של עולם הנדל"ן, תלמד כיצד לנתח עסקאות, לזהות הזדמנויות ולבחון סיכונים.
+      </p>
+      <p style="font-size:18px;line-height:1.7;color:var(--gold);font-weight:500;margin-bottom:48px;border-top:1px solid rgba(184,150,62,0.25);padding-top:32px">
+        המטרה שלנו היא שלאחר העסקה הראשונה תהיה בעל נכס טוב יותר ומשקיע טוב יותר.
+      </p>
+      <a href="#contact" class="btn btn--gold"><span>בוא נדבר ←</span></a>
     </div>
   </div>
 </section>
@@ -1395,7 +1336,7 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
             <option>ייעוץ לפני מכירה</option>
           </select>
         </div>
-        <button type="submit" class="form__submit">שלח ניצור קשר בקרוב ←</button>
+        <button type="submit" class="form__submit">שלח ←</button>
         <p class="form__note">הפרטים שלך נשארים אצלנו בלבד.</p>
       </form>
       <div class="form__success" id="formSuccess" style="display:none;">
@@ -1473,12 +1414,12 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
       if (data.success) {
         window.location.href = '/thank-you/';
       } else {
-        btn.textContent = 'שלח ניצור קשר בקרוב ←';
+        btn.textContent = 'שלח ←';
         btn.disabled = false;
         alert('אירעה שגיאה. נסה שנית.');
       }
     } catch {
-      btn.textContent = 'שלח ניצור קשר בקרוב ←';
+      btn.textContent = 'שלח ←';
       btn.disabled = false;
       alert('אירעה שגיאה. נסה שנית.');
     }
