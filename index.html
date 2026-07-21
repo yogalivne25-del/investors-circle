@@ -1028,14 +1028,19 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
 </section>
 
 <!-- VIDEO BREAK -->
-<section style="width:100%;background:#000;line-height:0;overflow:hidden;">
-  <div style="position:relative;padding-bottom:56.25%;height:0;">
-    <iframe
-      src="https://www.youtube.com/embed/rkupHf87wtc?autoplay=1&mute=1&loop=1&playlist=rkupHf87wtc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-      style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+<section style="background:var(--navy);padding:64px 0;">
+  <div class="container">
+    <div style="position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;border-radius:4px;">
+      <iframe
+        src="https://www.youtube.com/embed/rkupHf87wtc?autoplay=1&mute=1&loop=1&playlist=rkupHf87wtc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+        style="position:absolute;top:-60px;left:-2px;width:calc(100% + 4px);height:calc(100% + 120px);border:0;pointer-events:none;"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+      <div style="position:absolute;top:0;left:0;width:100%;height:60px;background:var(--navy);z-index:2;"></div>
+      <div style="position:absolute;bottom:0;left:0;width:100%;height:60px;background:var(--navy);z-index:2;"></div>
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;"></div>
+    </div>
   </div>
 </section>
 
