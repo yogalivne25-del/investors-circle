@@ -1023,9 +1023,18 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
 </section>
 
 <!-- VIDEO BREAK -->
+<style>
+.video-break-desktop { display: block; }
+.video-break-mobile { display: none; }
+@media (max-width: 768px) {
+  .video-break-desktop { display: none; }
+  .video-break-mobile { display: block; }
+}
+</style>
 <section style="background:var(--navy);padding:64px 0;">
   <div class="container">
-    <div style="position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;border-radius:4px;">
+    <!-- Desktop: video -->
+    <div class="video-break-desktop" style="position:relative;width:100%;padding-bottom:56.25%;overflow:hidden;border-radius:4px;">
       <iframe
         src="https://www.youtube.com/embed/rkupHf87wtc?autoplay=1&mute=1&loop=1&playlist=rkupHf87wtc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=6"
         style="position:absolute;top:-60px;left:-2px;width:calc(100% + 4px);height:calc(100% + 120px);border:0;pointer-events:none;"
@@ -1035,6 +1044,10 @@ document.getElementById('heroForm').addEventListener('submit', async function(e)
       <div style="position:absolute;top:0;left:0;width:100%;height:60px;background:var(--navy);z-index:2;"></div>
       <div style="position:absolute;bottom:0;left:0;width:100%;height:60px;background:var(--navy);z-index:2;"></div>
       <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;"></div>
+    </div>
+    <!-- Mobile: static image -->
+    <div class="video-break-mobile">
+      <img src="https://img.youtube.com/vi/rkupHf87wtc/maxresdefault.jpg" alt="תל אביב מלמעלה" style="width:100%;height:auto;display:block;border-radius:4px;" />
     </div>
     <div class="why-tlv__bottom" style="grid-template-columns:1fr;margin-top:48px;">
       <div>
