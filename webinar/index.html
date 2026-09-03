@@ -175,6 +175,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .host-stats .n { font-family: 'Frank Ruhl Libre', serif; font-size: 30px; color: var(--gold); }
     .host-stats .l { font-size: 12px; color: var(--grey); }
 
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
+    .proj-card { border: 1px solid var(--border); background: var(--white); }
+    .proj-card__top { position: relative; aspect-ratio: 4/3; background: var(--offwhite); display: flex; align-items: center; justify-content: center; }
+    .proj-card__tag { position: absolute; top: 14px; right: 14px; background: var(--gold); color: var(--white); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; padding: 4px 12px; text-transform: uppercase; }
+    .proj-card__tag.rented { background: var(--navy); }
+    .proj-card__tag.progress { background: var(--gold3); }
+    .proj-card__mark { font-family: 'Frank Ruhl Libre', serif; font-size: 40px; color: rgba(184,150,62,0.25); }
+    .proj-card__body { padding: 26px; }
+    .proj-card__loc { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .proj-card__body h3 { font-size: 16px; margin-bottom: 10px; line-height: 1.35; }
+    .proj-card__body p { font-size: 13.5px; color: var(--grey); line-height: 1.7; margin-bottom: 18px; }
+    .proj-card__metrics { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--border); }
+    .proj-card__metric { padding: 10px; text-align: center; border-inline-end: 1px solid var(--border); }
+    .proj-card__metric:last-child { border-inline-end: none; }
+    .proj-card__metric .v { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; color: var(--navy); }
+    .proj-card__metric .v.gold { color: var(--gold3); }
+    .proj-card__metric .l { font-size: 9.5px; color: var(--grey2); letter-spacing: 0.5px; margin-top: 2px; }
+
     /* FORM */
     .signup {
       background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%);
@@ -329,7 +348,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul>
           <li>אתם מחפשים "התעשרות מהירה" בלי סיכון</li>
           <li>אין לכם שום הון פנוי או אופק להשקעה</li>
-          <li>אתם לא מוכנים להשקיע זמן בלמידה ובתהליך</li>
+          <li>אתם לא מוכנים לקפיצת מדרגה בחייכם</li>
         </ul>
       </div>
     </div>
@@ -352,6 +371,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="center">
+  <div class="container">
+    <span class="label">לא רק תיאוריה</span>
+    <h2>עסקאות אמיתיות שליווינו בתל אביב</h2>
+    <div class="divider divider--center"></div>
+    <p class="section-sub">חלק קטן מהעסקאות שעליהן נדבר בגישה שנלמד בוובינר.</p>
+    <div class="projects-grid" style="text-align:right">
+      <div class="proj-card">
+        <div class="proj-card__top">
+          <span class="proj-card__tag">מומש</span>
+          <span class="proj-card__mark">◆</span>
+        </div>
+        <div class="proj-card__body">
+          <p class="proj-card__loc">יהושע בן נון · תל אביב</p>
+          <h3>השבחת דירת שני חדרים ומימוש ערך</h3>
+          <p>נכס שנרכש מתוך זיהוי פוטנציאל תכנוני והשבחתי, ונמכר במחיר המשקף את הערך שנוצר בתהליך.</p>
+          <div class="proj-card__metrics">
+            <div class="proj-card__metric"><div class="v">₪3.2M</div><div class="l">רכישה</div></div>
+            <div class="proj-card__metric"><div class="v">₪4.4M</div><div class="l">מכירה</div></div>
+            <div class="proj-card__metric"><div class="v gold">+37%</div><div class="l">עליית ערך</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-card__top">
+          <span class="proj-card__tag rented">מושכר</span>
+          <span class="proj-card__mark">◆</span>
+        </div>
+        <div class="proj-card__body">
+          <p class="proj-card__loc">רחוב הקליר · תל אביב</p>
+          <h3>השבחת נכס להשכרה ארוכת טווח</h3>
+          <p>נכס שנרכש מתוך ראייה ארוכת טווח של הכנסה שוטפת, עם תפוסה מלאה ושכירות יציבה.</p>
+          <div class="proj-card__metrics">
+            <div class="proj-card__metric"><div class="v">₪1.65M</div><div class="l">רכישה</div></div>
+            <div class="proj-card__metric"><div class="v">₪8,200</div><div class="l">שכ"ד/חודש</div></div>
+            <div class="proj-card__metric"><div class="v gold">5.4%</div><div class="l">תשואה</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-card__top">
+          <span class="proj-card__tag progress">בתהליך</span>
+          <span class="proj-card__mark">◆</span>
+        </div>
+        <div class="proj-card__body">
+          <p class="proj-card__loc">שמעון התרסי · תל אביב</p>
+          <h3>מהלך השבחה במסגרת התחדשות עירונית</h3>
+          <p>שילוב בין פוטנציאל השבחה בטווח הקצר לבין אפשרויות התחדשות עירונית בטווח הבינוני והארוך.</p>
+          <div class="proj-card__metrics">
+            <div class="proj-card__metric"><div class="v">₪2.8M</div><div class="l">רכישה</div></div>
+            <div class="proj-card__metric"><div class="v">₪320K</div><div class="l">עלות השבחה</div></div>
+            <div class="proj-card__metric"><div class="v gold">₪4.2M</div><div class="l">שווי צפוי</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="/projects/" class="btn" style="background:var(--navy);margin-top:44px;display:inline-block">לכל העסקאות ←</a>
   </div>
 </section>
 
