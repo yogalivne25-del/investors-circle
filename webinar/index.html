@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="icon" type="image/svg+xml" href="/images/logo-dark.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>וובינר חינם: איך להתחיל בנדל"ן בתל אביב ב-2026 | The Investor's Circle TLV</title>
-  <meta name="description" content="וובינר חינם: מפת דרכים ב-3 שלבים להתחלה נכונה בנדל&quot;ן בתל אביב, ואיך עושים &quot;פליפ&quot; בעיר היקרה בעולם. הרשמה חינם, מקומות מוגבלים." />
+  <meta name="description" content="וובינר חינם: מפת דרכים ב-3 שלבים להתחלה נכונה בנדל&quot;ן בתל אביב, ואיך עושים &quot;פליפ&quot; בעיר הנחשקת תל אביב. הרשמה חינם, מקומות מוגבלים." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Heebo:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -74,13 +74,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* HERO */
     .hero {
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 100%);
       color: var(--white);
-      padding: 64px 0 56px;
+      padding: 72px 0 60px;
       text-align: center;
       position: relative;
+      overflow: hidden;
       border-bottom: 3px solid var(--gold);
     }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('/images/tel%20aviv%20sky%20line.jpg') center 60%/cover no-repeat;
+      z-index: 0;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(13,27,42,0.94) 0%, rgba(26,46,66,0.88) 55%, rgba(13,27,42,0.82) 100%);
+      z-index: 0;
+    }
+    .hero .container { position: relative; z-index: 1; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(184,150,62,0.14); color: var(--gold2);
@@ -150,6 +161,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .learn-card h3 { font-size: 17px; margin-bottom: 10px; }
     .learn-card p { font-size: 14px; color: var(--grey); line-height: 1.7; }
 
+    /* WHY TLV */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 24px; }
+    .why-card { padding: 28px 24px; border: 1px solid var(--border); text-align: right; }
+    .why-card .stat { font-family: 'Frank Ruhl Libre', serif; font-size: 32px; color: var(--gold3); margin-bottom: 10px; }
+    .why-card h3 { font-size: 15px; margin-bottom: 8px; }
+    .why-card p { font-size: 13.5px; color: var(--grey); line-height: 1.7; }
+
     /* PROCESS (3 steps) */
     .steps-3 {
       background: var(--navy); color: var(--white); padding: 72px 0;
@@ -177,14 +195,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fit-card.yes li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
     .fit-card.no li::before { content: '✕'; color: var(--grey2); font-weight: 700; flex-shrink: 0; }
 
-    /* HOST */
+    /* HOST / TEAM */
     .host { background: var(--offwhite); }
-    .host-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
-    .host-photo { aspect-ratio: 4/5; background: url('/images/hero.jpg') center/cover; border: 1px solid var(--border); }
-    .host-stats { display: flex; gap: 32px; margin-top: 28px; }
-    .host-stats div { }
+    .host-stats { display: flex; gap: 32px; margin-top: 8px; margin-bottom: 40px; }
     .host-stats .n { font-family: 'Frank Ruhl Libre', serif; font-size: 30px; color: var(--gold); }
     .host-stats .l { font-size: 12px; color: var(--grey); }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .team-card { background: var(--white); border: 1px solid var(--border); text-align: right; }
+    .team-card__photo { aspect-ratio: 4/5; background-size: cover; background-position: center; border-bottom: 3px solid var(--gold); }
+    .team-card__body { padding: 24px 26px; }
+    .team-card__role { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .team-card__body h3 { font-size: 18px; margin-bottom: 10px; }
+    .team-card__body p { font-size: 13.5px; color: var(--grey); line-height: 1.75; }
 
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
@@ -250,7 +272,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     footer a { color: var(--gold); text-decoration: none; }
 
     @media (max-width: 768px) {
-      .fit-grid, .signup-grid, .host-grid { grid-template-columns: 1fr; gap: 32px; }
+      .fit-grid, .signup-grid, .team-grid { grid-template-columns: 1fr; gap: 32px; }
+      .host-stats { justify-content: center; flex-wrap: wrap; }
       section { padding: 56px 0; }
       .signup, .steps-3 { padding: 56px 0; }
     }
@@ -272,9 +295,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">◆ וובינר חי · חינם · מקומות מוגבלים</div>
-    <h1>איך להתחיל בנדל"ן בתל אביב ב-<em>2026</em></h1>
-    <p class="sub">מפת דרכים ב-3 שלבים להתעשרות ארוכת טווח, ואיך עושים "פליפ" בעיר היקרה בעולם: מה צריך, מה לא צריך, ולמי זה מתאים (ולמי לא).</p>
+    <div class="hero-badge">◆ וובינר חי לשנת 2026 · חינם · מקומות מוגבלים</div>
+    <h1>הצעד הראשון שלכם אל שוק הנדל"ן <em>הכי נחשק בישראל</em></h1>
+    <p class="sub">מפת דרכים ב-3 שלבים להתעשרות ארוכת טווח, ואיך עושים "פליפ" בעיר הנחשקת תל אביב: מה צריך, מה לא צריך, ולמי זה מתאים (ולמי לא).</p>
     <div class="hero-meta">
       <span>למשקיעים בתחילת הדרך</span>
       <span>מועד יעודכן בקרוב</span>
@@ -332,12 +355,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="learn-card">
         <div class="num">02</div>
         <h3>איך עושים "פליפ" בת"א</h3>
-        <p>העקרונות שמאפשרים לזהות פוטנציאל השבחה בעיר היקרה בעולם, ולהפוך אותו לתשואה אמיתית.</p>
+        <p>העקרונות שמאפשרים לזהות פוטנציאל השבחה בעיר הנחשקת תל אביב, ולהפוך אותו לתשואה אמיתית.</p>
       </div>
       <div class="learn-card">
         <div class="num">03</div>
         <h3>מה צריך ומה לא צריך</h3>
         <p>ההון, הידע והצוות שבאמת נדרשים כדי להתחיל, ומה אפשר (וכדאי) לוותר עליו בשלב הזה.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY TEL AVIV -->
+<section class="center" style="background:var(--offwhite)">
+  <div class="container">
+    <span class="label">ההיבט הכלכלי</span>
+    <h2>למה דווקא תל אביב</h2>
+    <div class="divider divider--center"></div>
+    <p class="section-sub">יש הרבה סיבות לבחור בתל אביב, אבל אנחנו נדבר בעיקר על אחת: המספרים.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="stat">◆</div>
+        <h3>ביקוש שלא נעצר</h3>
+        <p>מחסור מובנה בקרקע פנויה מול ביקוש קבוע, יוצר לחץ מתמיד על המחירים לאורך זמן.</p>
+      </div>
+      <div class="why-card">
+        <div class="stat">◆</div>
+        <h3>מהערים היציבות בישראל</h3>
+        <p>תל אביב נחשבת לאחת הערים היציבות והחזקות בישראל בעליית ערך נכסים לטווח ארוך.</p>
+      </div>
+      <div class="why-card">
+        <div class="stat">◆</div>
+        <h3>שוק נזיל ובטוח</h3>
+        <p>ביקוש גבוה גם בתקופות האטה מייצר זמן מכירה קצר יחסית ונזילות גבוהה לעומת פריפריה.</p>
       </div>
     </div>
   </div>
@@ -398,19 +448,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- HOST -->
-<section class="host">
+<!-- HOST / TEAM -->
+<section class="host center">
   <div class="container">
-    <div class="host-grid">
-      <div class="host-photo"></div>
-      <div>
-        <span class="label">מי מעביר את הוובינר</span>
-        <h2>ניסיון שאי אפשר לקנות</h2>
-        <div class="divider"></div>
-        <p style="font-size:15px;color:var(--grey);max-width:520px">The Investor's Circle TLV מלווה משקיעים ויזמי נדל"ן בתל אביב, עם שקיפות מלאה ותשואות אמיתיות, לא הבטחות שיווקיות.</p>
-        <div class="host-stats">
-          <div><div class="n">15+</div><div class="l">שנות ניסיון בשוק ת"א</div></div>
-          <div><div class="n">100%</div><div class="l">ליווי אישי ופרטי</div></div>
+    <span class="label">מי מעביר את הוובינר</span>
+    <h2>קצת עלינו, אנשים בדיוק כמוכם</h2>
+    <div class="divider divider--center"></div>
+    <p class="section-sub">גם אנחנו התחלנו יום אחד בלי ניסיון בנדל"ן. ההבדל הוא שעברנו את זה כבר, ועכשיו אנחנו מביאים את הדרך המקוצרת אליכם.</p>
+    <div class="host-stats" style="justify-content:center">
+      <div><div class="n">15+</div><div class="l">שנות ניסיון בשוק ת"א</div></div>
+      <div><div class="n">100%</div><div class="l">ליווי אישי ופרטי</div></div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card__photo" style="background-image:url('/images/doron-family.jpg.jpeg')"></div>
+        <div class="team-card__body">
+          <p class="team-card__role">מייסד ושותף מנהל</p>
+          <h3>דורון אפריאט</h3>
+          <p>למעלה מ-15 שנות ניסיון באיתור הזדמנויות והשבחת נכסים בתל אביב, בדגש על הצפון הישן ולב העיר. כל עסקה נבחנת דרך שלוש עדשות: כלכלית, תכנונית ועסקית.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__photo" style="background-image:url('/images/yuval-family.jpg.jpg')"></div>
+        <div class="team-card__body">
+          <p class="team-card__role">שותף ומנהל שיווק ופיתוח עסקי</p>
+          <h3>יובל לב</h3>
+          <p>למעלה מעשור בניהול שיווק ופיתוח עסקי, לצד פעילות מעשית בנדל"ן. מתמחה במיצוי פוטנציאל הנכס לאחר הרכישה, ובהפיכת כל לקוח למשקיע בטוח ועצמאי יותר.</p>
         </div>
       </div>
     </div>
